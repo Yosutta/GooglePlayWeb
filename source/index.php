@@ -9,6 +9,7 @@
       echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
       echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
       echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
+      echo "<link rel='icon' href='resources/icon.png'>";
       echo "<link rel='stylesheet' href='style.css'>";
   ?>
   <title>Google Play</title>
@@ -33,59 +34,61 @@
   </div>
   <!-- Topic chooser -->
   <div class="row">
-      <div class="col-lg-center-1 bg-warning" style="height:100px">
+      <div class="col-lg-center-1 col-md-center-1 bg-warning" style="height:100px">
           What is happening
       </div>
-      <div class="col-lg-center-11 bg-danger">
+      <div class="col-lg-center-11 col-md-center-11 bg-danger">
           Details
       </div>
   </div>
   <div class="row">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
-      </div>
-      <div class="col-lg-1 items-holder">
-          <a href="#Items">
-              <div class="items"></div>
-          </a>
+      <div class="col-lg-2 col-md-center-1" style="height=200px;background-color:green"></div>
+      <div class="col-lg-10 col-md-center-11 row">        
+        <div class="col-lg-1 col-md-center-item items-holder" style="margin-left:40px">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 col-md-center-item items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 col-md-center-item items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 col-md-center-item items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 col-md-center-item items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 col-md-center-item items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 medScreenItems items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 medScreenItems items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
+        <div class="col-lg-1 medScreenItems items-holder">
+            <a href="#Items">
+                <div class="items"></div>
+            </a>
+        </div>
       </div>
   </div>
 </body>
