@@ -1,0 +1,1 @@
+Tất cả mã javascript phải được viết ở đây
