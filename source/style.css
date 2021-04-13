@@ -110,21 +110,14 @@ form nav button{
 /* Cart */
 /* Each Item view*/
 .items-holder{
-  padding:3px;
-}
-.items{
-  height:100px;
-  box-sizing: border-box;
-  background-color: white;
-  text-align: center;
-  margin:3px;
+
 }
 
-.items-holder a div{
+.items-holder{
   transition: background-color 0.5s;
 }
 
-.items-holder a div:hover{
+.items-holder:hover{
   background-color :gray;
 }
 

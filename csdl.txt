@@ -1,0 +1,29 @@
+apps
+- appid int
+- name varchar64
+- creator varchar64
+- category varchar16
+- ranking int
+- free boolean
+- cost int
+- downloads int
+- link varchar128
+
+comments 
+- appid int
+- userid varchar32
+- comments varchar128
+- ranking int
+
+users
+- username varchar64
+- password varchar64
+- userid varchar32
+- privillege int
+
+userInfo
+- userid varchar32
+- fullName varchar64
+- age int
+- dateCreated date
+

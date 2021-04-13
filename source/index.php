@@ -15,10 +15,30 @@
     <?php include 'style.css'; ?>
     </style>  
     <title>Google Play</title>
+    <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "database";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password,$dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        }
+        
+        $sql = "SELECT * FROM `items`";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        
+        
+    ?>
 </head>
 <body>
   <!-- Header  -->
-  <div class="container-fluid" id="header">
+    <div class="container-fluid" id="header">
       <a href="index.php">
           <img class="" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="GooglePlay">
       </a>
@@ -31,11 +51,13 @@
           </nav>
       </form>
       <!-- Account Image -->
+      
       <a href="#" class="float-right mr-4 mt-2 rounded bg-primary text-white text-decoration-none" style="font-size:15px;padding:5px 15px">Sign in</a>
       <!-- <a href="#ToAccount">
           <img class="rounded-circle float-right mr-4 mt-2" src="resources/account/J2.png" alt="J2">
       </a> -->
-  </div>
+     </div>
+
 
   <!-- Navigation bar -->
     <div class="bg-white stickyNav" style="height:48px;top:0">
@@ -69,6 +91,7 @@
         <i class="fas fa-cog"></i>
     </button>
     </div>
+
     <!-- Navigation Sidebar-->
     <div class="stickyNav shadow-sm snav">
         <!-- My Apps, Shop -->
@@ -120,10 +143,37 @@
         </a>
     </div>
 
-  <div style="height:500px"></div>
-  <div style="height:500px"></div>
-  <div style="height:500px"></div>
-  <div style="height:500px"></div>
-  <div style="height:500px"></div>
+    <div style="height:500px;">
+        <div class="" style=" margin-top:-350px;margin-left:250px;">
+            <a href="" class="items-holder float-left">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['name'] ?></h5>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="items-holder float-left">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['name'] ?></h5>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>
+            
+
+            
+        </div>
+    </div>
+    <div style="height:500px"></div>
+    <div style="height:500px"></div>
+    <div style="height:500px"></div>
+    <div style="height:500px"></div>
 </body>
 </html>
