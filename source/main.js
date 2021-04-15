@@ -1,1 +1,3 @@
-Tất cả mã javascript phải được viết ở đây
+function login(){
+    console.log("hello");
+}

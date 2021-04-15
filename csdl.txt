@@ -1,5 +1,5 @@
 apps
-- appid int
+- appid varchar16
 - name varchar64
 - creator varchar64
 - category varchar16
@@ -10,20 +10,21 @@ apps
 - link varchar128
 
 comments 
-- appid int
-- userid varchar32
+- appid varchar16
+- userid int
 - comments varchar128
 - ranking int
 
 users
 - username varchar64
 - password varchar64
-- userid varchar32
-- privillege int
+- email varchar64
+- userid int
+- level int
 
 userInfo
-- userid varchar32
+- userid int
 - fullName varchar64
 - age int
-- dateCreated date
-
+- birthDate date
+- pictureLink varchar128

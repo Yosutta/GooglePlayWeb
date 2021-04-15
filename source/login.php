@@ -6,102 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <?php
+    <?php
       echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
       echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
       echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
       echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
       echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
       echo "<link rel='icon' href='resources/icon.png'>";
-     ?>
+      echo "<script src='main.js'></script>"
+    ?>
     <style>
     <?php include 'style.css'; ?>
     </style>  
-    <title>Google Play</title>
+    <title>Reset password</title>
     
 </head>
 <body>
 
     <form action="login.php" method="POST">
     Username
-      <input type="text" name="username" id="usename">
+      <input type="text" name="username" id="username">
+      <div name="usernameerror"></div>
       <br>
       Password
-      <input type="text" name="password" id="password">
-      </div>
+      <input type="password" name="password" id="password">
+      <div name="passworderror"></div>
       <br>
       <button class="btn btn-primary" type="submit">Submit</button>
     </form>
-
+    <a href="register.php">Create a new account</a>
+    <br>
+    <a href="resetaccount.php">Forgot Password?</a>
 </body>
 <?php
-    $dbservername = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
-    $dbname = "database";
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "database";
 
-    $conn = new mysqli($dbservername,$dbusername,$dbpassword,$dbname);
+  // Create connection
+  $conn = new mysqli($servername, $username, $password,$dbname);
 
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-
-    function login($user,$pass){
-      if(strlen($user)>0 || strlen($pass)){
-        $sql = "select * from users";
-        global $conn;
-        $result = $conn->query($sql);
-        $usernames = [];
-
-        if ($result->num_rows > 0) {
-          // output data of each row
-          while($row = $result->fetch_assoc()) {
-            array_push($usernames,$row['username']);
-          }
-        }
-
-
-        $i=0;
-        while($i<count($usernames)){
-
-          if($usernames[$i] == $user){
-
-            echo "Username True"."<br>";
-
-            $sql = "select password from users where username ='".$usernames[$i]."'";
-            $result = $conn->query($sql);
-            $row1 = $result->fetch_assoc();
-
-            if($row1['password'] == $pass){
-              echo "Password True";
-              break;
-            }
-            else
-              echo "Password not true";
-            break;
-          }
-          else
-
-            if($i==count($usernames)){
-              echo "Username not true";
-            }
-          $i+=1;
-
-        }
-
-      }
-      else{
-        echo "Not enough info";
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+      
+  function login($user,$pass){
+    global $conn;
+    $sql = "SELECT * FROM users WHERE username='$user'";
+    $result = $conn->query($sql);
+    while($row=$result->fetch_assoc()){
+      if($row['password']==$pass){
+        echo 'Logged in';
       }
     }
+  }
+  
+  if(isset($_POST['username'])){
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+    login($user,$pass);
+  }
 
-    if(isset($_POST['username']))
-    {
-      $user = $_POST['username'];
-      $pass = $_POST['password'];
-      login($user,$pass);
-    } 
-    
-    ?>
+  $conn->close();
+  ?>
 </html>
