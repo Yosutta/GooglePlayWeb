@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 10:20 AM
+-- Generation Time: Apr 16, 2021 at 12:10 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emailverification`
+--
+
+CREATE TABLE `emailverification` (
+  `email` varchar(64) NOT NULL,
+  `code` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `emailverification`
+--
+
+INSERT INTO `emailverification` (`email`, `code`) VALUES
+('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55'),
+('phuphuongtin@gmail.com', '6dba1dcd42c7e334ff25ec50746702c1');
 
 -- --------------------------------------------------------
 
@@ -43,7 +62,8 @@ INSERT INTO `users` (`username`, `password`, `email`, `userid`, `level`) VALUES
 ('yuuta', '123', 'grafiticraft@gmail.com', 1, 3),
 ('tin', 'qwe', 'phuphuongtin@gmail.com', 2, 2),
 ('jeff', '420', 'jeff@gmail.com', 3, 1),
-('grafiticraft', 'bbqyuming123', 'yuuta@gmail.com', 4, 1);
+('grafiticraft', 'Bbqyuming123', 'yuuta@gmail.com', 5, 1),
+('phuong tin', 'yuuta123', 'phuongtin@yahoo.com', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -66,7 +86,8 @@ INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `pictureLink`) VALUE
 (1, 'Togashi Yuuta', '0000-00-00', ''),
 (2, 'Phu Phuong Tin', '0000-00-00', ''),
 (3, 'Jeff Bezos', '0000-00-00', ''),
-(4, 'Grafiti Craft', '1998-10-20', '');
+(6, 'Grafiti Craft', '2100-10-31', ''),
+(7, 'Phù Phương Tín', '2000-10-13', '');
 
 --
 -- Indexes for dumped tables
@@ -92,13 +113,13 @@ ALTER TABLE `usersinfo`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `usersinfo`
 --
 ALTER TABLE `usersinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

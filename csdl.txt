@@ -25,6 +25,9 @@ users
 userInfo
 - userid int
 - fullName varchar64
-- age int
 - birthDate date
 - pictureLink varchar128
+
+emailVerification
+- email varchar64
+- code varchar8

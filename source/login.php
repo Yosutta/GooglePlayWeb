@@ -36,7 +36,7 @@
     </form>
     <a href="register.php">Create a new account</a>
     <br>
-    <a href="resetaccount.php">Forgot Password?</a>
+    <a href="send_link.php">Forgot Password?</a>
 </body>
 <?php
   $servername = "localhost";
