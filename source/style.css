@@ -110,7 +110,7 @@ form nav button{
 /* Cart */
 /* Each Item view*/
 .items-holder{
-
+  text-decoration: none;
 }
 
 .items-holder{
@@ -118,7 +118,8 @@ form nav button{
 }
 
 .items-holder:hover{
-  background-color :gray;
+  background-color :rgb(99, 99, 99);
+  opacity:0.8;
 }
 
 /* Custom Collumns Large*/

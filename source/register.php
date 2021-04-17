@@ -29,6 +29,9 @@
     Password
     <input type="password" name="password" id="password">
     </div>
+    Confirm Password
+    <input type="password" name="Cpassword" id="Cpassword">
+    </div>
 
     <div>
       FullName
