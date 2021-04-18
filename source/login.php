@@ -18,27 +18,42 @@
     <style>
     <?php include 'style.css'; ?>
     </style>  
-    <title>Reset password</title>
+    <title>Login</title>
     
 </head>
 <body>
+    <div class = "alignment_center">
+      <div class ="frame">
+      <form action="login.php" method="POST">
+        <div class="alignment_left"><img class="alignment_left" src ="./resources/Login/google_logo.png" width="120">
+        <br>
+        <p class="title">Sign in</p>
+        <p class="text_bios">with your Google Account</p>
+        
+        </div>
+        <input class="input_decoration" placeholder="Email or Phone number" type="text" name="username" id="username">
+        <div name="usernameerror"></div>
+        <br>
+        <input class="input_decoration" placeholder="Password" type="password" name="password" id="password">
+        <div name="passworderror"></div>
+        <br>
 
-    <form action="login.php" method="POST">
-    Username
-      <input type="text" name="username" id="username">
-      <div name="usernameerror"></div>
+        <div class="pt-lg-5 text-right">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+
+      </form>
+      <div class ="alignment_left" style="padding-top: 20px">
+      <a href="register.php">Create a new account</a>
       <br>
-      Password
-      <input type="password" name="password" id="password">
-      <div name="passworderror"></div>
-      <br>
-      <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
-    <a href="register.php">Create a new account</a>
-    <br>
-    <a href="send_link.php">Forgot Password?</a>
+      <a href="send_link.php">Forgot Password?</a>
+      <div style="padding-bottom: 120px"></div>
+      </div>
+      </div>
+    </div>
 </body>
-<?php
+
+<!-- <?php
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -70,5 +85,5 @@
   }
 
   $conn->close();
-  ?>
+  ?>  -->
 </html>

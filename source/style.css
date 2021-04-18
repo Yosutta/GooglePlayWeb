@@ -109,9 +109,6 @@ form nav button{
 
 /* Cart */
 /* Each Item view*/
-.items-holder{
-
-}
 
 .items-holder{
   transition: background-color 0.5s;
@@ -122,3 +119,65 @@ form nav button{
 }
 
 /* Custom Collumns Large*/
+
+/* Login screen */
+
+.alignment_center{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.frame{
+  background-color: white; 
+  padding: 40px;
+  box-shadow: 5px 5px 3px #d0d0d0;
+  border-radius: 6px;
+}
+
+.alignment_left{
+  text-align: left;
+}
+
+.alignment_right{
+  text-align: right;
+}
+
+.title{
+  font-size: 30px;
+  padding-top:10px;
+  font-weight: 600;
+  margin:0px; 
+}
+
+.text_bios{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 600;
+    padding-bottom: 70px;
+}
+
+.input_decoration{
+  width : 500px;
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+ .input_decoration:focus{
+   outline: none;
+ }
+
+ /* Register screen */
+
+ .white_body{
+  background-color: white;
+}
+.res_frame {
+  border-radius: 9px;
+  border: 1px solid #d0d0d0; 
+  padding: 40px;
+}

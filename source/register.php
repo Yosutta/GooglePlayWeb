@@ -18,10 +18,17 @@
     <style>
     <?php include 'style.css'; ?>
     </style>  
-    <title>Reset password</title>
+    <title>Register</title>
     
 </head>
+<body class ="white_body">
+  <div class="alignment_center">
+  <div class="res_frame">
+  <table>
+  <tr>
+  <td>
   <form action="" method="POST">
+    <div class="alignment_left"><img class="alignment_left" src ="./resources/Login/google_logo.png" width="120"></div>
     <div>
     Username 
     <input type="text" name="username" id="username">
@@ -29,7 +36,6 @@
     Password
     <input type="password" name="password" id="password">
     </div>
-
     <div>
       FullName
       <input type="text" name="fullname" id="fullname">
@@ -40,10 +46,16 @@
       Email
       <input type="email" name="email" id="email">
     </div>
-
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
-<body>
+  </td>
+  <td><img src="./resources/Register/img.png" width="320px"></td>
+  </tr>
+  </table>
+  </div>
+  </div>
+</body>
+<!--
 <?php
   $servername = "localhost";
   $username ="root";
@@ -121,5 +133,5 @@
     register($user,$pass,$fullName,$birthDate,$email);
   }
 
-?>
+?> -->
 </html>
