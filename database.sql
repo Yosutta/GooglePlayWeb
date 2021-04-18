@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2021 at 12:10 PM
+-- Generation Time: Apr 17, 2021 at 12:09 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `apps`
+--
+
+CREATE TABLE `apps` (
+  `appid` varchar(16) NOT NULL,
+  `appname` varchar(64) NOT NULL,
+  `creator` varchar(64) NOT NULL,
+  `category` varchar(16) NOT NULL,
+  `ranking` int(11) NOT NULL,
+  `free` tinyint(1) NOT NULL,
+  `cost` int(11) NOT NULL,
+  `downloads` int(11) NOT NULL,
+  `link` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `apps`
+--
+
+INSERT INTO `apps` (`appid`, `appname`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `link`) VALUES
+('g1', 'Genshin Impact', 'Mihoyo Inc', 'Game', 5, 1, 0, 1000000, './resources/Home/genshinimpact.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `emailverification`
 --
 
@@ -31,14 +56,6 @@ CREATE TABLE `emailverification` (
   `email` varchar(64) NOT NULL,
   `code` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `emailverification`
---
-
-INSERT INTO `emailverification` (`email`, `code`) VALUES
-('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55'),
-('phuphuongtin@gmail.com', '6dba1dcd42c7e334ff25ec50746702c1');
 
 -- --------------------------------------------------------
 
@@ -59,8 +76,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `email`, `userid`, `level`) VALUES
-('yuuta', '123', 'grafiticraft@gmail.com', 1, 3),
-('tin', 'qwe', 'phuphuongtin@gmail.com', 2, 2),
+('yuuta', 'Arewedone', 'grafiticraft@gmail.com', 1, 3),
+('tin', 'qwerty', 'phuphuongtin@gmail.com', 2, 2),
 ('jeff', '420', 'jeff@gmail.com', 3, 1),
 ('grafiticraft', 'Bbqyuming123', 'yuuta@gmail.com', 5, 1),
 ('phuong tin', 'yuuta123', 'phuongtin@yahoo.com', 6, 1);
@@ -87,7 +104,8 @@ INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `pictureLink`) VALUE
 (2, 'Phu Phuong Tin', '0000-00-00', ''),
 (3, 'Jeff Bezos', '0000-00-00', ''),
 (6, 'Grafiti Craft', '2100-10-31', ''),
-(7, 'Phù Phương Tín', '2000-10-13', '');
+(7, 'Phù Phương Tín', '2000-10-13', ''),
+(8, 'uzumaki ', '2000-08-08', '');
 
 --
 -- Indexes for dumped tables
@@ -113,13 +131,13 @@ ALTER TABLE `usersinfo`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `usersinfo`
 --
 ALTER TABLE `usersinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

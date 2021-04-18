@@ -30,7 +30,6 @@
         die("Connection failed: " . $conn->connect_error);
         }
 
-        print_r($conn);
         
         $sql = "SELECT * FROM `apps`";
         $result = $conn->query($sql);
@@ -146,29 +145,21 @@
         </a>
     </div>
 
+    <!-- All apps list -->
     <div style="height:500px;">
         <div class="" style=" margin-top:-350px;margin-left:250px;">
-            <a href="" class="items-holder float-left">
+            <a href="" class="items-holder float-left mr-2">
                 <div class="card" style="width: 10rem; position:static">
                     <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['name'] ?></h5>
+                        <h5 class="card-title"><?php echo $row['appname'] ?></h5>
                         <p class="card-text"></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
             </a>
 
-            <a href="" class="items-holder float-left">
-                <div class="card" style="width: 10rem; position:static">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['name'] ?></h5>
-                        <p class="card-text"></p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
-            </a>
+
             
 
             

@@ -13,25 +13,13 @@
       echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
       echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
       echo "<link rel='icon' href='resources/icon.png'>";
-      echo "<script src='main.js'></script>";
-      echo "<link rel='stylesheet' type='text/css' href='showPasswordResetBox.php'>"  ;
+      echo "<script src='main.js'></script>"
     ?>
-    
     <style>
     <?php include 'style.css'; ?>
     </style>  
 </head>
 <body>
-
-
-  <!-- <form action="" method="post" style="display:none" id="resetPass">
-    Change your password
-    <br>
-    <input type="text" name="newPass" id="newPass">
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form> -->
-
-
 </body>
 <?php
     $servername = "localhost";
@@ -47,17 +35,6 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $email = "";
-
-    function getEmail($code){
-      global $conn;
-      $sql = "SELECT email FROM emailverification where code='$code'";
-
-      $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      return $row['email'];
-    }
-
     function checkCode($code){
       global $conn;
       $sql = "SELECT * FROM emailverification";
@@ -71,13 +48,12 @@
       }
   
       if(in_array($code,$codes)){
-        $email = getEmail($code);
         return true;
       }
       else
         return false;
     }
-
+    
 
     // function sendCodeByMail($email,$code){
     //   $subject = "Googleplay Project has just sent an email verification code";
@@ -91,39 +67,20 @@
     //   }
     // }
 
-    function confirmVerification($code){
+    function resetPassword($code){
       if(checkCode($code)){
+        global $conn;
 
-        echo "<form action='' method='post' id='resetPass'>Change your password<br><input type='password' name='newPass' id='newPass'><br><br>Re-enter your password<br><input type='password' name='CnewPass' id='CnewPass'><br><br><button type='submit' class='btn btn-success'>Submit</button></form>";
+        echo "Email Verification is correct";
+        $sql = "DELETE FROM emailverification where code = '$code'";
+
+        $conn->query($sql);
       }
-      else
-        echo "This email verification link has expired";
-    }
-
-    function resetPass($newPass,$email,$code){
-      global $conn;
-      $email = getEmail($code);
-      print_r($newPass);
-      $sql = "UPDATE users SET password ='$newPass' WHERE email = '$email'";
-
-      $conn->query($sql);
-
-      echo "Password has been change for account $email";
-      echo $code;
-      $sql = "DELETE from emailverification where code = '$code'";
-      $conn->query($sql);
-      header("Location:login.php");
     }
 
     if(isset($_GET['token'])){
       $code = $_GET['token'];
-      confirmVerification($code);
-    }
-
-    if(isset($_POST['newPass'])){
-      $newPass = $_POST['newPass'];
-      $code = $_GET['token'];
-      resetPass($newPass,$email,$code);
+      resetPassword($code);
     }
 ?>
 </html>

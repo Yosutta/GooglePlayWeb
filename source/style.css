@@ -109,16 +109,24 @@ form nav button{
 
 /* Cart */
 /* Each Item view*/
+<<<<<<< HEAD
+=======
+.items-holder{
+  text-decoration: none;
+}
+>>>>>>> 0c7ea799bf181e82fde050dacfc731de114775df
 
 .items-holder{
   transition: background-color 0.5s;
 }
 
 .items-holder:hover{
-  background-color :gray;
+  background-color :rgb(99, 99, 99);
+  opacity:0.8;
 }
 
 /* Custom Collumns Large*/
+<<<<<<< HEAD
 
 /* Login screen */
 
@@ -181,3 +189,5 @@ form nav button{
   border: 1px solid #d0d0d0; 
   padding: 40px;
 }
+=======
+>>>>>>> 0c7ea799bf181e82fde050dacfc731de114775df
