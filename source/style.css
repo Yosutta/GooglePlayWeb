@@ -185,3 +185,60 @@ form nav button{
   border: 1px solid #d0d0d0; 
   padding: 40px;
 }
+.spacing_bottom{
+  padding-bottom: 30px;
+}
+
+.res_img_decoration{
+  padding-left: 100px;
+  padding-right: 40px;
+}
+
+.res_title{ 
+  font-size: 32px;
+  padding-bottom: 30px;
+}
+
+.res_instruction_text{
+  margin: 0px;
+  text-align:left;
+  padding-left: 9px;
+  color : gray;
+}
+
+.res_input{
+  width: 490px;
+  height: 42px; 
+  border-radius: 4px;
+  padding-left : 10px;
+  font-size: 18px;
+  border : 1px solid #d0d0d0; 
+}
+
+.res_2col_input{ 
+  width: 230px; 
+  height: 42px; 
+  border-radius: 4px;
+  padding-left: 10px;
+  font-size: 18px; 
+  border: 1px solid #d0d0d0; 
+}
+.res_2col_2_input{ 
+  width: 250px; 
+  height: 42px; 
+  border-radius: 4px;
+  padding-left: 10px;
+  font-size: 18px; 
+  border: 1px solid #d0d0d0; 
+}
+
+.res_custom_checkbox{
+  width:24px;
+  height:24px;
+  border: 4px solid;
+}
+
+.res_custom_label{
+  font-size: 18px;
+  font-weight: normal;
+}
