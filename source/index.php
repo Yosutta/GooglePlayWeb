@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
+      session_start();
       echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
       echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
       echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
@@ -51,11 +52,27 @@
           </nav>
       </form>
       <!-- Account Image -->
-      
-      <a href="#" class="float-right mr-4 mt-2 rounded bg-primary text-white text-decoration-none" style="font-size:15px;padding:5px 15px">Sign in</a>
-      <!-- <a href="#ToAccount">
-          <img class="rounded-circle float-right mr-4 mt-2" src="resources/account/J2.png" alt="J2">
-      </a> -->
+      <?php
+        if(isset($_POST['btn1'])){
+            unset($_SESSION['username']);
+            unset($_SESSION['userid']);
+            unset($_SESSION['level']);
+            unset($_SESSION['pictureLink']);
+        }
+        if(!isset($_SESSION['username'])){
+            echo '<a href="login.php" class="float-right mr-4 mt-2 rounded bg-primary text-white text-decoration-none" style="font-size:15px;padding:5px 15px">Sign in</a>';
+        }
+        else{
+            $username = $_SESSION['username'];
+            echo $_SESSION['level'];
+            echo $username;
+            $pictureLink = $_SESSION['pictureLink'];
+            echo '<img class="rounded-circle float-right mr-4 mt-2" src='.$pictureLink.' alt='.$username.'>';
+            }
+      ?>
+      <form action="" method="post">
+          <button type="submit" name="btn1">Log out</button>
+      </form>
      </div>
 
 
@@ -120,27 +137,49 @@
     </div>
 
     <div class="snav shadow-sm stickyNav" style="height:200px;background-color:#e9e9e9;top:248px;padding-top:8px">
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">Account</div>
-        </a>
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">Payment methods</div>
-        </a>
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">My subscriptions</div>
-        </a>
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">Redeem</div>
-        </a>
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">My wishlist</div>
-        </a>
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">My Play activity</div>
-        </a>
-        <a class="text-decoration-none" href="#">
-            <div class="s3nav">Parent Guide</div>
-        </a>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            Account
+        </button>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            Payment methods
+        </button>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            My subsciptions
+        </button>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="modal" data-target="#exampleModal">
+            Redeem
+        </button>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            My wishlist
+        </button>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            My play activity
+        </button>
+        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            Parent's guide
+        </button>
+    </div>
+
+    <!-- Code Redeem pop up -->
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="redeemCode.php" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Redeem your code</h5>
+                </div>
+                <div class="modal-body">
+                    Your code
+                    <input type="text" id="redeemCode" name="redeemCode">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
     </div>
 
     <!-- All apps list -->

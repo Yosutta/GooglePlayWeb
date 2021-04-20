@@ -10,6 +10,9 @@ apps
 - picturelink varchar128
 - link varchar128
 
+category
+- name varchar64
+
 comments 
 - appid varchar16
 - userid int
@@ -27,7 +30,14 @@ userInfo
 - userid int
 - fullName varchar64
 - birthDate date
+- balance int
+- gender boolean
 - pictureLink varchar128
+
+userBalance
+- serial varchar16
+- date date
+- value int
 
 emailVerification
 - email varchar64

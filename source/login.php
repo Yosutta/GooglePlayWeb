@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
+      session_start();
       echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
       echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
       echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
@@ -70,6 +71,15 @@
     $result = $conn->query($sql);
     while($row=$result->fetch_assoc()){
       if($row['password']==$pass){
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['userid'] = $row['userid'];
+        $userid = $row['userid'];
+        $_SESSION['level'] = $row['level'];
+        $sql1 = "SELECT * FROM usersinfo WHERE userid='$userid'";
+        $result1 = $conn->query($sql1);
+        $row1=$result1->fetch_assoc();
+        $_SESSION['pictureLink'] = $row1["pictureLink"];
+
         header("Location:index.php");
       }
     }
