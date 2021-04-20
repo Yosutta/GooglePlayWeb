@@ -242,3 +242,12 @@ form nav button{
   font-size: 18px;
   font-weight: normal;
 }
+
+ /* Account screen */
+
+#profile_display{
+  display: block; 
+  width: 60%;
+  margin: 10px auto; 
+  border-radius: 50%;
+}
