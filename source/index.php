@@ -137,9 +137,9 @@
     </div>
 
     <div class="snav shadow-sm stickyNav" style="height:200px;background-color:#e9e9e9;top:248px;padding-top:8px">
-        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+        <a href="info_update.php"><button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             Account
-        </button>
+        </button></a>
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             Payment methods
         </button>
