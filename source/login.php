@@ -80,6 +80,9 @@
         $row1=$result1->fetch_assoc();
         $_SESSION['pictureLink'] = $row1["pictureLink"];
 
+        // include("updateSession.php");
+        // updateAccount($row['userid']);
+
         header("Location:index.php");
       }
     }
