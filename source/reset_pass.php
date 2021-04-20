@@ -14,12 +14,9 @@
       echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
       echo "<link rel='icon' href='resources/icon.png'>";
       echo "<script src='main.js'></script>";
-      echo "<link rel='stylesheet' type='text/css' href='showPasswordResetBox.php'>"  ;
+      echo "<link rel='stylesheet' type='text/css' href='showPasswordResetBox.php'>";
+      echo "<link rel='stylesheet' type='text/css' href='style.css'>";
     ?>
-    
-    <style>
-    <?php include 'style.css'; ?>
-    </style>  
 </head>
 <body>
 

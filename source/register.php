@@ -16,10 +16,8 @@
       echo "<script src='main.js'></script>";
       echo "<script type='text/javascript' src='lib/datepicker.js'></script>";
       echo "<link rel='stylesheet' type='text/css' href='lib/bootstrap-datepicker.css'>";
+      echo "<link rel='stylesheet' type='text/css' href='style.css'>";
     ?>
-    <style>
-    <?php include 'style.css'; ?>
-    </style>  
     <title>Register</title>
     
 </head>
@@ -101,7 +99,7 @@
     }
 };
 </script>
-<!--
+
 <?php
   $servername = "localhost";
   $username ="root";
@@ -161,6 +159,8 @@
 
         $conn->query($sql1);
         $conn->query($sql2);
+
+        header("Location:login.php");
       }
       else
         echo "This email has already been used";
@@ -179,5 +179,5 @@
     register($user,$pass,$fullName,$birthDate,$email);
   }
 
-?> -->
+?>
 </html>
