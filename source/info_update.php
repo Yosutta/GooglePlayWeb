@@ -104,7 +104,7 @@ function displayImage(e){
         
         move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
 
-        $sql = "UPDATE `usersinfo` SET `pictureLink`='$targets' WHERE userid='$userid'";
+        $sql = "UPDATE usersinfo SET `pictureLink`='$targets' WHERE userid='$userid'";
         $conn->query($sql);
 
         include("updateSession.php");
