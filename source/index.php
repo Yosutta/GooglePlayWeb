@@ -66,7 +66,11 @@
             $username = $_SESSION['username'];
             echo $_SESSION['level'];
             echo $username;
-            $pictureLink = $_SESSION['pictureLink'];
+            if(strlen($_SESSION['pictureLink'])>3){
+                $pictureLink = $_SESSION['pictureLink'];
+            }
+            else
+                $pictureLink = "resources/default/default_img.jpg";
             echo '<img class="rounded-circle float-right mr-4 mt-2" src='.$pictureLink.' alt='.$username.'>';
             }
       ?>
@@ -137,9 +141,11 @@
     </div>
 
     <div class="snav shadow-sm stickyNav" style="height:200px;background-color:#e9e9e9;top:248px;padding-top:8px">
-        <a href="info_update.php"><button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
-            Account
-        </button></a>
+        <a href="info_update.php">
+            <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+                Account
+            </button>
+        </a>
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             Payment methods
         </button>

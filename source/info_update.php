@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
+      session_start();
       echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
       echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
       echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
@@ -25,7 +26,13 @@
                 <form action="info_update.php" method="POST" enctype="multipart/form-data">
                     <div class='form-group'>
                         <div class="image">
-                            <img src="resources/default/default_img.jpg" id="profile_display"/>
+                        <img src="<?php
+                            if(strlen($_SESSION['pictureLink'])>3){
+                                echo $_SESSION['pictureLink'];
+                            }
+                            else
+                                echo "resources/default/default_img.jpg"
+                        ?>"  id="profile_display"/>
                             <div class="img_layout" onclick="triggerClick()">
                                 <div class="word_update">Update</div>
                             </div>
@@ -61,7 +68,8 @@
 <script>
     function triggerClick(){
     document.querySelector('#profile-image').click();
-}
+    displayImage(e);
+}   
 
 function displayImage(e){
     if(e.files[0]){
@@ -77,11 +85,37 @@ function displayImage(e){
 }
 </script>
 <?php
+    $servername = "localhost";
+    $username ="root";
+    $password = "";
+    $dbname = "database";
+  
+    $conn = new mysqli($servername,$username,$password,$dbname);
+  
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
     if (isset($_POST["save_account"])){
-        echo "<pre>", print_r($_FILES["profile-image"]["tmp_name"]) ,"</pre>";
-        $profileImage = time()."_".$_FILES["profile-image"]["name"];
-        $tagets = 'resources/account/' .$profileImage;
-        move_uploaded_file($_FILES["profile-image"]["tmp_name"],$tagets);
+        // echo "<pre>", print_r($_FILES["profile-image"]["name"]) ,"</pre>";
+
+        // $profileImage = time()."_".$_FILES["profile-image"]["name"];
+        $profileImage = $_SESSION['username'].".jpg";
+        $targets = 'resources/account/' .$profileImage;
+        $userid = $_SESSION['userid'];
+        global $conn;
+
+        echo $targets;
+        
+        move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
+
+        $sql = "UPDATE usersinfo SET `pictureLink`='$targets' WHERE userid='$userid'";
+        $conn->query($sql);
+
+        include("updateSession.php");
+        echo($userid);
+        updateAccount($userid);
+        
     }
 ?>
 </html>
