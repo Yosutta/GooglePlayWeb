@@ -25,13 +25,18 @@
             <div class="col-4 offset-md-4 alignment_center">
                 <form action="info_update.php" method="POST" enctype="multipart/form-data">
                     <div class='form-group'>
+                        <div class="image">
                         <img src="<?php
                             if(strlen($_SESSION['pictureLink'])>3){
                                 echo $_SESSION['pictureLink'];
                             }
                             else
                                 echo "resources/default/default_img.jpg"
-                        ?>" onclick="triggerClick()" id="profile_display"/>
+                        ?>"  id="profile_display"/>
+                            <div class="img_layout" onclick="triggerClick()">
+                                <div class="word_update">Update</div>
+                            </div>
+                        </div>
                         <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
                     </div>
                     <div class='form-group'>
