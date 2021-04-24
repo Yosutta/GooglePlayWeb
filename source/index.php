@@ -14,7 +14,7 @@
       echo "<script src='main.js'></script>";
       echo "<link rel='stylesheet' type='text/css' href='style.css'>";
     ?>
-    <title>Reset password</title>
+    <title>GooglePlay</title>
     <?php
         $servername = "localhost";
         $username = "root";

@@ -106,8 +106,7 @@
         if(!checkSentEmail($email)){
           global $conn;
           $emailHash = md5($email);
-          $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-          $link = $actual_link."/source/reset_pass.php?token=$emailHash";
+          $link = "/source/reset_pass.php?token=$emailHash";
           $sql = "INSERT INTO emailverification values('$email','$emailHash')";
           $conn->query($sql);
   
