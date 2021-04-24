@@ -189,21 +189,21 @@
 
     <!-- All apps list -->
     <!-- Most downloads -->
-    <?php
-        $sql = "SELECT * FROM `mostdownloadsfree`";
-        $result = $conn->query($sql);
-        $mostDownloadsFree = [];
-        while($row=$result->fetch_assoc()){
-            array_push($mostDownloadsFree,$row['appid']);
-        }
-        
-        include("getAppInfo.php");
-        print_r($mostDownloadsFree[0]);
+    <div class="" style="">
+        <?php
+            $sql = "SELECT * FROM `mostdownloadsfree`";
+            $result = $conn->query($sql);
+            $mostDownloadsFree = [];
+            while($row=$result->fetch_assoc()){
+                array_push($mostDownloadsFree,$row['appid']);
+            }
+            
+            include("getAppInfo.php");
 
-        
-    ?>
-    <div class="" style="height:500px;">
-        <h2 style="margin-top:-350px;margin-left:250px;">Most Downloads</h2>
+
+            
+        ?>
+        <h2 class="appGridNameFirst">Most Downloads</h2>
         <div class="" style="margin-left:250px;">
             <a href="" class="items-holder float-left mr-2">
                 <div class="card" style="width: 10rem; position:static">
@@ -271,23 +271,19 @@
     </div>
 
     <!-- Games -->
-    <?php
-        $sql = "SELECT * FROM `apps`";
-        $result = $conn->query($sql);
-        $list = [];
-        while($row=$result->fetch_assoc()){
-            if($row['category'] == "Game"){
-                array_push($list,$row['appid']);
-            }
-        }
-        
-        print_r($list[0]);
-
-        
-    ?> 
     <div class="" style="">
-        <h2 style="margin-top:-200px;margin-left:250px;">Games</h2>
-        <div class="" style="margin-left:250px;">
+        <?php
+            $sql = "SELECT * FROM `apps`";
+            $result = $conn->query($sql);
+            $list = [];
+            while($row=$result->fetch_assoc()){
+                if($row['category'] == "Game"){
+                    array_push($list,$row['appid']);
+                }
+            }
+        ?> 
+        <h2 class="appGridName">Games</h2>
+        <div class="appGridPosition">
             <a href="" class="items-holder float-left mr-2">
                 <div class="card" style="width: 10rem; position:static">
                     <img class="card-img-top" src="<?php $row = getAppInfo($list[0]); echo $row['link']?>" alt="Card image cap">
@@ -353,9 +349,6 @@
         </div>
     </div>
     
-    <div style="height:500px"></div>
-    <div style="height:500px"></div>
-    <div style="height:500px"></div>
     <div style="height:500px"></div>
 </body>
 </html>
