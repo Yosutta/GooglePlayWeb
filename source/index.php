@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-      session_start();
-      echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
-      echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
-      echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
-      echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
-      echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
-      echo "<link rel='icon' href='resources/icon.png'>";
-      echo "<script src='main.js'></script>";
-      echo "<link rel='stylesheet' type='text/css' href='style.css'>";
-    ?>
     <title>GooglePlay</title>
     <?php
+        session_start();
+        echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+        echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
+        echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'>";
+        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
+        echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
+        echo "<link rel='icon' href='resources/icon.png'>";
+        echo "<script src='main.js'></script>";
+        echo "<link rel='stylesheet' type='text/css' href='style.css'>";
+
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -174,7 +173,7 @@
         <div class="modal-content">
             <form action="redeemCode.php" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Redeem your code</h5>
+                    <h6 class="modal-title" id="exampleModalLabel">Redeem your code</h6>
                 </div>
                 <div class="modal-body">
                     Your code
@@ -189,25 +188,171 @@
     </div>
 
     <!-- All apps list -->
-    <div style="height:500px;">
-        <div class="" style=" margin-top:-350px;margin-left:250px;">
+    <!-- Most downloads -->
+    <?php
+        $sql = "SELECT * FROM `mostdownloadsfree`";
+        $result = $conn->query($sql);
+        $mostDownloadsFree = [];
+        while($row=$result->fetch_assoc()){
+            array_push($mostDownloadsFree,$row['appid']);
+        }
+        
+        include("getAppInfo.php");
+        print_r($mostDownloadsFree[0]);
+
+        
+    ?>
+    <div class="" style="height:500px;">
+        <h2 style="margin-top:-350px;margin-left:250px;">Most Downloads</h2>
+        <div class="" style="margin-left:250px;">
             <a href="" class="items-holder float-left mr-2">
                 <div class="card" style="width: 10rem; position:static">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[0]); echo $row['link']?>" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['appname'] ?></h5>
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
                         <p class="card-text"></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
             </a>
-
-
-            
-
-            
+    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[1]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[2]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[3]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[4]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+        
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[5]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>  
         </div>
     </div>
+
+    <!-- Games -->
+    <?php
+        $sql = "SELECT * FROM `apps`";
+        $result = $conn->query($sql);
+        $list = [];
+        while($row=$result->fetch_assoc()){
+            if($row['category'] == "Game"){
+                array_push($list,$row['appid']);
+            }
+        }
+        
+        print_r($list[0]);
+
+        
+    ?> 
+    <div class="" style="">
+        <h2 style="margin-top:-200px;margin-left:250px;">Games</h2>
+        <div class="" style="margin-left:250px;">
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[0]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>
+    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[1]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[2]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[3]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[4]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>    
+        
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[5]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>  
+        </div>
+    </div>
+    
     <div style="height:500px"></div>
     <div style="height:500px"></div>
     <div style="height:500px"></div>

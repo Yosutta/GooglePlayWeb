@@ -109,7 +109,13 @@ form nav button{
 }
 
 /* Cart */
-/* Each Item view*/
+/* App Grid View */
+.card-title{
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+/* Each App view*/
 .items-holder{
   text-decoration: none;
 }
