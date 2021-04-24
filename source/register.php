@@ -156,9 +156,14 @@
         global $conn;
 
         $sql1 = "INSERT INTO `users`(`username`, `password`, `email`, `level`) VALUES ('$user','$pass','$email',1)";
-        $sql2 = "INSERT INTO `usersinfo` (`fullName`, `birthDate`, `pictureLink`) VALUES ('$fullName', '$birthDate', '')";
-
         $conn->query($sql1);
+
+        $sql1 = "SELECT * from users where username = '$user'";
+        $result = $conn->query($sql1);
+        $row = $result->fetch_assoc();
+        $userid = $row['userid'];
+
+        $sql2 = "INSERT INTO `usersinfo` (`userid`,`fullName`, `birthDate`, `pictureLink`) VALUES ('$userid','$fullName', '$birthDate', '')";
         $conn->query($sql2);
 
         header("Location:login.php");

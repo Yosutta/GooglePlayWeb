@@ -28,7 +28,11 @@
                         <div class="image">
                         <img src="<?php
                             if(strlen($_SESSION['pictureLink'])>3){
-                                echo $_SESSION['pictureLink'];
+                                if(file_exists($_SESSION['pictureLink'])){
+                                    echo $_SESSION['pictureLink'];
+                                }
+                                else
+                                    echo "resources/default/default_img.jpg";
                             }
                             else
                                 echo "resources/default/default_img.jpg"

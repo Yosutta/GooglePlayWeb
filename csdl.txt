@@ -34,6 +34,10 @@ userInfo
 - gender boolean
 - pictureLink varchar128
 
+mostDownloadsFree
+
+mostDownloadsPaid
+
 userBalance
 - serial varchar16
 - date date

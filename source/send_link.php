@@ -106,7 +106,7 @@
         if(!checkSentEmail($email)){
           global $conn;
           $emailHash = md5($email);
-          $link = "http://localhost:8080/GooglePlayWeb/source/reset_pass.php?token=$emailHash";
+          $link = "/source/reset_pass.php?token=$emailHash";
           $sql = "INSERT INTO emailverification values('$email','$emailHash')";
           $conn->query($sql);
   
