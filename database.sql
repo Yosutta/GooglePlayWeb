@@ -45,6 +45,20 @@ CREATE TABLE `apps` (
 
 INSERT INTO `apps` (`appid`, `appname`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `link`) VALUES
 ('g1', 'Genshin Impact', 'Mihoyo Inc', 'Game', 5, 1, 0, 1000000, './resources/Home/genshinimpact.jpg');
+('g2', 'Pokemon Go', 'Niantic', 'Game', 4, 1, 0, 14434228, 'C:\\xampp\\htdocs\\GooglePlayWeb\\source\\resources\\Home'),
+('g3', 'Youtube', 'Google LLC', 'Video', 4, 1, 0, 98659435, './resources/Home/Youtube.jpg'),
+('g4', 'Spotify', 'Spotify Ltd', 'Music', 5, 1, 0, 22219764, '	./resources/Home/Spotify.jpg'),
+('g5', 'Twitter', 'Twitter Ltd', 'Social Network', '5', '1', '0', '21505764', './resources/Home/twitter.jpg');
+('g6', 'Netflix', 'Netflix, Inc', 'Movies', 5, 1, 0, 11429488, './resources/Home/Netflix.jpg'),
+('g7', 'FPT Play', 'FPT Coop', 'Movies', 4, 1, 0, 158926, './resources/Home/fpt.jpg\r\n'),
+('g8', 'PUBG', 'Tencent Game', 'Game', 5, 1, 0, 36410201, './resources/Home/Pubg.jpg\r\n'),
+('g9', 'Money Lover', 'Finsify', 'Finance', 5, 1, 0, 177149, './resources/Home/MoneyLover.jpg\r\n'),
+('g10', 'Facebook', 'Facebook', 'Social Network', 6, 1, 0, 109231519, './resources/Home/Facebook.jpg\r\n'),
+('g11', 'Messenger', 'Facebook', 'Social Network', 5, 1, 0, 77498494, './resources/Home/mess.jpg\r\n'),
+('g12', 'Instagram', 'Instagram', 'Social Network', 5, 1, 0, 116016818, './resources/Home/Ins.jpg\r\n'),
+('g13', 'TikTok', 'TikTok Pte.Ltd', 'Social Network', 5, 1, 0, 33824669, './resources/Home/TikTok.jpg\r\n'),
+('g14', 'Guitar Tuna', 'Your Musician Ltd', 'Music', 5, 1, 0, 1921019, './resources/Home/Guitar.jpg\r\n'),
+('g15', 'Zalo', 'Zalo Group', 'Social Network', 5, 1, 0, 1631218, './resources/Home/zalo.jpg\r\n'),
 
 -- --------------------------------------------------------
 
