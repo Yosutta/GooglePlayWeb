@@ -23,48 +23,95 @@
     <div class="container"> 
         <div class="row">
             <div class="col-4 offset-md-4 alignment_center">
-                <form action="info_update.php" method="POST" enctype="multipart/form-data">
-                    <div class='form-group'>
-                        <div class="image">
-                        <img src="<?php
-                            if(strlen($_SESSION['pictureLink'])>0){
-                                if(file_exists($_SESSION['pictureLink'])){
-                                    echo $_SESSION['pictureLink'];
-                                }
-                                else
-                                    echo "resources/default/default_img.jpg";
-                            }
-                            else
-                                echo "resources/default/default_img.jpg"
-                        ?>"  id="profile_display"/>
-                            <div class="img_layout" onclick="triggerClick()">
-                                <div class="word_update">Update</div>
-                            </div>
-                        </div>
-                        <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
-                    </div>
-                    <div class='form-group'>
-                        <button class ="btn btn-primary" name="save_account" type="submit">Save</button>
-                    </div>
-                    <!-- <label>Fullname</label>
-                    <input type="text">
-                    <br>
-                    <label>gender</label>
-                    <input type="text">
-                    <br>
-                    <label>birthday</label>
-                    <input type="text">
-                    <br>
-                    <label>nationality</label>
-                    <input type="text">
-                    <br>
-                    <label>Email</label>
-                    <input type="text">
-                    <br>
-                    <label>phonenumber</label>
-                    <input type="text">
-                    <br> -->
-                </form>
+                <div class="acc_frame">
+                    <form action="info_update.php" method="POST" enctype="multipart/form-data">
+                        <table>
+                            <tr>
+                                <td colspan="2"><div class='form-group'>
+                                    <div class="image">
+                                    <img src="<?php
+                                        if(strlen($_SESSION['pictureLink'])>0){
+                                            if(file_exists($_SESSION['pictureLink'])){
+                                                echo $_SESSION['pictureLink'];
+                                            }
+                                            else
+                                                echo "resources/default/default_img.jpg";
+                                        }
+                                        else
+                                            echo "resources/default/default_img.jpg"
+                                    ?>"  id="profile_display"/>
+                                        <div class="img_layout" onclick="triggerClick()">
+                                            <div class="word_update">Update</div>
+                                        </div>
+                                    </div>
+                                    <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
+                                </div></td>
+                                <td colspan="2"><div class="acc_spacing_fullname">
+                                    <table>
+                                        <tr>
+                                            <td><p class="acc_title_fullname">Full name</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td ><p>Email@gmail.com - Users</p></td>
+                                        </tr> 
+                                    </table>
+                                    </div></td>
+                            </tr>
+                            <tr>
+                                <td class ="alignment_left" colspan="4"><p class="acc_account_title">Account</p></td>
+                            </tr>
+                            <tr>
+                                <td class ="alignment_left" colspan="4" ><label>Username</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" ><input type="text" class="res_input"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class ="alignment_left"><label>gender</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="male_radio" name="gender_radio"></td>
+                                <td class="alignment_left"><label for="male_radio">Male</label></td>
+                                <td><input type="radio" id="female_radio" name="gender_radio" ></td>
+                                <td class="alignment_left"><label for="female_radio">Female</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class ="alignment_left"><label>birthday</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><input type="text" class="res_input"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class ="alignment_left" ><label>nationality</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><select name="nation" id="nation_select" class="res_input">
+                                    <option>Select Your Nationality</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class ="alignment_left"><label>email</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><input type="text" class="res_input"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class ="alignment_left"><label>phonenumber</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><input type="text" class="res_input"></td>
+                            </tr>
+                            <tr>
+                                <td><div class='form-group'>
+                                <button class ="btn btn-primary" name="save_account" type="submit">Edit</button>
+                                </div></td>
+                                <td><div class='form-group'>
+                                <button class ="btn btn-primary" name="save_account" type="submit">Save</button>
+                                </div></td>
+                        </tr>
+                        </table>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
