@@ -206,7 +206,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[0]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -230,7 +230,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[1]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -253,7 +253,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[2]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -276,7 +276,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[3]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -299,7 +299,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[4]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -322,7 +322,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[5]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -345,7 +345,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[6]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -368,7 +368,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[7]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -391,7 +391,7 @@
                 <?php  $row = getAppInfo($mostDownloadsFree[8]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -428,12 +428,11 @@
         ?> 
         <h2 class="appGridName">Games</h2>
         <div class="appGridPosition">
-        <div class="" style="margin-left:250px;">
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[0]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -480,7 +479,7 @@
                 <?php  $row = getAppInfo($list[2]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -503,7 +502,7 @@
                 <?php  $row = getAppInfo($list[3]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -526,7 +525,7 @@
                 <?php  $row = getAppInfo($list[4]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -549,7 +548,7 @@
                 <?php  $row = getAppInfo($list[5]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -572,7 +571,7 @@
                 <?php  $row = getAppInfo($list[6]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -595,7 +594,7 @@
                 <?php  $row = getAppInfo($list[7]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
@@ -618,7 +617,7 @@
                 <?php  $row = getAppInfo($list[8]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
-                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
