@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 08:00 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Apr 25, 2021 at 11:52 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -129,6 +129,34 @@ INSERT INTO `emailverification` (`email`, `code`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `giftcode`
+--
+
+CREATE TABLE `giftcode` (
+  `serial` varchar(8) NOT NULL,
+  `price` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `giftcode`
+--
+
+INSERT INTO `giftcode` (`serial`, `price`) VALUES
+('PX2ZSWYE', 20000),
+('YV5YHUIN', 20000),
+('JLJPJ1G6', 20000),
+('U44JP5I7', 20000),
+('Y08OKCM2', 20000),
+('1MRL9ZJA', 20000),
+('D51X07RW', 20000),
+('ZS539HIO', 20000),
+('YK5DRJ1K', 20000),
+('N99NA2TX', 20000),
+('ZR4PKGKK', 20000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mostdownloadsfree`
 --
 
@@ -154,6 +182,31 @@ INSERT INTO `mostdownloadsfree` (`appid`) VALUES
 ('s4'),
 ('s5'),
 ('v1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mostdownloadspaid`
+--
+
+CREATE TABLE `mostdownloadspaid` (
+  `appid` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mostdownloadspaid`
+--
+
+INSERT INTO `mostdownloadspaid` (`appid`) VALUES
+('g1'),
+('g10'),
+('g11'),
+('g7'),
+('g8'),
+('g9'),
+('m1'),
+('m2'),
+('mo1');
 
 -- --------------------------------------------------------
 
@@ -230,6 +283,12 @@ ALTER TABLE `creator`
 -- Indexes for table `mostdownloadsfree`
 --
 ALTER TABLE `mostdownloadsfree`
+  ADD PRIMARY KEY (`appid`);
+
+--
+-- Indexes for table `mostdownloadspaid`
+--
+ALTER TABLE `mostdownloadspaid`
   ADD PRIMARY KEY (`appid`);
 
 --
