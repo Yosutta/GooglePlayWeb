@@ -209,8 +209,8 @@
                 <div class="card" style="width: 10rem; position:static">
                     <img class="card-img-top" src="<?php $row = getAppInfo($mostDownloadsFree[0]); echo $row['link']?>" alt="Card image cap">
                     <div class="card-body">
-                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
-                        <p class="card-text"></p>
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
