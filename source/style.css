@@ -110,10 +110,18 @@ form nav button{
 
 /* Cart */
 /* App Grid View */
-.card-title{
-  white-space: nowrap;
-  overflow:hidden;
-  text-overflow: ellipsis;
+.appGridNameFirst{
+  margin-top:-370px;
+  margin-left:250px;
+  margin-bottom:20px;
+}
+
+.appGridName{
+  margin-top:300px;
+  margin-bottom:20px;
+}
+
+.appGridPosition{
 }
 /* Each App view*/
 .items-holder{
@@ -127,6 +135,13 @@ form nav button{
 .items-holder:hover{
   background-color :rgb(99, 99, 99);
   opacity:0.8;
+}
+
+.card-title{
+  
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 
 /* Custom Collumns Large*/

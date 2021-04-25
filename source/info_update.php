@@ -27,7 +27,7 @@
                     <div class='form-group'>
                         <div class="image">
                         <img src="<?php
-                            if(strlen($_SESSION['pictureLink'])>3){
+                            if(strlen($_SESSION['pictureLink'])>0){
                                 if(file_exists($_SESSION['pictureLink'])){
                                     echo $_SESSION['pictureLink'];
                                 }
