@@ -127,7 +127,27 @@ form nav button{
 }
 
 .appGridPosition{
+  padding-bottom:60px;
+} 
+
+@media only screen and (max-width: 1425px){ 
+  .appGridCounts-sm{
+    display:none;
+  }
 }
+
+@media only screen and (max-width: 1594px){ 
+  .appGridCounts-md{
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 1761px){ 
+  .appGridCounts-lg{
+    display:none;
+  }
+}
+
 /* Each App view*/
 .items-holder{
   text-decoration: none;

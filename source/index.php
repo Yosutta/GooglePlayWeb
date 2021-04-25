@@ -9,7 +9,7 @@
         echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
         echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
         echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'>";
-        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
+        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>";
         echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
         echo "<link rel='icon' href='resources/icon.png'>";
         echo "<script src='main.js'></script>";
@@ -167,25 +167,9 @@
 
     <!-- Code Redeem pop up -->
     <!-- Button trigger modal -->
+
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form action="redeemCode.php" method="post">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="exampleModalLabel">Redeem your code</h6>
-                </div>
-                <div class="modal-body">
-                    Your code
-                    <input type="text" id="redeemCode" name="redeemCode">
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    </div>
+            
 
     <!-- All apps list -->
     <!-- Most downloads -->
@@ -201,7 +185,7 @@
             include("getAppInfo.php");
         ?>
         <h2 class="appGridNameFirst">Most Downloads</h2>
-        <div class="" style="margin-left:250px;">
+        <div class="appGridPosition" style="margin-left:250px;">
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($mostDownloadsFree[0]);?>
                 <div class="card" style="width: 10rem; position:static">
@@ -341,7 +325,7 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
-            <div class="float-left mr-2">
+            <div class="float-left mr-2 appGridCounts-sm">
                 <?php  $row = getAppInfo($mostDownloadsFree[6]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
@@ -364,7 +348,7 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
-            <div class="float-left mr-2">
+            <div class="float-left mr-2 appGridCounts-md">
                 <?php  $row = getAppInfo($mostDownloadsFree[7]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
@@ -387,7 +371,7 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
-            <div class="float-left mr-2">
+            <div class="float-left mr-2 appGridCounts-lg">
                 <?php  $row = getAppInfo($mostDownloadsFree[8]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
@@ -410,12 +394,12 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
- 
-
+        </div>
+    </div>
 
     <!-- Games -->
     <br>
-    <div class="" style="">
+    <div class="" style="margin-left: 250px;">
         <?php
             $sql = "SELECT * FROM `apps`";
             $result = $conn->query($sql);
@@ -567,7 +551,7 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
-            <div class="float-left mr-2">
+            <div class="float-left mr-2 appGridCounts-sm">
                 <?php  $row = getAppInfo($list[6]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
@@ -590,7 +574,7 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
-            <div class="float-left mr-2">
+            <div class="float-left mr-2 appGridCounts-md">
                 <?php  $row = getAppInfo($list[7]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
@@ -613,7 +597,7 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
-            <div class="float-left mr-2">
+            <div class="float-left mr-2 appGridCounts-lg">
                 <?php  $row = getAppInfo($list[8]);?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
@@ -636,6 +620,232 @@
                     <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Most Paid Downloads -->
+    <br>
+    <div class="" style="margin-left: 250px;">
+        <?php
+            $sql = "SELECT * FROM `mostDownloadsPaid`";
+            $result = $conn->query($sql);
+            $list = [];
+            while($row=$result->fetch_assoc()){
+                array_push($list,$row['appid']);
+            }
+        ?> 
+        <h2 class="appGridName">Most Paid Downloads</h2>
+        <div class="appGridPosition">
+            <div class="float-left mr-2">
+                <?php  $row = getAppInfo($list[0]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
     
+            <div class="float-left mr-2">
+                <?php  $row = getAppInfo($list[1]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2">
+                <?php  $row = getAppInfo($list[2]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2">
+                <?php  $row = getAppInfo($list[3]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2">
+                <?php  $row = getAppInfo($list[4]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2">
+                <?php  $row = getAppInfo($list[5]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2 appGridCounts-sm">
+                <?php  $row = getAppInfo($list[6]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2 appGridCounts-md">
+                <?php  $row = getAppInfo($list[7]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+            <div class="float-left mr-2 appGridCounts-lg">
+                <?php  $row = getAppInfo($list[8]);?>
+                <div class="card" style="width: 10rem; position:static">
+                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                    <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+                </a>
+                    <div class="card-body">
+                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <br>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                    </div>
+                    <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+                    <?php 
+                        if($row['cost']!=0){
+                            $cost = $row['cost'];
+                            echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                        }
+                        else
+                            echo '<p class="text-success pl-3">Free</p>'
+                    ?>
+                    <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

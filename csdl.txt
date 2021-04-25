@@ -13,7 +13,7 @@ apps
 category
 - name varchar64
 
-comments 
+comments [Not Done]
 - appid varchar16
 - userid int
 - comments varchar128
@@ -35,13 +35,19 @@ userInfo
 - pictureLink varchar128
 
 mostDownloadsFree
+- appid varchar11
 
 mostDownloadsPaid
+- appid varchar11
 
-userBalance
+userBalance [Not Done]
 - serial varchar16
 - date date
 - value int
+
+giftCode
+- serial varchar8
+- price int
 
 emailVerification
 - email varchar64
