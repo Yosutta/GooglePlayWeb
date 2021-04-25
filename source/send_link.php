@@ -78,16 +78,6 @@
       }
       return false;
     }
-    
-    function generateRandomString() {
-      $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      $charactersLength = strlen($characters);
-      $randomString = '';
-      for ($i = 0; $i < 10; $i++) {
-          $randomString .= $characters[rand(0, $charactersLength - 1)];
-      }
-      return $randomString;
-    }
 
     function sendCodeByMail($email,$link){
       $subject = "Googleplay Project has just sent an email verification code";
