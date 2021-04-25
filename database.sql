@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 11:48 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Apr 25, 2021 at 06:25 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,11 +46,17 @@ CREATE TABLE `apps` (
 INSERT INTO `apps` (`appid`, `appname`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `link`) VALUES
 ('f1', 'Money Lover', 'Finsify', 'Finance', 5, 1, 0, 177149, './resources/apps/moneylover.jpg'),
 ('g1', 'Genshin Impact', 'Mihoyo Inc', 'Game', 5, 1, 0, 1000000, './resources/apps/genshinimpact.jpg'),
+('g10', 'Fo4', 'Garena Co.Ltd', 'Game', 5, 0, 15000, 114292482, './resources/apps/fo4.jpg'),
+('g11', 'Critical Strike', 'Vertigo Games', 'Game', 4, 0, 10000, 2314532, './resources/apps/cs.jpg'),
+('g12', 'Free Fire', 'Garena Co.Ltd', 'Game', 5, 1, 0, 2314252, './resources/apps/freefire.jpg'),
 ('g2', 'Pokemon Go', 'Niantic', 'Game', 4, 1, 0, 14434228, './resources/apps/pokemongo.jpg'),
 ('g3', 'PUBG', 'Tencent Game', 'Game', 5, 1, 0, 36410201, './resources/apps/pubgmobile.jpg'),
 ('g4', 'Azur Lane', 'Yostar', 'Game', 5, 1, 0, 1000000, './resources/apps/azurlane.jpg'),
-('g5', 'Liên quan Mobile', 'Garena Mobile Private', 'Game', 4, 1, 0, 1000000, './resources/apps/lienquan.jpg'),
+('g5', 'Liên quan Mobile', 'Garena Co.Ltd', 'Game', 4, 1, 0, 1000000, './resources/apps/lienquan.jpg'),
 ('g6', 'Neko Atsume: Kitty Collector', 'Hit-Point Co.,Ltd', 'Game', 5, 1, 0, 50000, './resources/apps/nekoatsume.jpg'),
+('g7', 'Tik Tac Toe', 'Arcline', 'Game', 3, 0, 2, 19208, './resources/apps/ttt.jpg'),
+('g8', 'Shadow Fight', 'Nekki', 'Game', 5, 0, 6000, 1233124, './resources/apps/sf.jpg'),
+('g9', 'COD: Call Of Duty', 'VNG', 'Game', 4, 0, 20000, 3527582, './resources/apps/cod.jpg'),
 ('m1', 'Spotify', 'Spotify Ltd', 'Music', 5, 1, 0, 22219764, '	./resources/apps/spotify.jpg'),
 ('m2', 'Guitar Tuna', 'Your Musician Ltd', 'Music', 5, 1, 0, 1921019, './resources/apps/guitar.jpg\r\n'),
 ('mo1', 'Netflix', 'Netflix, Inc', 'Movies', 5, 1, 0, 11429488, './resources/apps/netflix.jpg'),
@@ -62,6 +68,18 @@ INSERT INTO `apps` (`appid`, `appname`, `creator`, `category`, `ranking`, `free`
 ('s5', 'TikTok', 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 33824669, './resources/apps/tiktok.jpg\r\n'),
 ('s6', 'Zalo', 'Zalo Group', 'Social', 5, 1, 0, 1631218, './resources/apps/zalo.jpg\r\n'),
 ('v1', 'Youtube', 'Google LLC', 'Video', 4, 1, 0, 98659435, './resources/apps/youtube.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `creator`
+--
+
+CREATE TABLE `creator` (
+  `name` varchar(64) NOT NULL,
+  `id` int(11) NOT NULL,
+  `tittle` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -166,6 +184,13 @@ INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `pictureLink`) VALUE
 --
 ALTER TABLE `apps`
   ADD PRIMARY KEY (`appid`);
+
+--
+-- Indexes for table `creator`
+--
+ALTER TABLE `creator`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `mostdownloadsfree`

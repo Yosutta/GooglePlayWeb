@@ -346,6 +346,34 @@
                     </div>
                 </div>
             </a>  
+            <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[6]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>              <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[7]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>              <a href="" class="items-holder float-left mr-2">
+                <div class="card" style="width: 10rem; position:static">
+                    <img class="card-img-top" src="<?php $row = getAppInfo($list[8]); echo $row['link']?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['appname'] ?></h6>
+                        <p class="card-text"></p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </a>  
         </div>
     </div>
     
