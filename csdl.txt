@@ -30,8 +30,10 @@ userInfo
 - userid int
 - fullName varchar64
 - birthDate date
-- balance int
 - gender boolean
+- country varchar32
+- phoneNumber varchar16
+- balance int
 - pictureLink varchar128
 
 mostDownloadsFree
@@ -40,7 +42,7 @@ mostDownloadsFree
 mostDownloadsPaid
 - appid varchar11
 
-userBalance [Not Done]
+userCodeRedeemHistory [Not Done]
 - serial varchar16
 - date date
 - value int
@@ -52,3 +54,9 @@ giftCode
 emailVerification
 - email varchar64
 - code varchar8
+
+pendingApp(Not Done)
+- appname varchar64
+- creatorid int
+- category varchar32
+- pictureLink varchar128
