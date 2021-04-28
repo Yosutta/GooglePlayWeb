@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 11:52 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Apr 28, 2021 at 03:48 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,29 +46,50 @@ CREATE TABLE `apps` (
 
 INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `link`) VALUES
 ('f1', 'Money Lover', 3, 'Finsify', 'Finance', 5, 1, 0, 177149, './resources/apps/moneylover.jpg'),
-('g1', 'Genshin Impact', 9, 'Mihoyo Inc', 'Game', 5, 1, 0, 1408331, './resources/apps/genshinimpact.jpg'),
-('g10', 'Fo4', 5, 'Garena Co.Ltd', 'Game', 5, 0, 15000, 114292482, './resources/apps/fo4.jpg'),
-('g11', 'Critical Strike', 17, 'Vertigo Games', 'Game', 4, 0, 10000, 2314532, './resources/apps/cs.jpg'),
-('g12', 'Free Fire', 5, 'Garena Co.Ltd', 'Game', 5, 1, 0, 2314252, './resources/apps/freefire.jpg'),
-('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14434228, './resources/apps/pokemongo.jpg'),
-('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 36410201, './resources/apps/pubgmobile.jpg'),
-('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 1000000, './resources/apps/azurlane.jpg'),
-('g5', 'Liên quan Mobile', 5, 'Garena Co.Ltd', 'Game', 4, 1, 0, 1000000, './resources/apps/lienquan.jpg'),
-('g6', 'Neko Atsume: Kitty Collector', 7, 'Hit-Point Co.,Ltd', 'Game', 5, 1, 0, 50000, './resources/apps/nekoatsume.jpg'),
-('g7', 'Tik Tac Toe', 1, 'Arcline', 'Game', 3, 0, 2000, 19208, './resources/apps/ttt.jpg'),
-('g8', 'Shadow Fight', 10, 'Nekki', 'Game', 5, 0, 6000, 1233124, './resources/apps/sf.jpg'),
-('g9', 'COD: Call Of Duty', 14, 'VNG', 'Game', 4, 0, 20000, 3527582, './resources/apps/cod.jpg'),
-('m1', 'Spotify', 13, 'Spotify Ltd', 'Music', 5, 0, 22000, 22219764, '	./resources/apps/spotify.jpg'),
-('m2', 'Guitar Tuna', 20, 'Your Musician Ltd', 'Music', 5, 1, 0, 1921019, './resources/apps/guitar.jpg\r\n'),
-('mo1', 'Netflix', 11, 'Netflix, Inc', 'Movies', 5, 0, 16000, 11429488, './resources/apps/netflix.jpg'),
-('mo2', 'FPT Play', 4, 'FPT Coop', 'Movies', 4, 1, 0, 158926, './resources/apps/fptplay.jpg'),
-('s1', 'Twitter', 16, 'Twitter Ltd', 'Social', 5, 1, 0, 21505764, './resources/apps/twitter.jpg'),
-('s2', 'Facebook', 2, 'Facebook', 'Social', 5, 1, 0, 109231519, './resources/apps/facebook.jpg'),
-('s3', 'Messenger', 2, 'Facebook', 'Social', 5, 1, 0, 77498494, './resources/apps/mess.jpg\r\n'),
-('s4', 'Instagram', 8, 'Instagram', 'Social', 5, 1, 0, 116016818, './resources/apps/ins.jpg\r\n'),
-('s5', 'TikTok', 15, 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 33824669, './resources/apps/tiktok.jpg\r\n'),
-('s6', 'Zalo', 18, 'Zalo Group', 'Social', 5, 1, 0, 1631218, './resources/apps/zalo.jpg\r\n'),
-('v1', 'Youtube', 6, 'Google LLC', 'Video', 4, 1, 0, 98659435, './resources/apps/youtube.jpg');
+('f2', 'Momo', 23, 'M_Service JSC', 'Finance', 4, 0, 1000, 239717, './resources/apps/momo.jpg'),
+('f3', 'Adobe Photoshop', 24, 'Adobe', 'Finance', 5, 0, 5000, 1677356, './resources/apps/adobephotoshop.jpg\r\n'),
+('f4', 'Adobe Reader PDF', 24, 'Adobe', 'Finance', 5, 0, 10000, 4520986, './resources/apps/pdf.jpg\r\n'),
+('f5', 'Adobe Lightroom', 24, 'Adobe', 'Finance', 5, 0, 3000, 985333, './resources/apps/lightroom.jpg\r\n'),
+('g1', 'Genshin Impact', 9, 'Mihoyo Inc', 'Game', 5, 1, 0, 1411930, './resources/apps/genshinimpact.jpg'),
+('g10', 'FIFA Online 4 M', 5, 'Garena Co.Ltd', 'Game', 5, 0, 15000, 41678, './resources/apps/fo4.jpg'),
+('g11', 'Critical Strike', 17, 'Vertigo Games', 'Game', 4, 0, 10000, 393967, './resources/apps/cs.jpg'),
+('g12', 'Free Fire', 5, 'Garena Co.Ltd', 'Game', 5, 1, 0, 84137447, './resources/apps/freefire.jpg'),
+('g13', 'Infinite Flight ', 21, 'Infinite Flight LLC', 'Game', 5, 0, 20000, 71535, './resources/apps/flight.png\r\n'),
+('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, './resources/apps/gunny.png'),
+('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, './resources/apps/flappy.jpg\r\n'),
+('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, './resources/apps/kahoot.jpg\r\n'),
+('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, './resources/apps/pokemongo.jpg'),
+('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 884560, './resources/apps/pubgmobile.jpg'),
+('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 114856, './resources/apps/azurlane.jpg'),
+('g5', 'Liên quan Mobile', 5, 'Garena Co.Ltd', 'Game', 4, 1, 0, 4475522, './resources/apps/lienquan.jpg'),
+('g6', 'Neko Atsume: Kitty Collector', 7, 'Hit-Point Co.,Ltd', 'Game', 5, 1, 0, 339918, './resources/apps/nekoatsume.jpg'),
+('g7', 'Tik Tac Toe', 1, 'Arcline', 'Game', 3, 0, 2000, 673896, './resources/apps/ttt.jpg'),
+('g8', 'Shadow Fight 2', 10, 'Nekki', 'Game', 5, 0, 6000, 14150446, './resources/apps/sf.jpg'),
+('g9', 'COD: Call Of Duty', 14, 'VNG', 'Game', 4, 0, 20000, 224994, './resources/apps/cod.jpg'),
+('m1', 'Spotify', 13, 'Spotify Ltd', 'Music', 5, 0, 22000, 22271176, '	./resources/apps/spotify.jpg'),
+('m2', 'Guitar Tuna', 20, 'Your Musician Ltd', 'Music', 5, 1, 0, 1923265, './resources/apps/guitar.jpg\r\n'),
+('mo1', 'Netflix', 11, 'Netflix, Inc', 'Movies', 5, 0, 16000, 11455775, './resources/apps/netflix.jpg'),
+('mo2', 'FPT Play', 4, 'FPT Coop', 'Movies', 4, 1, 0, 159257, './resources/apps/fptplay.jpg'),
+('s1', 'Twitter', 16, 'Twitter Ltd', 'Social', 5, 1, 0, 17521324, './resources/apps/twitter.jpg'),
+('s2', 'Facebook', 2, 'Facebook', 'Social', 5, 1, 0, 109385285, './resources/apps/facebook.jpg'),
+('s3', 'Messenger', 2, 'Facebook', 'Social', 5, 1, 0, 77573840, './resources/apps/mess.jpg\r\n'),
+('s4', 'Instagram', 8, 'Instagram', 'Social', 5, 1, 0, 116316888, './resources/apps/ins.jpg\r\n'),
+('s5', 'TikTok', 15, 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 9649418, './resources/apps/tiktok.jpg\r\n'),
+('s6', 'Zalo', 18, 'Zalo Group', 'Social', 5, 1, 0, 1634141, './resources/apps/zalo.jpg\r\n'),
+('v1', 'Youtube', 6, 'Google LLC', 'Video', 4, 1, 0, 98986136, './resources/apps/youtube.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `appid` varchar(16) COLLATE utf8_vietnamese_ci NOT NULL,
+  `userid` int(11) NOT NULL,
+  `comment` varchar(128) COLLATE utf8_vietnamese_ci NOT NULL,
+  `ranking` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 -- --------------------------------------------------------
 
@@ -106,7 +127,12 @@ INSERT INTO `creator` (`name`, `id`, `tittle`) VALUES
 ('Vertigo Games', 17, 'Vertigo Games is the developer and publisher of free-to-play mobile shooter games.\r\n'),
 ('Zalo Group', 18, 'World in your hand\r\n'),
 ('Yostar Limited.\r\n', 19, 'YOSTAR LIMITED is dedicated in our creation and publication of anime-style games from PC to the mobile platform.\r\n'),
-('Your Musician Ltd', 20, 'Yousician reimagined how to learn an instrument making it fun, fast and easy to play your favorite songs. Now on piano, guitar, ');
+('Your Musician Ltd', 20, 'Yousician reimagined how to learn an instrument making it fun, fast and easy to play your favorite songs. Now on piano, guitar, '),
+('Infinite Flight LLC', 21, 'Discover the sky with our VR'),
+('Kahoot', 22, 'Kahoot! makes it easy to create, share and play fun learning games or trivia quizzes in minutes. Make learning awesome!\r\n'),
+('M_Service JSC', 23, 'Online wallet make you don\'t need cash anymore'),
+('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n'),
+('TGame Studio', 25, 'Thank you for playing my games..\r\n');
 
 -- --------------------------------------------------------
 
@@ -169,18 +195,16 @@ CREATE TABLE `mostdownloadsfree` (
 --
 
 INSERT INTO `mostdownloadsfree` (`appid`) VALUES
-('g10'),
-('g11'),
+('g12'),
 ('g2'),
-('g3'),
 ('g5'),
-('m1'),
-('mo1'),
+('m2'),
 ('s1'),
 ('s2'),
 ('s3'),
 ('s4'),
 ('s5'),
+('s6'),
 ('v1');
 
 -- --------------------------------------------------------
@@ -198,15 +222,29 @@ CREATE TABLE `mostdownloadspaid` (
 --
 
 INSERT INTO `mostdownloadspaid` (`appid`) VALUES
-('g1'),
-('g10'),
+('f2'),
+('f3'),
+('f4'),
+('f5'),
 ('g11'),
+('g16'),
 ('g7'),
 ('g8'),
-('g9'),
 ('m1'),
-('m2'),
 ('mo1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userbalance`
+--
+
+CREATE TABLE `userbalance` (
+  `serial` varchar(16) COLLATE utf8_vietnamese_ci NOT NULL,
+  `userid` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `Value` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 -- --------------------------------------------------------
 
@@ -273,6 +311,12 @@ ALTER TABLE `apps`
   ADD PRIMARY KEY (`appid`,`creatorid`) USING BTREE;
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`userid`,`appid`) USING BTREE;
+
+--
 -- Indexes for table `creator`
 --
 ALTER TABLE `creator`
@@ -292,6 +336,12 @@ ALTER TABLE `mostdownloadspaid`
   ADD PRIMARY KEY (`appid`);
 
 --
+-- Indexes for table `userbalance`
+--
+ALTER TABLE `userbalance`
+  ADD PRIMARY KEY (`userid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -306,6 +356,18 @@ ALTER TABLE `usersinfo`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `userbalance`
+--
+ALTER TABLE `userbalance`
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

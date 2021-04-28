@@ -13,11 +13,11 @@ apps
 category
 - name varchar64
 
-comments [Not Done]
+comments 
 - appid varchar16
 - userid int
 - comments varchar128
-- ranking int
+- ranking int	
 
 users
 - username varchar64
@@ -40,7 +40,7 @@ mostDownloadsFree
 mostDownloadsPaid
 - appid varchar11
 
-userBalance [Not Done]
+userBalance 
 - serial varchar16
 - date date
 - value int
