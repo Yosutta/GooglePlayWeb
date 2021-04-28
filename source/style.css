@@ -297,11 +297,17 @@ form nav button{
 
 #profile_display{
   display: block; 
-  width: 230px;
+  width: 200px;
   margin: 10px auto; 
   border-radius: 50%;
 }
 
+.acc_frame {
+  border-radius: 9px;
+  border: 1px solid grey;
+  background-color: white;   
+  padding: 40px;
+}
 
 .img_layout{
   position: absolute;
@@ -325,4 +331,23 @@ form nav button{
 
 .word_update{
     font-size:24px; 
+}
+
+.acc_title_fullname{
+  font-size: 30px;
+  font-weight:bold;
+}
+
+.acc_spacing_fullname{
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.acc_account_title{
+  font-size: 35px;
+  font-weight:bold;
 }
