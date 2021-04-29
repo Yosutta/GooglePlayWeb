@@ -10,6 +10,7 @@
         echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
         echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'>";
         echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>";
+        echo "<link href='https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap' rel='stylesheet'>";
         echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
         echo "<link rel='icon' href='resources/icon.png'>";
         echo "<script src='main.js'></script>";

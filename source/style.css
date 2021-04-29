@@ -351,3 +351,38 @@ form nav button{
   font-size: 35px;
   font-weight:bold;
 }
+
+
+/* Upload Apps page */
+
+.upload_app_frame{ 
+  display: grid; 
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 0.8fr 1.5fr 0.8fr ;
+  grid-template-areas: 
+  "title title title"
+  "content1 content2 content3"
+  "cator cator cator"
+  ;
+}
+
+#title{
+  grid-area: title;
+}
+
+#content1{
+  grid-area: content1;
+}
+
+#content2{
+  grid-area: content2;
+}
+
+#content3{
+  grid-area: content3;
+}
+
+#cator{
+  grid-area: cator;
+}
