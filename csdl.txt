@@ -29,6 +29,7 @@ users
 - password varchar64
 - email varchar64
 - userid int
+- creatorid int
 - level int
 
 userInfo

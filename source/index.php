@@ -33,11 +33,10 @@
         $sql = "SELECT * FROM `apps`";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
-        
-        
     ?>
+
 </head>
-<body>
+<body>     
   <!-- Header  -->
     <div class="container-fluid" id="header">
       <a href="index.php">
@@ -141,7 +140,7 @@
     </div>
 
     <div class="snav shadow-sm stickyNav" style="height:200px;background-color:#e9e9e9;top:248px;padding-top:8px">
-        <a href="info_update.php">
+        <a href="info_update.php" id="account" class="inactiveLink">
             <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
                 Account
             </button>
@@ -152,25 +151,23 @@
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             My subsciptions
         </button>
-        <button type="button" class="btn container-fluid s3nav" data-toggle="modal" data-target="#exampleModal">
-            Redeem
-        </button>
+        <a href="redeemCode.php">
+            <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+                Redeem
+            </button>
+        </a>
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             My wishlist
         </button>
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             My play activity
         </button>
-        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
-            Parent's guide
-        </button>
-    </div>
-
-    <!-- Code Redeem pop up -->
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
-            
+        <a href="upload_apps.php" id="devsite" class="inactiveLink">
+            <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+                Developer's site
+            </button>
+        </a>
+    </div>      
 
     <!-- All apps list -->
     <!-- RecentlyAdded -->
@@ -852,4 +849,11 @@
     </div>
 
 </body>
+<?php
+    if($_SESSION !=null){
+        if($_SESSION['level']==2){
+            echo '<script type="text/javascript">activateLink();</script>';
+        }
+    }
+?>
 </html>

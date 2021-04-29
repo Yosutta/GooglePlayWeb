@@ -161,9 +161,11 @@
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             My play activity
         </button>
-        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
-            Parent's guide
-        </button>
+        <a href="upload_apps.php">
+            <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+                Parent's guide
+            </button>
+        </a>
     </div>
 
     <!-- Code Redeem pop up -->

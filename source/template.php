@@ -117,7 +117,7 @@
             <div class="s3nav">My Play activity</div>
         </a>
         <a class="text-decoration-none" href="#">
-            <div class="s3nav">Parent Guide</div>
+            <div class="s3nav">Developer's site</div>
         </a>
     </div>
 

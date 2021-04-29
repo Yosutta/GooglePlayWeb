@@ -417,3 +417,45 @@ form nav button{
   margin-left: 0.8rem;
   margin-right: 0.8rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* GLOBAL CSS */
+/* GLOBAL CSS */
+/* GLOBAL CSS */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inactiveLink {
+  pointer-events: none;
+}
+
+.activateLink{
+  pointer-events:initial;
+}

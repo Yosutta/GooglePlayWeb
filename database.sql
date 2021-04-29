@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2021 at 11:39 AM
+-- Generation Time: Apr 29, 2021 at 08:12 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -66,7 +66,7 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('g7', 'Tik Tac Toe', 1, 'Arcline', 'Game', 3, 0, 2000, 673896, './resources/apps/ttt.jpg'),
 ('g8', 'Shadow Fight 2', 10, 'Nekki', 'Game', 5, 0, 6000, 14150446, './resources/apps/sf.jpg'),
 ('g9', 'COD: Call Of Duty', 14, 'VNG', 'Game', 4, 0, 20000, 224994, './resources/apps/cod.jpg'),
-('m1', 'Spotify', 13, 'Spotify Ltd', 'Music', 5, 0, 22000, 22271176, '	./resources/apps/spotify.jpg'),
+('m1', 'Spotify', 13, 'Spotify Ltd', 'Music', 5, 0, 22000, 22271176, './resources/apps/spotify.jpg'),
 ('m2', 'Guitar Tuna', 20, 'Your Musician Ltd', 'Music', 5, 1, 0, 1923265, './resources/apps/guitar.jpg\r\n'),
 ('mo1', 'Netflix', 11, 'Netflix, Inc', 'Movies', 5, 0, 16000, 11455775, './resources/apps/netflix.jpg'),
 ('mo2', 'FPT Play', 4, 'FPT Coop', 'Movies', 4, 1, 0, 159257, './resources/apps/fptplay.jpg'),
@@ -76,6 +76,7 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('s4', 'Instagram', 8, 'Instagram', 'Social', 5, 1, 0, 116316888, './resources/apps/ins.jpg\r\n'),
 ('s5', 'TikTok', 15, 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 9649418, './resources/apps/tiktok.jpg\r\n'),
 ('s6', 'Zalo', 18, 'Zalo Group', 'Social', 5, 1, 0, 1634141, './resources/apps/zalo.jpg\r\n'),
+('s7', 'Phuc Long', 26, 'grafiticraft', 'Social', 4, 0, 0, 0, 'resources/pendingapps/phuclong.jpg'),
 ('v1', 'Youtube', 6, 'Google LLC', 'Video', 4, 1, 0, 98986136, './resources/apps/youtube.jpg');
 
 -- --------------------------------------------------------
@@ -539,6 +540,13 @@ CREATE TABLE `pendingapp` (
   `picutreLink` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pendingapp`
+--
+
+INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `picutreLink`) VALUES
+('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 'resources/pendingapps/phuclong.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -548,6 +556,13 @@ CREATE TABLE `pendingapp` (
 CREATE TABLE `recentlyadded` (
   `appid` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `recentlyadded`
+--
+
+INSERT INTO `recentlyadded` (`appid`) VALUES
+('s7');
 
 -- --------------------------------------------------------
 
@@ -585,6 +600,7 @@ CREATE TABLE `users` (
   `password` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL,
   `userid` int(11) NOT NULL,
+  `creatorid` int(11) NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -592,16 +608,17 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `password`, `email`, `userid`, `level`) VALUES
-('grafiticraft', 'qwerty123', 'grafiticraft@gmail.com', 1, 3),
-('qwerty', '123', 'astoroicom@gmail.com', 2, 1),
-('nath', 'nath123', 'nath@gmail.com', 3, 1),
-('astoroicom', 'iop', 'phuphuongtin@gmail.com', 4, 1),
-('cunt', 'cunt123', 'cunt@gmai.com', 5, 1),
-('awdawdaw', 'qwerty123', 'dawdaw@gmail.com', 6, 1),
-('hahaha', '12345', 'hahaha@gmail.coom', 7, 1),
-('ba', 'hai', 'ffvvfvfvfvf@fjvfvfvfhvf', 8, 1),
-('Bynivh', '3', 'huubinh1823@gmail.com', 9, 3);
+INSERT INTO `users` (`username`, `password`, `email`, `userid`, `creatorid`, `level`) VALUES
+('grafiticraft', 'qwerty123', 'grafiticraft@gmail.com', 1, 26, 2),
+('qwerty', '123', 'astoroicom@gmail.com', 2, 0, 1),
+('nath', 'nath123', 'nath@gmail.com', 3, 0, 1),
+('astoroicom', 'iop', 'phuphuongtin@gmail.com', 4, 0, 1),
+('cunt', 'cunt123', 'cunt@gmai.com', 5, 0, 1),
+('awdawdaw', 'qwerty123', 'dawdaw@gmail.com', 6, 0, 1),
+('hahaha', '12345', 'hahaha@gmail.coom', 7, 0, 1),
+('ba', 'hai', 'ffvvfvfvfvf@fjvfvfvfhvf', 8, 0, 1),
+('Bynivh', '3', 'huubinh1823@gmail.com', 9, 0, 2),
+('admin', 'admin', '', 10, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -737,7 +754,7 @@ ALTER TABLE `userbalance`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `usersinfo`

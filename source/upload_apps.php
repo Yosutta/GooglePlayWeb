@@ -38,40 +38,48 @@
         array_push($categoriesTable,$row1);
       }
 
-
-      if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['creator_id'])){
-          // echo "<pre>", print_r($_FILES["profile-image"]["name"]) ,"</pre>";
+      if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['creator_id'], $_POST["cost"])){
+          if(strlen($_POST['title_app'])!=0){
+            global $conn;
+            $profileImage = strtolower($_POST['title_app']).".jpg";
+            $profileImage = str_replace(' ', '', $profileImage);
+            $targets = 'resources/pendingapps/' .$profileImage;
+            move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
   
-          // $profileImage = time()."_".$_FILES["profile-image"]["name"];
-          global $conn;
-          $profileImage = strtolower($_POST['title_app']).".jpg";
-          $profileImage = str_replace(' ', '', $profileImage);
-          $targets = './resources/pendingapps/' .$profileImage;
-          move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
+          //   print_r($_POST);
+            $appid = '';  
+            $apptitle = $_POST['title_app'];
+            $creatorid = $_POST['creator_id'];
+            $creatorname = $_POST['creator_name'];
+            $catename = $_POST['category_name'];
+            $cost = $_POST['cost'];
+  
+  
+            for($i=0;$i<count($categoriesTable);$i++){
+                if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
+                    $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
+                    break;
+                }
+            }
+  
 
-        //   print_r($_POST);
-          $appid = '';  
-          $apptitle = $_POST['title_app'];
-          $creatorid = $_POST['creator_id'];
-          $creatorname = $_POST['creator_name'];
-          $catename = $_POST['category_name'];
-
-
-          for($i=0;$i<count($categoriesTable);$i++){
-              if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
-                  $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
-                  break;
-              }
-          }
-
-          $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets')";
-          $conn->query($sql);
-
-          $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
-          $conn->query($sql);
-
-          $sql = "INSERT INTO `recentlyAdded` values ('$appid')";
-          $conn->query($sql);
+            if($cost==0){
+                $price = $_POST['pricing'];
+                $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
+            }
+            else
+                $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `ranking` ) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets',4)";
+      
+            $conn->query($sql);
+  
+            $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
+            $conn->query($sql);
+  
+            $sql = "INSERT INTO `recentlyAdded` values ('$appid')";
+            $conn->query($sql);
+          }       
+          else
+            echo "<h2 style='color:red'>Please provide more information</h2>";
       }
     ?>
     <title>Upload Applications</title>
@@ -96,7 +104,20 @@
 
             <!-- App's Title -->
             <div id="content2">
+                Title
                 <input type="text" name="title_app" placeholder="Title">
+                <br><br>
+
+                <label for="">Free</label>    
+                <input type="radio" name="cost" id="free" onclick="insertCost(),removeCost()" value="1" checked>
+                <label for="">Paid</label>    
+                <input type="radio" name="cost" id="pay" onclick="insertCost()" value="0">
+                
+                <br><br>
+                Pricing
+                <br>
+                <input type="number" name="pricing" id="pricing" disabled>
+
             </div>
             <!-- Hidden Creator id -->
             <input type="hidden" value="
