@@ -46,7 +46,7 @@
           global $conn;
           $profileImage = strtolower($_POST['title_app']).".jpg";
           $profileImage = str_replace(' ', '', $profileImage);
-          $targets = './resources/pendingapps/' .$profileImage;
+          $targets = 'resources/pendingapps/' .$profileImage;
           move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
 
         //   print_r($_POST);
