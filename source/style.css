@@ -302,6 +302,12 @@ form nav button{
   border-radius: 50%;
 }
 
+#profile_displayy{
+  display: block; 
+  width: 200px;
+  margin: 10px auto; 
+}
+
 .acc_frame {
   border-radius: 9px;
   border: 1px solid grey;

@@ -173,6 +173,9 @@
             
 
     <!-- All apps list -->
+    <!-- RecentlyAdded -->
+    
+
     <!-- Most downloads -->
     <div class="" style="">
         <?php

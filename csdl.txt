@@ -11,7 +11,8 @@ apps
 - link varchar128
 
 category
-- name varchar64
+- cateid varchar4
+- catename varchar32
 
 comments 
 - appid varchar16
@@ -46,6 +47,9 @@ mostDownloadsFree
 mostDownloadsPaid
 - appid varchar11
 
+recentlyAdded
+- appid varchar11
+
 <<<<<<< HEAD
 userBalance 
 =======
@@ -67,9 +71,9 @@ emailVerification
 
 pendingApp(Not Done)
 - appname varchar64
-- cateid varchar
+- appid varchar8
 - creatorid int
-- category varchar32
+- catename varchar32
 - pictureLink varchar128
 >>>>>>> 822ef833e06e64235d33fbee768fb969d174dbcb
 

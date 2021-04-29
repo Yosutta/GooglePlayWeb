@@ -68,20 +68,30 @@
                                         }
                                         else
                                             echo "resources/default/default_img.jpg"
-                                    ?>"  id="profile_display"/>
+                                            ?>"  id="profile_display"/>
                                         <div class="img_layout" onclick="triggerClick()">
                                             <div class="word_update">Update</div>
                                         </div>
                                     </div>
                                     <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
-                                </div></td>
+                                    </div>
+                                </td>
                                 <td colspan="2"><div class="acc_spacing_fullname">
                                     <table>
                                         <tr>
-                                            <td><p class="acc_title_fullname">Full name</p></td>
+                                            <td><p class="acc_title_fullname"><?php echo $row['fullName']?></p></td>
                                         </tr>
                                         <tr>
-                                            <td ><p><?php echo $email?> - <?php echo $row['fullName']?></p></td>
+                                            <td ><p><?php echo $email?> - <?php
+                                                if($_SESSION['level'] == 3){
+                                                    echo "Admin";
+                                                }
+                                                elseif($_SESSION['level'] ==2){
+                                                    echo "Creator";
+                                                }
+                                                else
+                                                    echo "User";
+                                            ?></p></td>
                                         </tr> 
                                     </table>
                                     </div></td>
