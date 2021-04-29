@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2021 at 03:59 PM
+-- Generation Time: Apr 29, 2021 at 04:48 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -90,6 +90,25 @@ CREATE TABLE `comment` (
   `comment` varchar(128) COLLATE utf8_vietnamese_ci NOT NULL,
   `ranking` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `countries`
+--
+
+CREATE TABLE `countries` (
+  `country` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`country`) VALUES
+('VietNam'),
+('Lao'),
+('Campuchia');
 
 -- --------------------------------------------------------
 
@@ -272,7 +291,8 @@ INSERT INTO `users` (`username`, `password`, `email`, `userid`, `level`) VALUES
 ('cunt', 'cunt123', 'cunt@gmai.com', 5, 1),
 ('awdawdaw', 'qwerty123', 'dawdaw@gmail.com', 6, 1),
 ('hahaha', '12345', 'hahaha@gmail.coom', 7, 1),
-('ba', 'hai', 'ffvvfvfvfvf@fjvfvfvfhvf', 8, 1);
+('ba', 'hai', 'ffvvfvfvfvf@fjvfvfvfhvf', 8, 1),
+('Bynivh', 'test123', 'huubinh1823@gmail.com', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -298,7 +318,8 @@ INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `pictureLink`) VALUE
 (5, 'bitch ass', '2021-04-14', 'resources/account/cunt.jpg'),
 (6, 'Phù Phương Tuấn', '2021-04-15', 'resources/account/awdawdaw.jpg'),
 (7, 'hahaha', '2021-04-09', 'resources/account/hahaha.jpg'),
-(8, 'blabla', '2021-04-23', 'resources/account/ba.jpg');
+(8, 'blabla', '2021-04-23', 'resources/account/ba.jpg'),
+(9, 'Pháº¡m Há»¯u BÃ¬nh', '2000-10-20', '');
 
 --
 -- Indexes for dumped tables
@@ -373,13 +394,13 @@ ALTER TABLE `userbalance`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `usersinfo`
 --
 ALTER TABLE `usersinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
