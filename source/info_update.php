@@ -232,8 +232,6 @@
         $sql = "UPDATE usersinfo SET `fullName`='$fullname',`birthDate`='$birthDate',`gender`=$gender,`country`='$country',`phoneNumber`='$phoneNumber',`pictureLink`='$targets' WHERE userid=$userid";
         $conn->query($sql);
 
-        echo $sql;
-
         include("updateSession.php");
         updateAccount($userid);
     }

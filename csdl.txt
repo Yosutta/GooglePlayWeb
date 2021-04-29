@@ -19,6 +19,10 @@ comments
 - comments varchar128
 - ranking int	
 
+countries
+- countryid
+- country_name varchar
+
 users
 - username varchar64
 - password varchar64

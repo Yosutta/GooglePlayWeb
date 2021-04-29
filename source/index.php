@@ -195,7 +195,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -219,7 +219,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -242,7 +242,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -265,7 +265,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -288,7 +288,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -311,7 +311,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -334,7 +334,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -357,7 +357,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -380,7 +380,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -421,7 +421,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -445,7 +445,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -468,7 +468,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -491,7 +491,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -514,7 +514,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -537,7 +537,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -560,7 +560,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -583,7 +583,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -606,7 +606,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -645,7 +645,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -669,7 +669,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -692,7 +692,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -715,7 +715,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -738,7 +738,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -761,7 +761,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -784,7 +784,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -807,7 +807,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -830,7 +830,7 @@
                     <div class="card-body">
                         <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator"><?php echo $row['creator'] ?></a>
+                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
