@@ -359,30 +359,55 @@ form nav button{
   display: grid; 
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 0.8fr 1.5fr 0.8fr ;
+  grid-template-rows: 0.5fr 2.0fr 0.5fr ;
   grid-template-areas: 
   "title title title"
   "content1 content2 content3"
   "cator cator cator"
   ;
+  grid-gap: 0.8rem;
 }
 
 #title{
   grid-area: title;
+  background-color: white;
+  margin-top: 0.8rem;
+  border-radius:30px;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
 }
 
 #content1{
   grid-area: content1;
+  background-color: white;
+  margin-left: 0.8rem;
+  border-radius:30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
 }
 
 #content2{
   grid-area: content2;
+  background-color: white;
+  border-radius:30px;
 }
 
 #content3{
   grid-area: content3;
+  background-color: white;
+  border-radius:30px;
+  margin-right: 0.8rem;
 }
 
 #cator{
   grid-area: cator;
+  background-color: white;
+  margin-bottom: 0.8rem;
+  border-radius:30px;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
 }
