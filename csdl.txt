@@ -47,7 +47,7 @@ userBalance
 =======
 userCodeRedeemHistory [Not Done]
 >>>>>>> 822ef833e06e64235d33fbee768fb969d174dbcb
-- serial varchar16
+- serial varchar8
 - date date
 - value int
 
@@ -63,7 +63,12 @@ emailVerification
 
 pendingApp(Not Done)
 - appname varchar64
+- cateid varchar
 - creatorid int
 - category varchar32
 - pictureLink varchar128
 >>>>>>> 822ef833e06e64235d33fbee768fb969d174dbcb
+
+category
+- name
+- cateid

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2021 at 04:48 AM
+-- Generation Time: Apr 29, 2021 at 05:20 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -81,6 +81,17 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `catename` varchar(16) NOT NULL,
+  `cateid` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `comment`
 --
 
@@ -98,14 +109,14 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `countries` (
-  `country` varchar(128) NOT NULL
+  `country_name` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `countries`
 --
 
-INSERT INTO `countries` (`country`) VALUES
+INSERT INTO `countries` (`country_name`) VALUES
 ('VietNam'),
 ('Lao'),
 ('Campuchia');
@@ -255,6 +266,19 @@ INSERT INTO `mostdownloadspaid` (`appid`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pendingapp`
+--
+
+CREATE TABLE `pendingapp` (
+  `appname` varchar(64) NOT NULL,
+  `cateid` int(3) NOT NULL,
+  `catename` varchar(16) NOT NULL,
+  `picutreLink` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userbalance`
 --
 
@@ -264,6 +288,18 @@ CREATE TABLE `userbalance` (
   `date` date NOT NULL,
   `Value` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usercoderedeemhistory`
+--
+
+CREATE TABLE `usercoderedeemhistory` (
+  `serial` varchar(8) NOT NULL,
+  `date` date NOT NULL,
+  `value` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -332,6 +368,12 @@ ALTER TABLE `apps`
   ADD PRIMARY KEY (`appid`,`creatorid`) USING BTREE;
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`cateid`);
+
+--
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
@@ -377,6 +419,12 @@ ALTER TABLE `usersinfo`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `cateid` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `comment`
