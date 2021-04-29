@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2021 at 09:01 AM
+-- Generation Time: Apr 29, 2021 at 11:39 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -81,13 +81,26 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Table structure for table `categories`
 --
 
-CREATE TABLE `category` (
-  `catename` varchar(16) NOT NULL,
-  `cateid` int(3) NOT NULL
+CREATE TABLE `categories` (
+  `catename` varchar(32) NOT NULL,
+  `cateid` varchar(4) NOT NULL,
+  `apps` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
+('Finance', 'f', 5),
+('Game', 'g', 16),
+('Music', 'm', 2),
+('Movies', 'mo', 2),
+('Social', 's', 6),
+('Video', 'v', 1);
 
 -- --------------------------------------------------------
 
@@ -478,7 +491,6 @@ INSERT INTO `mostdownloadsfree` (`appid`) VALUES
 ('g2'),
 ('g5'),
 ('m2'),
-('s1'),
 ('s2'),
 ('s3'),
 ('s4'),
@@ -520,10 +532,22 @@ INSERT INTO `mostdownloadspaid` (`appid`) VALUES
 
 CREATE TABLE `pendingapp` (
   `appname` varchar(64) NOT NULL,
-  `cateid` int(3) NOT NULL,
+  `appid` varchar(8) NOT NULL,
+  `creatorid` int(11) NOT NULL,
+  `creatorname` varchar(64) NOT NULL,
   `catename` varchar(16) NOT NULL,
   `picutreLink` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recentlyadded`
+--
+
+CREATE TABLE `recentlyadded` (
+  `appid` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -569,7 +593,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `email`, `userid`, `level`) VALUES
-('grafiticraft', 'qwerty123', 'grafiticraft@gmail.com', 1, 1),
+('grafiticraft', 'qwerty123', 'grafiticraft@gmail.com', 1, 3),
 ('qwerty', '123', 'astoroicom@gmail.com', 2, 1),
 ('nath', 'nath123', 'nath@gmail.com', 3, 1),
 ('astoroicom', 'iop', 'phuphuongtin@gmail.com', 4, 1),
@@ -577,7 +601,7 @@ INSERT INTO `users` (`username`, `password`, `email`, `userid`, `level`) VALUES
 ('awdawdaw', 'qwerty123', 'dawdaw@gmail.com', 6, 1),
 ('hahaha', '12345', 'hahaha@gmail.coom', 7, 1),
 ('ba', 'hai', 'ffvvfvfvfvf@fjvfvfvfhvf', 8, 1),
-('Bynivh', 'test123', 'huubinh1823@gmail.com', 9, 1);
+('Bynivh', '3', 'huubinh1823@gmail.com', 9, 3);
 
 -- --------------------------------------------------------
 
@@ -621,9 +645,9 @@ ALTER TABLE `apps`
   ADD PRIMARY KEY (`appid`,`creatorid`) USING BTREE;
 
 --
--- Indexes for table `category`
+-- Indexes for table `categories`
 --
-ALTER TABLE `category`
+ALTER TABLE `categories`
   ADD PRIMARY KEY (`cateid`);
 
 --
@@ -658,6 +682,18 @@ ALTER TABLE `mostdownloadspaid`
   ADD PRIMARY KEY (`appid`);
 
 --
+-- Indexes for table `pendingapp`
+--
+ALTER TABLE `pendingapp`
+  ADD PRIMARY KEY (`appid`);
+
+--
+-- Indexes for table `recentlyadded`
+--
+ALTER TABLE `recentlyadded`
+  ADD PRIMARY KEY (`appid`);
+
+--
 -- Indexes for table `userbalance`
 --
 ALTER TABLE `userbalance`
@@ -678,12 +714,6 @@ ALTER TABLE `usersinfo`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `cateid` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `comment`
