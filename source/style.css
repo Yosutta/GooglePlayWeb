@@ -459,3 +459,13 @@ input::-webkit-inner-spin-button {
 .activateLink{
   pointer-events:initial;
 }
+
+.inactiveLink:hover #dontcare{
+  background-color:red;
+}
+
+
+/* ADMIN PAGE */
+#giftcodenotification{
+  color:greenyellow;
+}

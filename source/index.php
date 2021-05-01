@@ -163,7 +163,7 @@
             My play activity
         </button>
         <a href="upload_apps.php" id="devsite" class="inactiveLink">
-            <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+            <button type="button" class="btn container-fluid s3nav" data-toggle="tooltip" title="Hello" data-target="">
                 Developer's site
             </button>
         </a>

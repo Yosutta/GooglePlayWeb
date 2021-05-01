@@ -61,38 +61,6 @@
                     break;
                 }
             }
-  
-<<<<<<< HEAD
-=======
-          // $profileImage = time()."_".$_FILES["profile-image"]["name"];
-          global $conn;
-          $profileImage = strtolower($_POST['title_app']).".jpg";
-          $profileImage = str_replace(' ', '', $profileImage);
-          $targets = 'resources/pendingapps/' .$profileImage;
-          move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
-
-        //   print_r($_POST);
-          $appid = '';  
-          $apptitle = $_POST['title_app'];
-          $creatorid = $_POST['creator_id'];
-          $creatorname = $_POST['creator_name'];
-          $catename = $_POST['category_name'];
-
-
-          for($i=0;$i<count($categoriesTable);$i++){
-              if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
-                  $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
-                  break;
-              }
-          }
-
-          $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets')";
-          $conn->query($sql);
-
-          $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
-          $conn->query($sql);
->>>>>>> 8f788da1fcf943714754438b6ef1c0e0e90476be
-
             if($cost==0){
                 $price = $_POST['pricing'];
                 $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
