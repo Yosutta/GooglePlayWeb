@@ -419,10 +419,21 @@ form nav button{
 }
 
 
+/* ADMIN PAGE */
 
+#statistic{
+  background-color: cyan;
+}
 
+#appmanagement{
+  background-color: green;
+}
 
-
+th{
+  padding-left:30px;
+  padding-right:30px;
+  border: 1px solid gray;
+}
 
 
 

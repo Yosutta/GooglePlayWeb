@@ -58,23 +58,37 @@
             for($i=0;$i<count($categoriesTable);$i++){
                 if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
                     $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
+                    $catename = $categoriesTable[$i]['catename'];
+                    $appsNumbers = (int)$categoriesTable[$i]['apps']+1;
+                    // Update numbers of apps of a category
+                    $sql = "UPDATE categories SET apps=$appsNumbers WHERE catename = '$catename'";
+                    $conn->query($sql);
+
                     break;
                 }
             }
-            if($cost==0){
-                $price = $_POST['pricing'];
-                $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
-            }
-            else
-                $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `ranking` ) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets',4)";
-      
-            $conn->query($sql);
-  
+            // if($cost==0){
+            //     $price = $_POST['pricing'];
+            //     $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
+            // }
+            // else
+            //     $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `ranking` ) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets',4)";
+            // $conn->query($sql);
+
+
+
+            // Add to pending apps
             $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
+            print_r($sql);
             $conn->query($sql);
-  
+
+            $sql = 
+
+            // Add to recenly added apps
             $sql = "INSERT INTO `recentlyAdded` values ('$appid')";
             $conn->query($sql);
+
+            header("Location:upload_apps.php");
           }       
           else
             echo "<h2 style='color:red'>Please provide more information</h2>";

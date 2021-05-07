@@ -32,6 +32,17 @@
       $price = "";
       $numbers = "";
 
+      $sql = "SELECT * FROM pendingapp";
+      $result = $conn->query($sql);
+      $pendingapps = [];
+      $row = $result->fetch_assoc();
+      if($row){
+          array_push($pendingapps, $row);
+          while($row=$result->fetch_assoc()){
+              array_push($pendingapps, $row);
+          }    
+        }
+        
 
       if(isset($_POST['giftcodeprice']) and isset($_POST['codes'])){
         global $price, $numbers;
@@ -39,31 +50,65 @@
         $numbers = $_POST['codes'];
         }
     ?>
-    <title>Upload Applications</title>
+    <script>
+    let pendingapps = <?php echo json_encode($pendingapps);?>
+    </script>
+    <title>A.D.M.I.N</title>
 </head>
 <body>
-    <div class="upload_app_frame">
-        <div id="title">
-            <p>Show us your incredible application</p>
-        </div> 
+        <div id="test"></div>
         <!-- App's Image -->
-        <div id="content1">
-        Apps 
-        </div>
-        <!-- App's Title -->
-        <div id="content2">
-            Title
+        <div class="container">
+            <div class="row">
+                <div class="col-3" id="statistic">
+                    Statistic
+                </div>
+                <div class="col-9" id="appmanagement">
+                    <div class="overflow-auto" style="">
+                        <table id="appsGrid">
+                            <tr>
+                                <th>App's name</th>
+                                <th>App's thumbnail </th>
+                                <th>Category</th>
+                                <th>Creator</th>
+                                <th>Status</th>
+                                <th>Approval</th>
+                            </tr>
+                            <tr>
+                                <td>Microsoft</td>
+                                <td>Picture</td>
+                                <td>Social</td>
+                                <td>Windows</td>
+                                <td>Waiting</td>
+                                <td>
+                                    <span style="background-color:greenyellow;padding:5px 10px 5px 10px;border-radius:5px">
+                                        <i class="fas fa-check mt-3" style="color:white"></i>
+                                    </span>
+                                    <span class="m-4" style="background-color:red;padding:5px 10px 5px 10px;border-radius:5px">
+                                        <i class="fas fa-times" style="color:white"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                            <script>
+                                for(let i=0;i<pendingapps.length;i++){
+                                    let row = document.createElement("tr");
+                                    let grid = document.createElement("td")
+                                    let appid = document.createTextNode(pendingapps[i]['appid']);
+                                    grid.appendChild(appid)
+                                    row.appendChild(grid)
+                                    
+                                    let table = document.getElementById("appsGrid");
 
-        </div>
-        <!-- Hidden Creator id -->
-        <input type="hidden" value="
-        <?php
-            echo $_SESSION['userid'];
-        ?>
-        " name="creator_id"/>
-        <!-- App's Creator -->
-        <div id="content3">
-            Creator
+                                    
+
+                                    table.appendChild = row[i];
+                                }
+                                
+                            </script>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- App's category -->
