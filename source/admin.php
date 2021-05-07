@@ -89,22 +89,6 @@
                                     </span>
                                 </td>
                             </tr>
-                            <script>
-                                for(let i=0;i<pendingapps.length;i++){
-                                    let row = document.createElement("tr");
-                                    let grid = document.createElement("td")
-                                    let appid = document.createTextNode(pendingapps[i]['appid']);
-                                    grid.appendChild(appid)
-                                    row.appendChild(grid)
-                                    
-                                    let table = document.getElementById("appsGrid");
-
-                                    
-
-                                    table.appendChild = row[i];
-                                }
-                                
-                            </script>
                         </table>
                     </div>
                 </div>
@@ -136,4 +120,30 @@
        header("Location:admin.php");
     }
 ?>
+<script>
+    for(let i=0;i<pendingapps.length;i++){
+        let table = document.getElementById("appsGrid");
+        let row  = table.insertRow(2);
+
+        let appname = row.insertCell(0)
+        let appimage = row.insertCell(1)
+        let category = row.insertCell(2)
+        let creator = row.insertCell(3)
+        let status = row.insertCell(4)
+
+        appname.innerHTML = pendingapps[i]['appname']
+
+        var img = document.createElement('img'); 
+        img.src = pendingapps[i]['pictureLink']; 
+        img.style.height = "100px";
+        appimage.appendChild(img);
+
+        category.innerHTML = pendingapps[i]['catename']
+
+        creator.innerHTML = pendingapps[i]['creatorname']
+
+        status.innerHTML = "Waiting"
+
+    }
+</script>
 </html>
