@@ -490,10 +490,33 @@ form nav button{
 .apps_word_update{
     font-size:24px; 
 }
+/* ADMIN PAGE */
 
+#statistic{
+  background-color: cyan;
+}
 
+#appmanagement{
+  background-color:khaki;
+}
 
+tr{
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
 
+th{
+  padding-left:30px;
+  padding-right:30px;
+  border: 1px solid gray;
+}
+
+td{
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 /* Creator layout */
 
@@ -545,3 +568,12 @@ input::-webkit-inner-spin-button {
   pointer-events:initial;
 }
 
+.inactiveLink:hover #dontcare{
+  background-color:red;
+}
+
+
+/* ADMIN PAGE */
+#giftcodenotification{
+  color:greenyellow;
+}

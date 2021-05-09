@@ -41,7 +41,7 @@
       if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['creator_id'], $_POST["cost"])){
           if(strlen($_POST['title_app'])!=0){
             global $conn;
-            $profileImage = strtolower($_POST['title_app']).".jpg";
+            $profileImage = strtolower($_POST['title_app']).".png";
             $profileImage = str_replace(' ', '', $profileImage);
             $targets = 'resources/pendingapps/' .$profileImage;
             move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
@@ -58,9 +58,16 @@
             for($i=0;$i<count($categoriesTable);$i++){
                 if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
                     $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
+                    $catename = $categoriesTable[$i]['catename'];
+                    $appsNumbers = (int)$categoriesTable[$i]['apps']+1;
+                    // Update numbers of apps of a category
+                    $sql = "UPDATE categories SET apps=$appsNumbers WHERE catename = '$catename'";
+                    $conn->query($sql);
+
                     break;
                 }
             }
+<<<<<<< HEAD
   
           // $profileImage = time()."_".$_FILES["profile-image"]["name"];
           global $conn;
@@ -76,17 +83,19 @@
           $creatorname = $_POST['creator_name'];
           $catename = $_POST['category_name'];
 
+=======
+            // if($cost==0){
+            //     $price = $_POST['pricing'];
+            //     $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
+            // }
+            // else
+            //     $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `ranking` ) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets',4)";
+            // $conn->query($sql);
+>>>>>>> 1506c9ea9636140baa97c161991b6625b18c6248
 
-          for($i=0;$i<count($categoriesTable);$i++){
-              if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
-                  $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
-                  break;
-              }
-          }
 
-          $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets')";
-          $conn->query($sql);
 
+<<<<<<< HEAD
           $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
           $conn->query($sql);
 
@@ -99,11 +108,20 @@
       
             $conn->query($sql);
   
+=======
+            // Add to pending apps
+>>>>>>> 1506c9ea9636140baa97c161991b6625b18c6248
             $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
+            print_r($sql);
             $conn->query($sql);
-  
+
+            $sql = 
+
+            // Add to recenly added apps
             $sql = "INSERT INTO `recentlyAdded` values ('$appid')";
             $conn->query($sql);
+
+            header("Location:upload_apps.php");
           }       
           else
             echo "<h2 style='color:red'>Please provide more information</h2>";

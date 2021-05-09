@@ -26,7 +26,7 @@
     function generateGiftCode($price,$numbers){
         global $conn;
         
-        for ($i = 0; $i <= $numbers; $i++) {
+        for ($i = 0; $i < $numbers; $i++) {
             $serial = generateRandomString();
             $sql = "INSERT INTO giftcode values('$serial','$price')";
             $conn->query($sql);
@@ -34,6 +34,9 @@
         
     }
 
-    generateGiftCode(20000,10);
+    print_r($_POST);
+
+    $price = $_POST['giftcodeprice'];
+    $ammount = $_POST['codes'];
 
 ?>

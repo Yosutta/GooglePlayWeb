@@ -76,6 +76,7 @@ pendingApp(Not Done)
 - creatorid int
 - catename varchar32
 - pictureLink varchar128
+- status int
 >>>>>>> 822ef833e06e64235d33fbee768fb969d174dbcb
 
 category

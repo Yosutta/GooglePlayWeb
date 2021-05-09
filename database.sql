@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2021 at 08:12 PM
+-- Generation Time: May 09, 2021 at 05:38 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -58,6 +58,7 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, './resources/apps/gunny.png'),
 ('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, './resources/apps/flappy.jpg\r\n'),
 ('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, './resources/apps/kahoot.jpg\r\n'),
+('g17', 'Vsmart Aris', 1, 'grafiticraft', 'Game', 5, 0, 6940000, 0, 'resources/pendingapps/vsmartaris.jpg'),
 ('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, './resources/apps/pokemongo.jpg'),
 ('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 884560, './resources/apps/pubgmobile.jpg'),
 ('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 114856, './resources/apps/azurlane.jpg'),
@@ -96,12 +97,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
-('Finance', 'f', 5),
-('Game', 'g', 16),
-('Music', 'm', 2),
+('Finance', 'f', 6),
+('Game', 'g', 20),
+('Music', 'm', 3),
 ('Movies', 'mo', 2),
-('Social', 's', 6),
-('Video', 'v', 1);
+('Social', 's', 9),
+('Video', 'v', 2);
 
 -- --------------------------------------------------------
 
@@ -444,7 +445,7 @@ CREATE TABLE `emailverification` (
 --
 
 INSERT INTO `emailverification` (`email`, `code`) VALUES
-('phuphuongtin@gmail.com', '6dba1dcd42c7e334ff25ec50746702c1');
+('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55');
 
 -- --------------------------------------------------------
 
@@ -462,16 +463,11 @@ CREATE TABLE `giftcode` (
 --
 
 INSERT INTO `giftcode` (`serial`, `price`) VALUES
-('JLJPJ1G6', 20000),
-('U44JP5I7', 20000),
-('Y08OKCM2', 20000),
-('1MRL9ZJA', 20000),
-('D51X07RW', 20000),
-('ZS539HIO', 20000),
-('YK5DRJ1K', 20000),
-('N99NA2TX', 20000),
-('ZR4PKGKK', 20000),
-('PHUPHUON', 10000);
+('7151LFF3', 500000),
+('76LQL9P9', 500000),
+('GMN908WG', 500000),
+('O0NZYKZP', 500000),
+('SZGSHMYC', 500000);
 
 -- --------------------------------------------------------
 
@@ -537,15 +533,25 @@ CREATE TABLE `pendingapp` (
   `creatorid` int(11) NOT NULL,
   `creatorname` varchar(64) NOT NULL,
   `catename` varchar(16) NOT NULL,
-  `picutreLink` varchar(128) NOT NULL
+  `pictureLink` varchar(128) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pendingapp`
 --
 
-INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `picutreLink`) VALUES
-('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 'resources/pendingapps/phuclong.jpg');
+INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `pictureLink`, `status`) VALUES
+('Bitcoin', 'f6', 1, 'grafiticraft', 'Finance', 'resources/pendingapps/bitcoin.png', 0),
+('Vsmart Aris', 'g17', 1, 'grafiticraft', 'Game', 'resources/pendingapps/vsmartaris.jpg', 0),
+('Get free Robux', 'g18', 1, 'grafiticraft', 'Game', 'resources/pendingapps/getfreerobux.jpg', 2),
+('Logitech gaming', 'g19', 1, 'grafiticraft', 'Game', 'resources/pendingapps/logitechgaming.png', 1),
+('Epic Games', 'g20', 1, 'grafiticraft', 'Game', 'resources/pendingapps/epicgames.png', 0),
+('Soundcloud', 'm3', 1, 'grafiticraft', 'Music', 'resources/pendingapps/soundcloud.png', 0),
+('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 'resources/pendingapps/phuclong.jpg', 0),
+('Snapchat', 's8', 1, 'grafiticraft', 'Social', 'resources/pendingapps/snapchat.png', 0),
+('WhatsApp', 's9', 1, 'grafiticraft', 'Social', 'resources/pendingapps/whatsapp.png', 0),
+('Twitch', 'v2', 1, 'grafiticraft', 'Video', 'resources/pendingapps/twitch.png', 1);
 
 -- --------------------------------------------------------
 
@@ -562,7 +568,16 @@ CREATE TABLE `recentlyadded` (
 --
 
 INSERT INTO `recentlyadded` (`appid`) VALUES
-('s7');
+('f6'),
+('g17'),
+('g18'),
+('g19'),
+('g20'),
+('m3'),
+('s7'),
+('s8'),
+('s9'),
+('v2');
 
 -- --------------------------------------------------------
 
@@ -685,6 +700,12 @@ ALTER TABLE `countries`
 ALTER TABLE `creator`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Indexes for table `giftcode`
+--
+ALTER TABLE `giftcode`
+  ADD PRIMARY KEY (`serial`);
 
 --
 -- Indexes for table `mostdownloadsfree`
