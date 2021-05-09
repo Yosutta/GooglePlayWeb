@@ -62,8 +62,6 @@
                 }
             }
   
-<<<<<<< HEAD
-=======
           // $profileImage = time()."_".$_FILES["profile-image"]["name"];
           global $conn;
           $profileImage = strtolower($_POST['title_app']).".jpg";
@@ -91,7 +89,6 @@
 
           $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
           $conn->query($sql);
->>>>>>> 8f788da1fcf943714754438b6ef1c0e0e90476be
 
             if($cost==0){
                 $price = $_POST['pricing'];
@@ -118,19 +115,25 @@
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="upload_app_frame">
             <div id="title">
-                <p>Show us your incredible application</p>
+                <div id="div_content">
+                    <div class="title_box">
+                        <p class="title_text">Show us your incredible application</p>
+                    </div>
+                    <div class="layout_box"> 
+                    </div>
+                </div>
             </div> 
             <!-- App's Image -->
             <div id="content1">
             App's Image
-            <div class="image">
-                <img src="resources/default/default_img.jpg" id="profile_displayy"/>
-                    <div class="img_layout" onclick="triggerClick()">
-                        <div class="word_update">Update</div>
-                    </div>
-                </div>
+            <div class="apps_image">
+                <img src="resources/default/defaut_app-icon.png" id="apps_profile_display"/>
+                <div class="apps_img_layout" onclick="triggerClick()">
+                    <div class="apps_word_update">Upload</div>
+                 </div>
+            </div>
                 <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
-                </div>
+            </div>
 
             <!-- App's Title -->
             <div id="content2">
@@ -145,11 +148,9 @@
                 
                 <br><br>
                 Pricing
-                <br>
                 <input type="number" name="pricing" id="pricing" disabled>
-
             </div>
-            <!-- Hidden Creator id -->
+            <!-- Hidden Creator id -->  
             <input type="hidden" value="
             <?php
                 echo $_SESSION['userid'];

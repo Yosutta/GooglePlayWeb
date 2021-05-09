@@ -50,7 +50,7 @@ form nav button{
   height:200px;
   background-color:green;
   top:48px;
-  background-color:#f5f5f5
+  background-color:#f5f5f5;
 }
 
 .s1nav{
@@ -302,11 +302,6 @@ form nav button{
   border-radius: 50%;
 }
 
-#profile_displayy{
-  display: block; 
-  width: 200px;
-  margin: 10px auto; 
-}
 
 .acc_frame {
   border-radius: 9px;
@@ -376,7 +371,6 @@ form nav button{
 
 #title{
   grid-area: title;
-  background-color: white;
   margin-top: 0.8rem;
   border-radius:30px;
   margin-left: 0.8rem;
@@ -418,27 +412,118 @@ form nav button{
   margin-right: 0.8rem;
 }
 
+#div_content{ 
+  height: 100%;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+}
+
+.title_box{
+  width: 99%;
+  height:100%; 
+  background: green;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius:30px;
+  box-sizing: border-box;
+}
+
+.layout_box{
+  width: 1%;
+  height:100%; 
+  background: black;
+  box-sizing: border-box;
+  border-left:100px solid green; 
+  border-top-right-radius: 30px;
+  border-bottom-right-radius:30px;
+  border-bottom: 170px solid transparent; 
+  transition:  width 1s ease-in;
+}
+
+#div_content:hover .layout_box{
+  width: 30%;
+  height:100%; 
+  background: black;
+  box-sizing: border-box;
+  border-left:100px solid green; 
+  border-top-right-radius: 30px;
+  border-bottom-right-radius:30px;
+  border-bottom: 170px solid transparent; 
+}
+
+#apps_profile_display{ 
+  width: 100%;
+  border: 1px solid black;
+  display:block;
+  border-radius: 25%;
+  opacity: 60%;
+}
+
+.apps_image{ 
+  width: 35%;
+  position: relative;
+}
+
+.apps_img_layout{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+  border-radius: 25%;
+  background : rgba(0,0,0,0.6); 
+  color: white; 
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  opacity: 0;
+}
+
+.apps_img_layout:hover{
+  opacity: 1;
+}
+
+.apps_word_update{
+    font-size:24px; 
+}
 
 
 
 
 
+/* Creator layout */
 
+.background_creator_alignment{
+  vertical-align: text-top;
+}
 
+.layout_creator{
+  padding-left: 350px;
+  padding-right: 150px;
+  padding-top: 108px;
+}
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
+.container-fluid{
+  overflow: hidden;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+.div_background{
+  background-image: url(./resources/Home/test.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%; 
+  height: 500px;
+}
 
 
 
@@ -459,3 +544,4 @@ input::-webkit-inner-spin-button {
 .activateLink{
   pointer-events:initial;
 }
+

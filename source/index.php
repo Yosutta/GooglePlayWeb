@@ -80,7 +80,7 @@
 
 
   <!-- Navigation bar -->
-    <div class="bg-white stickyNav" style="height:48px;top:0">
+    <div class="bg-white stickyNav" style="height:48px;top:0px;">
     <a href="#">
         <div class="catPlacement float-left text-white" style="background-color:#689f38;font-size:18px;padding:10px 30px;padding-right:83px">
             <i class="mt-1 fas fa-border-all"></i> &nbsp &nbsp Apps
