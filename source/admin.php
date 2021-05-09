@@ -58,7 +58,7 @@
 <body>
         <div id="test"></div>
         <!-- App's Image -->
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-3" id="statistic">
                     Statistic
@@ -75,21 +75,31 @@
                                 <th>Approval</th>
                             </tr>
                             <tr>
-                                <td>Microsoft</td>
+                                <td><a href="#">Microsoft</a></td>
                                 <td>Picture</td>
                                 <td>Social</td>
                                 <td>Windows</td>
                                 <td>Waiting</td>
                                 <td>
-                                    <span style="background-color:greenyellow;padding:5px 10px 5px 10px;border-radius:5px">
-                                        <i class="fas fa-check mt-3" style="color:white"></i>
-                                    </span>
-                                    <span class="m-4" style="background-color:red;padding:5px 10px 5px 10px;border-radius:5px">
+                                    <button style="background-color:greenyellow;border-radius:5px;width:50px" id="a6" value=6 onclick="whenApproved(id)">
+                                        <i class="fas fa-check" style="color:white"></i>
+                                    </button>
+                                    <button class="" style="background-color:red;border-radius:5px;width:50px" id="c6" value=6 onclick="whenDenied(id)">
                                         <i class="fas fa-times" style="color:white"></i>
-                                    </span>
+                                    </button>
                                 </td>
                             </tr>
-                        </table>
+                        </table>  
+                        <button class="btn btn-warning" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index)">
+                            <i class="fas fa-redo-alt text-white"></i>
+                        </button>  
+                        <button class="btn btn-info" id="previousAppGrid" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index-5), index = index -5">
+                            <i class="fas fa-angle-double-left"></i>
+                        </button>
+                        <button class="btn btn-info" id="nextAppGrid" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index+5),index = index +5">
+                            <i class="fas fa-angle-double-right"></i>
+                        </button>
+                        
                     </div>
                 </div>
             </div>
@@ -121,29 +131,7 @@
     }
 ?>
 <script>
-    for(let i=0;i<pendingapps.length;i++){
-        let table = document.getElementById("appsGrid");
-        let row  = table.insertRow(2);
-
-        let appname = row.insertCell(0)
-        let appimage = row.insertCell(1)
-        let category = row.insertCell(2)
-        let creator = row.insertCell(3)
-        let status = row.insertCell(4)
-
-        appname.innerHTML = pendingapps[i]['appname']
-
-        var img = document.createElement('img'); 
-        img.src = pendingapps[i]['pictureLink']; 
-        img.style.height = "100px";
-        appimage.appendChild(img);
-
-        category.innerHTML = pendingapps[i]['catename']
-
-        creator.innerHTML = pendingapps[i]['creatorname']
-
-        status.innerHTML = "Waiting"
-
-    }
+let index = 0
+showAdminAppsGrid(pendingapps,index)
 </script>
 </html>

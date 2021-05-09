@@ -41,7 +41,7 @@
       if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['creator_id'], $_POST["cost"])){
           if(strlen($_POST['title_app'])!=0){
             global $conn;
-            $profileImage = strtolower($_POST['title_app']).".jpg";
+            $profileImage = strtolower($_POST['title_app']).".png";
             $profileImage = str_replace(' ', '', $profileImage);
             $targets = 'resources/pendingapps/' .$profileImage;
             move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);

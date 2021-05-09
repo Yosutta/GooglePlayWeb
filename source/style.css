@@ -426,6 +426,13 @@ form nav button{
 }
 
 #appmanagement{
+  background-color:khaki;
+}
+
+tr{
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 th{
@@ -434,8 +441,11 @@ th{
   border: 1px solid gray;
 }
 
-
-
+td{
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 
 

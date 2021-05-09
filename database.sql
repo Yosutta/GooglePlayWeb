@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2021 at 07:55 AM
+-- Generation Time: May 09, 2021 at 05:38 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -97,12 +97,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
-('Finance', 'f', 5),
-('Game', 'g', 18),
-('Music', 'm', 2),
+('Finance', 'f', 6),
+('Game', 'g', 20),
+('Music', 'm', 3),
 ('Movies', 'mo', 2),
-('Social', 's', 7),
-('Video', 'v', 1);
+('Social', 's', 9),
+('Video', 'v', 2);
 
 -- --------------------------------------------------------
 
@@ -533,17 +533,25 @@ CREATE TABLE `pendingapp` (
   `creatorid` int(11) NOT NULL,
   `creatorname` varchar(64) NOT NULL,
   `catename` varchar(16) NOT NULL,
-  `pictureLink` varchar(128) NOT NULL
+  `pictureLink` varchar(128) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pendingapp`
 --
 
-INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `pictureLink`) VALUES
-('Vsmart Aris', 'g17', 1, 'grafiticraft', 'Game', 'resources/pendingapps/vsmartaris.jpg'),
-('Get free Robux', 'g18', 1, 'grafiticraft', 'Game', 'resources/pendingapps/getfreerobux.jpg'),
-('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 'resources/pendingapps/phuclong.jpg');
+INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `pictureLink`, `status`) VALUES
+('Bitcoin', 'f6', 1, 'grafiticraft', 'Finance', 'resources/pendingapps/bitcoin.png', 0),
+('Vsmart Aris', 'g17', 1, 'grafiticraft', 'Game', 'resources/pendingapps/vsmartaris.jpg', 0),
+('Get free Robux', 'g18', 1, 'grafiticraft', 'Game', 'resources/pendingapps/getfreerobux.jpg', 2),
+('Logitech gaming', 'g19', 1, 'grafiticraft', 'Game', 'resources/pendingapps/logitechgaming.png', 1),
+('Epic Games', 'g20', 1, 'grafiticraft', 'Game', 'resources/pendingapps/epicgames.png', 0),
+('Soundcloud', 'm3', 1, 'grafiticraft', 'Music', 'resources/pendingapps/soundcloud.png', 0),
+('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 'resources/pendingapps/phuclong.jpg', 0),
+('Snapchat', 's8', 1, 'grafiticraft', 'Social', 'resources/pendingapps/snapchat.png', 0),
+('WhatsApp', 's9', 1, 'grafiticraft', 'Social', 'resources/pendingapps/whatsapp.png', 0),
+('Twitch', 'v2', 1, 'grafiticraft', 'Video', 'resources/pendingapps/twitch.png', 1);
 
 -- --------------------------------------------------------
 
@@ -560,9 +568,16 @@ CREATE TABLE `recentlyadded` (
 --
 
 INSERT INTO `recentlyadded` (`appid`) VALUES
+('f6'),
 ('g17'),
 ('g18'),
-('s7');
+('g19'),
+('g20'),
+('m3'),
+('s7'),
+('s8'),
+('s9'),
+('v2');
 
 -- --------------------------------------------------------
 
