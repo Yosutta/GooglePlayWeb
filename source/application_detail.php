@@ -39,47 +39,34 @@
 </head>
 <body class="testing_grid">
     <div id="loadheader"></div>
-    <div class="layout_creator">
-        <div class="div_background">
-            <div>
-                <div class="div_title_description">
-                    <div>
-                        <img class="img_creator"src="./resources/creator/pikachu.png"/>
-                    </div>
-                    <p class="title_creator">Name creator</p>
-                    <p class="title_description">fbkgkbngbkgnbkgbn kgbgkbngkbngk ngbgkbngkbnllekfbnglbn, bgnbmg kbm gbmgbkm kmgbkgmb gbkmgbkm bkgm</p>
-                </div>
-                <div class="content_text_featured"><p class="featured">Featured</p></div>
-                <div class="creator_feature">
-                    <div class="featured_app">
-                        <img src="./resources/creator/featured_test/clashofclans.jpeg" id="feature_image"/>
-                    </div>
-                    <div class="infor_feature">
-                        Hello
-                    </div>
-                </div>
-                <div>
-                    <p>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </p>
-                </div>
+    <div class="alignment_frame_ad">
+        <div class="frame_ad">
+            <img style="padding-right:40px; float:left"src="./resources/apps/fo4.jpg">
+            <div class="infor_ad">
+            <p class="title_ad">FIFA Online 4M</p>
+            <div class="rating_ad">
+                <a href="#" class="a_tag_ad">Creator</a>
+                <a href="#" class="a_tag_ad">Category</a>
+                <p class="rating_start_ad" ><?php echo $row['ranking']?>/5 &#9733</p>
+            </div>
+            <div class="div_install_btn_ad">
+                <button type="submit" class="btn btn-success">Install</button>
+            </div>
             </div>
         </div>
-	</div>
-
-<script>
-    src="jquery.js"
-    $(function(){
-      $("#loadheader").load("header.php"); 
-    });
-    if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-} else {
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
-}   
-</script>
+    </div>
+    <script>
+        src="jquery.js"
+        $(function(){
+        $("#loadheader").load("header.php"); 
+        });
+        if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    } else {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    }   
+    </script>
 </body>
 </html>
