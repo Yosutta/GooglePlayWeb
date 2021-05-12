@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2021 at 10:54 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: May 12, 2021 at 02:03 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,48 +37,54 @@ CREATE TABLE `apps` (
   `free` tinyint(1) NOT NULL,
   `cost` int(11) NOT NULL,
   `downloads` int(11) NOT NULL,
-  `link` varchar(128) NOT NULL
+  `description` varchar(128) NOT NULL,
+  `updatedate` date NOT NULL DEFAULT current_timestamp(),
+  `capacity` int(10) NOT NULL,
+  `link` varchar(128) NOT NULL,
+  `screenshotlink` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `apps`
 --
 
-INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `link`) VALUES
-('f1', 'Money Lover', 3, 'Finsify', 'Finance', 5, 1, 0, 177149, './resources/apps/moneylover.jpg'),
-('f2', 'Momo', 23, 'M_Service JSC', 'Finance', 4, 0, 1000, 239717, './resources/apps/momo.jpg'),
-('f3', 'Adobe Photoshop', 24, 'Adobe', 'Finance', 5, 0, 5000, 1677356, './resources/apps/adobephotoshop.jpg\r\n'),
-('f4', 'Adobe Reader PDF', 24, 'Adobe', 'Finance', 5, 0, 10000, 4520986, './resources/apps/pdf.jpg\r\n'),
-('f5', 'Adobe Lightroom', 24, 'Adobe', 'Finance', 5, 0, 3000, 985333, './resources/apps/lightroom.jpg\r\n'),
-('g1', 'Genshin Impact', 9, 'Mihoyo Inc', 'Game', 5, 1, 0, 1411930, './resources/apps/genshinimpact.jpg'),
-('g10', 'FIFA Online 4 M', 5, 'Garena Co.Ltd', 'Game', 5, 0, 15000, 41678, './resources/apps/fo4.jpg'),
-('g11', 'Critical Strike', 17, 'Vertigo Games', 'Game', 4, 0, 10000, 393967, './resources/apps/cs.jpg'),
-('g12', 'Free Fire', 5, 'Garena Co.Ltd', 'Game', 5, 1, 0, 84137447, './resources/apps/freefire.jpg'),
-('g13', 'Infinite Flight ', 21, 'Infinite Flight LLC', 'Game', 5, 0, 20000, 71535, './resources/apps/flight.png\r\n'),
-('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, './resources/apps/gunny.png'),
-('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, './resources/apps/flappy.jpg\r\n'),
-('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, './resources/apps/kahoot.jpg\r\n'),
-('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, './resources/apps/pokemongo.jpg'),
-('g21', 'Bandori', 26, 'grafiticraft', 'Game', 5, 0, 10000, 0, 'resources/pendingapps/bandori.png'),
-('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 884560, './resources/apps/pubgmobile.jpg'),
-('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 114856, './resources/apps/azurlane.jpg'),
-('g5', 'Liên quan Mobile', 5, 'Garena Co.Ltd', 'Game', 4, 1, 0, 4475522, './resources/apps/lienquan.jpg'),
-('g6', 'Neko Atsume: Kitty Collector', 7, 'Hit-Point Co.,Ltd', 'Game', 5, 1, 0, 339918, './resources/apps/nekoatsume.jpg'),
-('g7', 'Tik Tac Toe', 1, 'Arcline', 'Game', 3, 0, 2000, 673896, './resources/apps/ttt.jpg'),
-('g8', 'Shadow Fight 2', 10, 'Nekki', 'Game', 5, 0, 6000, 14150446, './resources/apps/sf.jpg'),
-('g9', 'COD: Call Of Duty', 14, 'VNG', 'Game', 4, 0, 20000, 224994, './resources/apps/cod.jpg'),
-('m1', 'Spotify', 13, 'Spotify Ltd', 'Music', 5, 0, 22000, 22271176, './resources/apps/spotify.jpg'),
-('m2', 'Guitar Tuna', 20, 'Your Musician Ltd', 'Music', 5, 1, 0, 1923265, './resources/apps/guitar.jpg\r\n'),
-('mo1', 'Netflix', 11, 'Netflix, Inc', 'Movies', 5, 0, 16000, 11455775, './resources/apps/netflix.jpg'),
-('mo2', 'FPT Play', 4, 'FPT Coop', 'Movies', 4, 1, 0, 159257, './resources/apps/fptplay.jpg'),
-('s1', 'Twitter', 16, 'Twitter Ltd', 'Social', 5, 1, 0, 17521324, './resources/apps/twitter.jpg'),
-('s2', 'Facebook', 2, 'Facebook', 'Social', 5, 1, 0, 109385285, './resources/apps/facebook.jpg'),
-('s3', 'Messenger', 2, 'Facebook', 'Social', 5, 1, 0, 77573840, './resources/apps/mess.jpg\r\n'),
-('s4', 'Instagram', 8, 'Instagram', 'Social', 5, 1, 0, 116316888, './resources/apps/ins.jpg\r\n'),
-('s5', 'TikTok', 15, 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 9649418, './resources/apps/tiktok.jpg\r\n'),
-('s6', 'Zalo', 18, 'Zalo Group', 'Social', 5, 1, 0, 1634141, './resources/apps/zalo.jpg\r\n'),
-('s7', 'Phuc Long', 26, 'grafiticraft', 'Social', 4, 0, 0, 0, 'resources/pendingapps/phuclong.jpg'),
-('v1', 'Youtube', 6, 'Google LLC', 'Video', 4, 1, 0, 98986136, './resources/apps/youtube.jpg');
+INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `description`, `updatedate`, `capacity`, `link`, `screenshotlink`) VALUES
+('e2', 'maivanmanh', 0, 'admin', 'Education', 5, 0, 20000, 0, '', '2021-05-12', 0, 'resources/pendingapps/maivanmanh.png', ''),
+('f1', 'Money Lover', 3, 'Finsify', 'Finance', 5, 1, 0, 177149, '', '2021-05-12', 0, './resources/apps/moneylover.jpg', ''),
+('f2', 'Momo', 23, 'M_Service JSC', 'Finance', 4, 0, 1000, 239717, '', '2021-05-12', 0, './resources/apps/momo.jpg', ''),
+('f3', 'Adobe Photoshop', 24, 'Adobe', 'Finance', 5, 0, 5000, 1677356, '', '2021-05-12', 0, './resources/apps/adobephotoshop.jpg\r\n', ''),
+('f4', 'Adobe Reader PDF', 24, 'Adobe', 'Finance', 5, 0, 10000, 4520986, '', '2021-05-12', 0, './resources/apps/pdf.jpg\r\n', ''),
+('f5', 'Adobe Lightroom', 24, 'Adobe', 'Finance', 5, 0, 3000, 985333, '', '2021-05-12', 0, './resources/apps/lightroom.jpg\r\n', ''),
+('g1', 'Genshin Impact', 9, 'Mihoyo Inc', 'Game', 5, 1, 0, 1411930, '', '2021-05-12', 0, './resources/apps/genshinimpact.jpg', ''),
+('g10', 'FIFA Online 4 M', 5, 'Garena Co.Ltd', 'Game', 5, 0, 15000, 41678, '', '2021-05-12', 0, './resources/apps/fo4.jpg', ''),
+('g11', 'Critical Strike', 17, 'Vertigo Games', 'Game', 4, 0, 10000, 393967, '', '2021-05-12', 0, './resources/apps/cs.jpg', ''),
+('g12', 'Free Fire', 5, 'Garena Co.Ltd', 'Game', 5, 1, 0, 84137447, '', '2021-05-12', 0, './resources/apps/freefire.jpg', ''),
+('g13', 'Infinite Flight ', 21, 'Infinite Flight LLC', 'Game', 5, 0, 20000, 71535, '', '2021-05-12', 0, './resources/apps/flight.png\r\n', ''),
+('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, '', '2021-05-12', 0, './resources/apps/gunny.png', ''),
+('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, '', '2021-05-12', 0, './resources/apps/flappy.jpg\r\n', ''),
+('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, '', '2021-05-12', 0, './resources/apps/kahoot.jpg\r\n', ''),
+('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, '', '2021-05-12', 0, './resources/apps/pokemongo.jpg', ''),
+('g21', 'Bandori', 26, 'grafiticraft', 'Game', 5, 0, 10000, 0, '', '2021-05-12', 0, 'resources/pendingapps/bandori.png', ''),
+('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 884560, '', '2021-05-12', 0, './resources/apps/pubgmobile.jpg', ''),
+('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 114856, '', '2021-05-12', 0, './resources/apps/azurlane.jpg', ''),
+('g5', 'Liên quan Mobile', 5, 'Garena Co.Ltd', 'Game', 4, 1, 0, 4475522, '', '2021-05-12', 0, './resources/apps/lienquan.jpg', ''),
+('g6', 'Neko Atsume: Kitty Collector', 7, 'Hit-Point Co.,Ltd', 'Game', 5, 1, 0, 339918, '', '2021-05-12', 0, './resources/apps/nekoatsume.jpg', ''),
+('g7', 'Tik Tac Toe', 1, 'Arcline', 'Game', 3, 0, 2000, 673896, '', '2021-05-12', 0, './resources/apps/ttt.jpg', ''),
+('g8', 'Shadow Fight 2', 10, 'Nekki', 'Game', 5, 0, 6000, 14150446, '', '2021-05-12', 0, './resources/apps/sf.jpg', ''),
+('g9', 'COD: Call Of Duty', 14, 'VNG', 'Game', 4, 0, 20000, 224994, '', '2021-05-12', 0, './resources/apps/cod.jpg', ''),
+('m1', 'Spotify', 13, 'Spotify Ltd', 'Music', 5, 0, 22000, 22271176, '', '2021-05-12', 0, './resources/apps/spotify.jpg', ''),
+('m2', 'Guitar Tuna', 20, 'Your Musician Ltd', 'Music', 5, 1, 0, 1923265, '', '2021-05-12', 0, './resources/apps/guitar.jpg\r\n', ''),
+('mo1', 'Netflix', 11, 'Netflix, Inc', 'Movies', 5, 0, 16000, 11455775, '', '2021-05-12', 0, './resources/apps/netflix.jpg', ''),
+('mo2', 'FPT Play', 4, 'FPT Coop', 'Movies', 4, 1, 0, 159257, '', '2021-05-12', 0, './resources/apps/fptplay.jpg', ''),
+('s1', 'Twitter', 16, 'Twitter Ltd', 'Social', 5, 1, 0, 17521324, '', '2021-05-12', 0, './resources/apps/twitter.jpg', ''),
+('s2', 'Facebook', 2, 'Facebook', 'Social', 5, 1, 0, 109385285, '', '2021-05-12', 0, './resources/apps/facebook.jpg', ''),
+('s3', 'Messenger', 2, 'Facebook', 'Social', 5, 1, 0, 77573840, '', '2021-05-12', 0, './resources/apps/mess.jpg\r\n', ''),
+('s4', 'Instagram', 8, 'Instagram', 'Social', 5, 1, 0, 116316888, '', '2021-05-12', 0, './resources/apps/ins.jpg\r\n', ''),
+('s5', 'TikTok', 15, 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 9649418, '', '2021-05-12', 0, './resources/apps/tiktok.jpg\r\n', ''),
+('s6', 'Zalo', 18, 'Zalo Group', 'Social', 5, 1, 0, 1634141, '', '2021-05-12', 0, './resources/apps/zalo.jpg\r\n', ''),
+('s7', 'Phuc Long', 26, 'grafiticraft', 'Social', 4, 0, 0, 0, '', '2021-05-12', 0, 'resources/pendingapps/phuclong.jpg', ''),
+('s8', 'TikTok Wall', 15, 'TikTok Pte.Ltd', 'Social', 4, 0, 0, 56976, '', '2021-05-12', 0, 'resources/pendingapps/tiktokwall.png', ''),
+('v1', 'Youtube', 6, 'Google LLC', 'Video', 4, 1, 0, 98986136, '', '2021-05-12', 0, './resources/apps/youtube.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -97,12 +103,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
-('Education', 'e', 1),
+('Education', 'e', 2),
 ('Finance', 'f', 6),
 ('Game', 'g', 21),
 ('Music', 'm', 3),
 ('Movies', 'mo', 2),
-('Social', 's', 9),
+('Social', 's', 8),
 ('Video', 'v', 2);
 
 -- --------------------------------------------------------
@@ -115,7 +121,8 @@ CREATE TABLE `comment` (
   `appid` varchar(16) COLLATE utf8_vietnamese_ci NOT NULL,
   `userid` int(11) NOT NULL,
   `comment` varchar(128) COLLATE utf8_vietnamese_ci NOT NULL,
-  `ranking` int(11) NOT NULL
+  `ranking` int(11) NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 -- --------------------------------------------------------
@@ -396,39 +403,42 @@ INSERT INTO `countries` (`id`, `country_name`) VALUES
 CREATE TABLE `creator` (
   `name` varchar(64) NOT NULL,
   `id` int(11) NOT NULL,
-  `tittle` varchar(128) NOT NULL
+  `tittle` varchar(128) NOT NULL,
+  `backgroundlink` varchar(64) NOT NULL,
+  `iconlink` varchar(64) NOT NULL,
+  `feature` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `creator`
 --
 
-INSERT INTO `creator` (`name`, `id`, `tittle`) VALUES
-('Arcline', 1, 'We are passionate game developers behind the games like Tic Tac Toe Glow, Spot It, Decrypto and many more!\r\n'),
-('Facebook', 2, 'Best social media in the world.'),
-('Finsify', 3, 'Bring personal financial management solutions and products to Vietnamese people. '),
-('FPT Coop', 4, 'Work for your best experience for watching.'),
-('Garena', 5, 'We will try our best to bloodsucking your wallet.'),
-('Google LLC', 6, 'We help you search the world'),
-('Hit-Point Co.,Ltd', 7, 'A game company operating in Nagoya and Kyoto.\r\nWe distribute apps such as \"Neko Atsume\", \"Narumonoka\" and \"Henri\". '),
-('Instagram', 8, 'Saving the beautiful pictures with your life'),
-('Mihoyo Inc', 9, 'Our game will take you to the fairy world'),
-('Nekki', 10, 'Cool and epic action fighting games, multiplayer games with top 3D graphics featuring online and offline brawl and fun battles w'),
-('Netflix, Inc', 11, 'Signing with us to seeing all movies in the world'),
-('Niantic, Inc', 12, 'Joining imagination world with us'),
-('Spotify Ltd', 13, 'Best music\'s app in the world'),
-('VNG', 14, 'VNG GAMES - BY GAMERS, FOR GAMERS\r\n'),
-('TikTok Pte.Ltd', 15, 'Saving your memory'),
-('Twitter Ltd', 16, 'Flying with your chatting'),
-('Vertigo Games', 17, 'Vertigo Games is the developer and publisher of free-to-play mobile shooter games.\r\n'),
-('Zalo Group', 18, 'World in your hand\r\n'),
-('Yostar Limited.\r\n', 19, 'YOSTAR LIMITED is dedicated in our creation and publication of anime-style games from PC to the mobile platform.\r\n'),
-('Your Musician Ltd', 20, 'Yousician reimagined how to learn an instrument making it fun, fast and easy to play your favorite songs. Now on piano, guitar, '),
-('Infinite Flight LLC', 21, 'Discover the sky with our VR'),
-('Kahoot', 22, 'Kahoot! makes it easy to create, share and play fun learning games or trivia quizzes in minutes. Make learning awesome!\r\n'),
-('M_Service JSC', 23, 'Online wallet make you don\'t need cash anymore'),
-('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n'),
-('TGame Studio', 25, 'Thank you for playing my games..\r\n');
+INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `feature`) VALUES
+('Arcline', 1, 'We are passionate game developers behind the games like Tic Tac Toe Glow, Spot It, Decrypto and many more!\r\n', '', '', ''),
+('Facebook', 2, 'Best social media in the world.', '', '', ''),
+('Finsify', 3, 'Bring personal financial management solutions and products to Vietnamese people. ', '', '', ''),
+('FPT Coop', 4, 'Work for your best experience for watching.', '', '', ''),
+('Garena', 5, 'We will try our best to bloodsucking your wallet.', '', '', ''),
+('Google LLC', 6, 'We help you search the world', '', '', ''),
+('Hit-Point Co.,Ltd', 7, 'A game company operating in Nagoya and Kyoto.\r\nWe distribute apps such as \"Neko Atsume\", \"Narumonoka\" and \"Henri\". ', '', '', ''),
+('Instagram', 8, 'Saving the beautiful pictures with your life', '', '', ''),
+('Mihoyo Inc', 9, 'Our game will take you to the fairy world', '', '', ''),
+('Nekki', 10, 'Cool and epic action fighting games, multiplayer games with top 3D graphics featuring online and offline brawl and fun battles w', '', '', ''),
+('Netflix, Inc', 11, 'Signing with us to seeing all movies in the world', '', '', ''),
+('Niantic, Inc', 12, 'Joining imagination world with us', '', '', ''),
+('Spotify Ltd', 13, 'Best music\'s app in the world', '', '', ''),
+('VNG', 14, 'VNG GAMES - BY GAMERS, FOR GAMERS\r\n', 'resources/creator/background/vng.jpeg', 'resources/creator/icon/vng.jpeg', ''),
+('TikTok Pte.Ltd', 15, 'Saving your memory', '', '', ''),
+('Twitter Ltd', 16, 'Flying with your chatting', '', '', ''),
+('Vertigo Games', 17, 'Vertigo Games is the developer and publisher of free-to-play mobile shooter games.\r\n', '', '', ''),
+('Zalo Group', 18, 'World in your hand\r\n', '', '', ''),
+('Yostar Limited.\r\n', 19, 'YOSTAR LIMITED is dedicated in our creation and publication of anime-style games from PC to the mobile platform.\r\n', '', '', ''),
+('Your Musician Ltd', 20, 'Yousician reimagined how to learn an instrument making it fun, fast and easy to play your favorite songs. Now on piano, guitar, ', '', '', ''),
+('Infinite Flight LLC', 21, 'Discover the sky with our VR', '', '', ''),
+('Kahoot', 22, 'Kahoot! makes it easy to create, share and play fun learning games or trivia quizzes in minutes. Make learning awesome!\r\n', '', '', ''),
+('M_Service JSC', 23, 'Online wallet make you don\'t need cash anymore', '', '', ''),
+('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n', 'resources/creator/background/adobe.jpg', 'resources/creator/icon/adobe.jpg', ''),
+('TGame Studio', 25, 'Thank you for playing my games..\r\n', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -545,6 +555,7 @@ CREATE TABLE `pendingapp` (
 
 INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`, `status`) VALUES
 ('Mazii', 'e1', 26, 'grafiticraft', 'Education', 54000, 'resources/pendingapps/mazii.png', 0),
+('maivanmanh', 'e2', 0, 'admin', 'Education', 20000, 'resources/pendingapps/maivanmanh.png', 1),
 ('Bitcoin', 'f6', 1, 'grafiticraft', 'Finance', 0, 'resources/pendingapps/bitcoin.png', 0),
 ('Vsmart Aris', 'g17', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/vsmartaris.jpg', 0),
 ('Get free Robux', 'g18', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/getfreerobux.jpg', 2),
@@ -552,6 +563,7 @@ INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `caten
 ('Epic Games', 'g20', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/epicgames.png', 0),
 ('Bandori', 'g21', 1, 'grafiticraft', 'Game', 10000, 'resources/pendingapps/bandori.png', 0),
 ('Soundcloud', 'm3', 1, 'grafiticraft', 'Music', 0, 'resources/pendingapps/soundcloud.png', 0),
+('TikTok Wall', 's10', 0, 'TikTok Pte.Ltd', 'Social', 0, 'resources/pendingapps/tiktokwall.png', 1),
 ('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/phuclong.jpg', 0),
 ('Snapchat', 's8', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/snapchat.png', 0),
 ('WhatsApp', 's9', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/whatsapp.png', 0),
@@ -573,6 +585,7 @@ CREATE TABLE `recentlyadded` (
 
 INSERT INTO `recentlyadded` (`appid`) VALUES
 ('e1'),
+('e2'),
 ('f6'),
 ('g17'),
 ('g18'),
@@ -580,6 +593,7 @@ INSERT INTO `recentlyadded` (`appid`) VALUES
 ('g20'),
 ('g21'),
 ('m3'),
+('s10'),
 ('s7'),
 ('s8'),
 ('s9'),
