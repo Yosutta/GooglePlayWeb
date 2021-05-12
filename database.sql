@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 05:38 AM
+-- Generation Time: May 11, 2021 at 06:04 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -58,8 +58,8 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, './resources/apps/gunny.png'),
 ('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, './resources/apps/flappy.jpg\r\n'),
 ('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, './resources/apps/kahoot.jpg\r\n'),
-('g17', 'Vsmart Aris', 1, 'grafiticraft', 'Game', 5, 0, 6940000, 0, 'resources/pendingapps/vsmartaris.jpg'),
 ('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, './resources/apps/pokemongo.jpg'),
+('g21', 'Bandori', 26, 'grafiticraft', 'Game', 5, 0, 10000, 0, 'resources/pendingapps/bandori.png'),
 ('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 884560, './resources/apps/pubgmobile.jpg'),
 ('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 114856, './resources/apps/azurlane.jpg'),
 ('g5', 'Liên quan Mobile', 5, 'Garena Co.Ltd', 'Game', 4, 1, 0, 4475522, './resources/apps/lienquan.jpg'),
@@ -97,8 +97,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
+('Education', 'e', 1),
 ('Finance', 'f', 6),
-('Game', 'g', 20),
+('Game', 'g', 21),
 ('Music', 'm', 3),
 ('Movies', 'mo', 2),
 ('Social', 's', 9),
@@ -533,6 +534,7 @@ CREATE TABLE `pendingapp` (
   `creatorid` int(11) NOT NULL,
   `creatorname` varchar(64) NOT NULL,
   `catename` varchar(16) NOT NULL,
+  `price` int(11) NOT NULL,
   `pictureLink` varchar(128) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -541,17 +543,19 @@ CREATE TABLE `pendingapp` (
 -- Dumping data for table `pendingapp`
 --
 
-INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `pictureLink`, `status`) VALUES
-('Bitcoin', 'f6', 1, 'grafiticraft', 'Finance', 'resources/pendingapps/bitcoin.png', 0),
-('Vsmart Aris', 'g17', 1, 'grafiticraft', 'Game', 'resources/pendingapps/vsmartaris.jpg', 0),
-('Get free Robux', 'g18', 1, 'grafiticraft', 'Game', 'resources/pendingapps/getfreerobux.jpg', 2),
-('Logitech gaming', 'g19', 1, 'grafiticraft', 'Game', 'resources/pendingapps/logitechgaming.png', 1),
-('Epic Games', 'g20', 1, 'grafiticraft', 'Game', 'resources/pendingapps/epicgames.png', 0),
-('Soundcloud', 'm3', 1, 'grafiticraft', 'Music', 'resources/pendingapps/soundcloud.png', 0),
-('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 'resources/pendingapps/phuclong.jpg', 0),
-('Snapchat', 's8', 1, 'grafiticraft', 'Social', 'resources/pendingapps/snapchat.png', 0),
-('WhatsApp', 's9', 1, 'grafiticraft', 'Social', 'resources/pendingapps/whatsapp.png', 0),
-('Twitch', 'v2', 1, 'grafiticraft', 'Video', 'resources/pendingapps/twitch.png', 1);
+INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`, `status`) VALUES
+('Mazii', 'e1', 26, 'grafiticraft', 'Education', 54000, 'resources/pendingapps/mazii.png', 0),
+('Bitcoin', 'f6', 1, 'grafiticraft', 'Finance', 0, 'resources/pendingapps/bitcoin.png', 0),
+('Vsmart Aris', 'g17', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/vsmartaris.jpg', 0),
+('Get free Robux', 'g18', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/getfreerobux.jpg', 2),
+('Logitech gaming', 'g19', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/logitechgaming.png', 1),
+('Epic Games', 'g20', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/epicgames.png', 0),
+('Bandori', 'g21', 1, 'grafiticraft', 'Game', 10000, 'resources/pendingapps/bandori.png', 0),
+('Soundcloud', 'm3', 1, 'grafiticraft', 'Music', 0, 'resources/pendingapps/soundcloud.png', 0),
+('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/phuclong.jpg', 0),
+('Snapchat', 's8', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/snapchat.png', 0),
+('WhatsApp', 's9', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/whatsapp.png', 0),
+('Twitch', 'v2', 1, 'grafiticraft', 'Video', 0, 'resources/pendingapps/twitch.png', 1);
 
 -- --------------------------------------------------------
 
@@ -568,11 +572,13 @@ CREATE TABLE `recentlyadded` (
 --
 
 INSERT INTO `recentlyadded` (`appid`) VALUES
+('e1'),
 ('f6'),
 ('g17'),
 ('g18'),
 ('g19'),
 ('g20'),
+('g21'),
 ('m3'),
 ('s7'),
 ('s8'),
@@ -657,7 +663,7 @@ CREATE TABLE `usersinfo` (
 --
 
 INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `gender`, `country`, `phoneNumber`, `balance`, `pictureLink`) VALUES
-(1, 'Phu Phuong Tin', '2000-10-13', 1, 'Viet Nam', '0932956893', 300000, 'resources/account/grafiticraft.jpg'),
+(1, 'Phu Phuong Tin', '2000-10-13', 0, 'Viet Nam', '0932956893', 300000, 'resources/account/grafiticraft.jpg'),
 (3, 'Nath Bhagawan', '2021-03-10', 0, '', '', 69000, 'resources/account/nath.jpg'),
 (4, 'adwd', '2021-03-31', 0, '', '', 0, 'resources/account/astoroicom.jpg'),
 (5, 'bitch ass', '2021-04-14', 0, '', '', 0, 'resources/account/cunt.jpg'),

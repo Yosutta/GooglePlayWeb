@@ -42,7 +42,6 @@
               array_push($pendingapps, $row);
           }    
         }
-        
 
       if(isset($_POST['giftcodeprice']) and isset($_POST['codes'])){
         global $price, $numbers;
@@ -53,10 +52,9 @@
     <script>
     let pendingapps = <?php echo json_encode($pendingapps);?>
     </script>
-    <title>A.D.M.I.N</title>
+    <title>GPlay - A.D.M.I.N</title>
 </head>
 <body>
-        <div id="test"></div>
         <!-- App's Image -->
         <div class="container-fluid">
             <div class="row">
@@ -65,8 +63,17 @@
                 </div>
                 <div class="col-9" id="appmanagement">
                     <div class="overflow-auto" style="">
+                        <button class="btn btn-warning" onclick="showAdminAppsGrid(pendingapps,index)">
+                            <i class="fas fa-redo-alt text-white"></i>
+                        </button>  
+                        <button class="btn btn-info" id="previousAppGrid" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index-5), index = index -5,console.log(index)">
+                            <i class="fas fa-angle-double-left"></i>
+                        </button>
+                        <button class="btn btn-info" id="nextAppGrid" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index+5),index = index +5,console.log(index)">
+                            <i class="fas fa-angle-double-right"></i>
+                        </button>
                         <table id="appsGrid">
-                            <tr>
+                            <tr class="tradmin">
                                 <th>App's name</th>
                                 <th>App's thumbnail </th>
                                 <th>Category</th>
@@ -74,36 +81,12 @@
                                 <th>Status</th>
                                 <th>Approval</th>
                             </tr>
-                            <tr>
-                                <td><a href="#">Microsoft</a></td>
-                                <td>Picture</td>
-                                <td>Social</td>
-                                <td>Windows</td>
-                                <td>Waiting</td>
-                                <td>
-                                    <button style="background-color:greenyellow;border-radius:5px;width:50px" id="a6" value=6 onclick="whenApproved(id)">
-                                        <i class="fas fa-check" style="color:white"></i>
-                                    </button>
-                                    <button class="" style="background-color:red;border-radius:5px;width:50px" id="c6" value=6 onclick="whenDenied(id)">
-                                        <i class="fas fa-times" style="color:white"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>  
-                        <button class="btn btn-warning" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index)">
-                            <i class="fas fa-redo-alt text-white"></i>
-                        </button>  
-                        <button class="btn btn-info" id="previousAppGrid" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index-5), index = index -5">
-                            <i class="fas fa-angle-double-left"></i>
-                        </button>
-                        <button class="btn btn-info" id="nextAppGrid" onclick="removeAdminAppsGrid(),showAdminAppsGrid(pendingapps,index+5),index = index +5">
-                            <i class="fas fa-angle-double-right"></i>
-                        </button>
-                        
+                        </table> 
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- App's category -->
         <form action="" method="post" id="cator">
@@ -121,7 +104,8 @@
             <input type="number" name="codes" id="codes">
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
- 
+
+
 </body> 
 <?php
     if(isset($_POST['giftcodeprice']) and isset($_POST['codes'])){

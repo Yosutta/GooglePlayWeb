@@ -1,7 +1,3 @@
-function updateSession(){
-
-}
-
 function insertCost(){
     let toggle = document.getElementById("pricing");
     if(toggle.disabled === false) 
@@ -31,23 +27,32 @@ function activateLink(){
 // ADMIN PAGE
 
 function showAdminAppsGrid(pendingapps,index){
+    let table = document.getElementById("appsGrid")
     let back = document.getElementById("previousAppGrid")
-    let front = document.getElementById("nextAppGrid")
+    let front = document.getElementById("nextAppGrid")  
+
     if(index === 0)
         back.disabled = true;
-    else
+    else{
         back.disabled = false;
+    }
 
-
-    if(index >= pendingapps.length-5) 
+    if(pendingapps.length-index < 5) {
         front.disabled =true;
+    }
     else
         front.disabled = false;
 
+
+
+    // console.log(pendingapps.length, index, step)
+
     let x = 1
+
     for(let i=index;i<index+5;i++){
-        let table = document.getElementById("appsGrid");
         let row  = table.insertRow(x);
+        row.classList.add("tradmin")
+
 
         let appname = row.insertCell(0)
         let appimage = row.insertCell(1)
@@ -55,49 +60,55 @@ function showAdminAppsGrid(pendingapps,index){
         let creator = row.insertCell(3)
         let status = row.insertCell(4)
         let buttons = row.insertCell(5)
+        
+        if(pendingapps[i]!==undefined){
+            let id = "appTemplate.php?appid="+pendingapps[i]['appid']
+            appname.innerHTML = "<a href ='"+id+"'>"+pendingapps[i]['appname']+"</a>"
 
-        let appid = "appTemplate.php?appid="+pendingapps[i]['appid']
-        appname.innerHTML = "<a href ='"+appid+"'>"+pendingapps[i]['appname']+"</a>"
+            var img = document.createElement('img'); 
+            img.src = pendingapps[i]['pictureLink']; 
+            img.style.height = "100px";
+            appimage.appendChild(img);
 
-        var img = document.createElement('img'); 
-        img.src = pendingapps[i]['pictureLink']; 
-        img.style.height = "50px";
-        appimage.appendChild(img);
+            category.innerHTML = pendingapps[i]['catename']
 
-        category.innerHTML = pendingapps[i]['catename']
+            creator.innerHTML = pendingapps[i]['creatorname']
 
-        creator.innerHTML = pendingapps[i]['creatorname']
+            no = x;
 
-        no = x;
+            appid = pendingapps[i]['appid']
 
-        if(pendingapps[i]['status']==0){
-            status.innerHTML = "Waiting"
-            buttons.innerHTML = `<button style="background-color:greenyellow;border-radius:5px;width:50px" id="a`+no+`" value=`+no+` onclick="whenApproved(id)"">
-                                <i class="fas fa-check text-white"></i>
-                            </button>
-                            <button class="" style="background-color:red;border-radius:5px;width:50px" id="c`+no+`" value=`+no+` onclick="whenDenied(id)"">
-                                <i class="fas fa-times text-white""></i>
-                            </button>`;
-        }
-        else if(pendingapps[i]['status']==1){
-            status.innerHTML = "Approved"
-            buttons.innerHTML = `<button style="background-color:greenyellow;border-radius:5px;width:50px" id="a`+no+`" value=`+no+` onclick="whenApproved(id)"">
+
+            if(pendingapps[i]['status']==0){
+                status.innerHTML = "Waiting"
+                buttons.innerHTML = `<div id="approvalButton" name="`+appid+`">
+                                <button type="submit" style="background-color:greenyellow;border-radius:5px;width:50px" id="a`+no+`" name="approve" value=`+no+` onclick="whenApproved(id)"">
                                     <i class="fas fa-check text-white"></i>
                                 </button>
-                                `
-        }
-        else{
-            status.innerHTML = "Canceled"
-            buttons.innerHTML = `<button class="" style="background-color:red;border-radius:5px;width:50px" id="c`+no+`" value=`+no+` onclick="whenDenied(id)"">
-                                    <i class="fas fa-times text-white""></i>
-                                </button>`;
-        }
-        x= x+1;                                    
+                                <button type="submit" class="" style="background-color:red;border-radius:5px;width:50px" id="c`+no+`" name="deny" value=`+no+` onclick="whenDenied(id)"">
+                                    <i class="fas fa-times text-white"></i>
+                                </button></div>`;
+            }
+            else if(pendingapps[i]['status']==1){
+                status.innerHTML = "Approved"
+                buttons.innerHTML = `<button style="background-color:greenyellow;border-radius:5px;width:50px" id="a`+no+`" value=`+no+`" disabled>
+                                        <i class="fas fa-check text-white"></i>
+                                    </button>
+                                    `
+            }
+            else{
+                status.innerHTML = "Canceled"
+                buttons.innerHTML = `<button class="" style="background-color:red;border-radius:5px;width:50px" id="c`+no+`" value=`+no+`" disabled>
+                                        <i class="fas fa-times text-white""></i>
+                                    </button>`;
+            }
+            x= x+1;  
+        }                                  
     }
 }
 
 function removeAdminAppsGrid(){
-    let table = document.getElementById("appsGrid");
+    let table = document.getElementById("appsGrid")
     for(let i=0;i<5;i++)
         table.deleteRow(1); 
 }
@@ -125,7 +136,7 @@ function whenApproved(id){
     let table = document.getElementById("appmanagement")
     let row = table.getElementsByTagName("tr")[approve.value]
     var td = row.getElementsByTagName("td")[4];
-  
+
     td.innerHTML = "Approved";
 
     approve.disabled = true;
@@ -135,4 +146,14 @@ function whenApproved(id){
 
     let deny = document.getElementById(cid)
     deny.style.display = "none";
+
+    xmlhttp = new XMLHttpRequest();
+    
+    var PageToSendTo = "adminRequest.php?";
+    var MyVariable = document.getElementById(id).parentElement.attributes.name.nodeValue;
+    var VariablePlaceholder = "appid=";
+    var UrlToSend = PageToSendTo + VariablePlaceholder + MyVariable;
+    
+    xmlhttp.open("GET", UrlToSend, false);
+    xmlhttp.send();
 }

@@ -9,9 +9,9 @@
         echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
         echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
         echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'>";
-        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
-        echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
+        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>";
         echo "<link href='https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap' rel='stylesheet'>";
+        echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
         echo "<link rel='icon' href='resources/icon.png'>";
         echo "<script src='main.js'></script>";
         echo "<link rel='stylesheet' type='text/css' href='style.css'>";
@@ -28,18 +28,12 @@
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         }
-
-        
-        $sql = "SELECT * FROM `apps`";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        
-        
     ?>
+
 </head>
-<body>
-    <!-- Header  -->
-    <div class="container-fluid float-left" id="header">
+<body>     
+  <!-- Header  -->
+    <div class="container-fluid" id="header">
       <a href="index.php">
           <img class="" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="GooglePlay">
       </a>
@@ -79,9 +73,11 @@
       </form>
      </div>
 
-    <div class="float-left container-fluid p-0 bg-white stickyNav" style="height:48px;">
+
+  <!-- Navigation bar -->
+    <div class="bg-white stickyNav" style="height:48px;top:0px;">
     <a href="#">
-        <div class="catPlacement float-left text-white" style="background-color:#689f38;font-size:18px;padding:10px 30px; padding-right:83px;">
+        <div class="catPlacement float-left text-white" style="background-color:#689f38;font-size:18px;padding:10px 30px;padding-right:83px">
             <i class="mt-1 fas fa-border-all"></i> &nbsp &nbsp Apps
         </div>
     </a>
@@ -110,9 +106,9 @@
         <i class="fas fa-cog"></i>
     </button>
     </div>
-    <div class="float-left">
-        <!-- Navigation Sidebar-->
-        <div class="stickyNav shadow-sm snav">
+
+    <!-- Navigation Sidebar-->
+    <div class="stickyNav shadow-sm snav">
         <!-- My Apps, Shop -->
         <div style="padding-top:7px;padding-bottom:7px">
             <a href="#" class="text-decoration-none">
@@ -135,8 +131,9 @@
                 <div class="catFont s2nav">Editors' Choice</div>
             </a>
         </div>
-        </div>
-    <!-- Account, Payment methods, My subsciptions, Redeem -->
+        <!-- Account, Payment methods, My subsciptions, Redeem -->
+    </div>
+
     <div class="snav shadow-sm stickyNav" style="height:200px;background-color:#e9e9e9;top:248px;padding-top:8px">
         <a href="info_update.php" id="account" class="inactiveLink">
             <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
@@ -165,8 +162,16 @@
                 Developer's site
             </button>
         </a>
-    </div>   
+    </div>     
 
+    <!-- APPLICATION LIST -->
 
 </body>
+<?php
+    if($_SESSION !=null){
+        if($_SESSION['level']==2){
+            echo '<script type="text/javascript">activateLink();</script>';
+        }
+    }
+?>
 </html>

@@ -126,7 +126,7 @@
         </div>
         <!-- Games, Family, Editor's Choice -->
         <div>
-            <a href="#" class="text-decoration-none">
+            <a href="appList.php?category=Game" class="text-decoration-none">
                 <div class="catFont s2nav">Games</div>
             </a>
             <a href="#" class="text-decoration-none">

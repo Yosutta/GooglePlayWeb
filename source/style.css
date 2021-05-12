@@ -500,19 +500,27 @@ form nav button{
   background-color:khaki;
 }
 
-tr{
+.appgridimage{
+  height: 100px;
+}
+
+.tradmin{
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   border-bottom: 1px solid gray;
 }
+.tradmin>th{
+  font-size: 20px;;
+}
 
-th{
-  padding-left:30px;
-  padding-right:30px;
+.tradmin>th{
+  padding-left:40px;
+  padding-right:40px;
   border: 1px solid gray;
 }
 
-td{
+.tradmin>td{
+  font-weight: bold;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;

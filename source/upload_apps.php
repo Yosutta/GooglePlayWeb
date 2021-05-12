@@ -38,21 +38,27 @@
         array_push($categoriesTable,$row1);
       }
 
-      if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['creator_id'], $_POST["cost"])){
+      if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['user_id'], $_POST["cost"])){
           if(strlen($_POST['title_app'])!=0){
             global $conn;
             $profileImage = strtolower($_POST['title_app']).".png";
             $profileImage = str_replace(' ', '', $profileImage);
             $targets = 'resources/pendingapps/' .$profileImage;
             move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
+
+            $userid = $_POST['user_id'];
+            $sql = "SELECT creatorid from users where userid = $userid";
+            $result = $conn->query($sql);
   
           //   print_r($_POST);
             $appid = '';  
             $apptitle = $_POST['title_app'];
-            $creatorid = $_POST['creator_id'];
+            $creatorid = "";
+            if($row = $result->fetch_assoc())
+                $creatorid = $row['creatorid'];
             $creatorname = $_POST['creator_name'];
             $catename = $_POST['category_name'];
-            $cost = $_POST['cost'];
+            $cost = $_POST['pricing'];
   
   
             for($i=0;$i<count($categoriesTable);$i++){
@@ -67,55 +73,11 @@
                     break;
                 }
             }
-<<<<<<< HEAD
   
           // $profileImage = time()."_".$_FILES["profile-image"]["name"];
-          global $conn;
-          $profileImage = strtolower($_POST['title_app']).".jpg";
-          $profileImage = str_replace(' ', '', $profileImage);
-          $targets = 'resources/pendingapps/' .$profileImage;
-          move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
-
-        //   print_r($_POST);
-          $appid = '';  
-          $apptitle = $_POST['title_app'];
-          $creatorid = $_POST['creator_id'];
-          $creatorname = $_POST['creator_name'];
-          $catename = $_POST['category_name'];
-
-=======
-            // if($cost==0){
-            //     $price = $_POST['pricing'];
-            //     $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
-            // }
-            // else
-            //     $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `ranking` ) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets',4)";
-            // $conn->query($sql);
->>>>>>> 1506c9ea9636140baa97c161991b6625b18c6248
-
-
-
-<<<<<<< HEAD
-          $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
-          $conn->query($sql);
-
-            if($cost==0){
-                $price = $_POST['pricing'];
-                $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `free`, `cost`, `ranking`) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets','$cost','$price', 5)";
-            }
-            else
-                $sql = "INSERT INTO `apps`(`appid`, `appname`, `creatorid`, `creator`, `category`, `link`, `ranking` ) VALUES ('$appid','$apptitle','$creatorid','$creatorname','$catename','$targets',4)";
-      
-            $conn->query($sql);
-  
-=======
-            // Add to pending apps
->>>>>>> 1506c9ea9636140baa97c161991b6625b18c6248
-            $sql = "INSERT INTO `pendingapp` VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$targets')";
+            $sql = "INSERT INTO `pendingapp`(`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`) VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$cost','$targets')";
             print_r($sql);
             $conn->query($sql);
-
-            $sql = 
 
             // Add to recenly added apps
             $sql = "INSERT INTO `recentlyAdded` values ('$appid')";
@@ -144,12 +106,12 @@
             <!-- App's Image -->
             <div id="content1">
             App's Image
-            <div class="apps_image">
-                <img src="resources/default/defaut_app-icon.png" id="apps_profile_display"/>
-                <div class="apps_img_layout" onclick="triggerClick()">
-                    <div class="apps_word_update">Upload</div>
-                 </div>
-            </div>
+                <div class="apps_image">
+                    <img src="resources/default/defaut_app-icon.png" id="apps_profile_display"/>
+                    <div class="apps_img_layout" onclick="triggerClick()">
+                        <div class="apps_word_update">Upload</div>
+                    </div>
+                </div>
                 <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
             </div>
 
@@ -173,7 +135,7 @@
             <?php
                 echo $_SESSION['userid'];
             ?>
-            " name="creator_id"/>
+            " name="user_id"/>
             <!-- App's Creator -->
             <div id="content3">
                 Creator
