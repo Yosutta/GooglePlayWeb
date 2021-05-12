@@ -111,7 +111,6 @@
     if(isset($_POST['giftcodeprice']) and isset($_POST['codes'])){
        include("generateGiftCode.php");
        generateGiftCode($price,$numbers);
-       header("Location:admin.php");
     }
 ?>
 <script>

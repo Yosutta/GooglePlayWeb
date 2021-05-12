@@ -65,7 +65,7 @@ function showAdminAppsGrid(pendingapps,index){
             let id = "appTemplate.php?appid="+pendingapps[i]['appid']
             appname.innerHTML = "<a href ='"+id+"'>"+pendingapps[i]['appname']+"</a>"
 
-            var img = document.createElement('img'); 
+            let img = document.createElement('img'); 
             img.src = pendingapps[i]['pictureLink']; 
             img.style.height = "100px";
             appimage.appendChild(img);
@@ -118,16 +118,29 @@ function whenDenied(id){
 
     let table = document.getElementById("appmanagement")
     let row = table.getElementsByTagName("tr")[deny.value]
-    var td = row.getElementsByTagName("td")[4];
+    let td = row.getElementsByTagName("td")[4];
     td.innerHTML = "Canceled";
 
     deny.disabled = true;
     
-    var aid = id.replace('c', '');
+    let aid = id.replace('c', '');
     aid = 'a'+aid;
 
     let approve = document.getElementById(aid)
     approve.style.display = "none";
+
+    xmlhttp = new XMLHttpRequest();
+    
+    let PageToSendTo = "adminRequest.php?";
+    let appid = document.getElementById(id).parentElement.attributes.name.nodeValue;
+    let appidHolder = "appid=";
+    let statusHolder = "&status=";
+    let status = 2;
+    let UrlToSend = PageToSendTo + appidHolder + appid + statusHolder+status;
+    
+    xmlhttp.open("GET", UrlToSend, false);
+    console.log(xmlhttp)
+    xmlhttp.send();
 }
 
 function whenApproved(id){
@@ -135,13 +148,13 @@ function whenApproved(id){
 
     let table = document.getElementById("appmanagement")
     let row = table.getElementsByTagName("tr")[approve.value]
-    var td = row.getElementsByTagName("td")[4];
+    let td = row.getElementsByTagName("td")[4];
 
     td.innerHTML = "Approved";
 
     approve.disabled = true;
     
-    var cid = id.replace('a', '');
+    let cid = id.replace('a', '');
     cid = 'c'+cid;
 
     let deny = document.getElementById(cid)
@@ -149,11 +162,14 @@ function whenApproved(id){
 
     xmlhttp = new XMLHttpRequest();
     
-    var PageToSendTo = "adminRequest.php?";
-    var MyVariable = document.getElementById(id).parentElement.attributes.name.nodeValue;
-    var VariablePlaceholder = "appid=";
-    var UrlToSend = PageToSendTo + VariablePlaceholder + MyVariable;
+    let PageToSendTo = "adminRequest.php?";
+    let appid = document.getElementById(id).parentElement.attributes.name.nodeValue;
+    let appidHolder = "appid=";
+    let statusHolder = "&status=";
+    let status = 1;
+    let UrlToSend = PageToSendTo + appidHolder + appid + statusHolder+status;
     
     xmlhttp.open("GET", UrlToSend, false);
+    console.log(xmlhttp)
     xmlhttp.send();
 }
