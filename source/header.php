@@ -35,11 +35,9 @@
         $row = $result->fetch_assoc();
         
         
-    ?>
-</head>
-<body>
+    ?>    
     <!-- Header  -->
-    <div class="container-fluid float-left" id="header">
+    <div class="container-fluid" id="header" >
       <a href="index.php">
           <img class="" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="GooglePlay">
       </a>
@@ -78,66 +76,66 @@
           <button type="submit" name="btn1">Log out</button>
       </form>
      </div>
-
-    <div class="float-left container-fluid p-0 bg-white stickyNav" style="height:48px;">
-    <a href="#">
-        <div class="catPlacement float-left text-white" style="background-color:#689f38;font-size:18px;padding:10px 30px; padding-right:83px;">
-            <i class="mt-1 fas fa-border-all"></i> &nbsp &nbsp Apps
-        </div>
-    </a>
-    <a href="#">
-        <div class="catPlacement float-left catFont" style="margin-left:60px">
-            Categories <i class="fas fa-chevron-down"></i>
-        </div>
-    </a>
-    <div class="float-left mt-2" style="border-left:1px solid #c1c1c1;height:30px;"></div>
-    <a href="#">
-        <div class="catPlacement float-left catFont">
-            Home
-        </div>
-    </a>
-    <a href="#">
-        <div class="catPlacement float-left catFont">
-            Top Chart
-        </div>
-    </a>
-    <a href="#">
-        <div class="catPlacement float-left catFont">
-            New releases
-        </div>
-    </a>
-    <button type="button" class="float-right rounded" style="margin-top:8px;margin-right:55px;padding:2px 20px;border:1px solid #c1c1c1">
-        <i class="fas fa-cog"></i>
-    </button>
+    <div  id="Appsbar">
+    <div style="height:48px;" class=" container-fluid p-0 bg-white ">
+        <a href="#">
+            <div class="catPlacement float-left text-white" style="background-color:#689f38;font-size:18px;padding:10px 30px; padding-right:83px;">
+                <i class="mt-1 fas fa-border-all"></i> &nbsp &nbsp Apps
+            </div>
+        </a>
+        <a href="#">
+            <div class="catPlacement float-left catFont" style="margin-left:60px">
+                Categories <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
+        <div class="float-left mt-2" style="border-left:1px solid #c1c1c1;height:30px;"></div>
+        <a href="#">
+            <div class="catPlacement float-left catFont">
+                Home
+            </div>
+        </a>
+        <a href="#">
+            <div class="catPlacement float-left catFont">
+                Top Chart
+            </div>
+        </a>
+        <a href="#">
+            <div class="catPlacement float-left catFont">
+                New releases
+            </div>
+        </a>
+        <button type="button" class="float-right rounded" style="margin-top:8px;margin-right:55px;padding:2px 20px;border:1px solid #c1c1c1">
+            <i class="fas fa-cog"></i>
+        </button>
     </div>
-    <div class="float-left">
-        <!-- Navigation Sidebar-->
-        <div class="stickyNav shadow-sm snav">
-        <!-- My Apps, Shop -->
-        <div style="padding-top:7px;padding-bottom:7px">
-            <a href="#" class="text-decoration-none">
-                <div class="s1nav">My apps</div>
-            </a>
-            <a href="#" class="text-decoration-none">
-                <div class="s1nav" style="color:rgb(124, 175, 48)">Shop</div>
-            </a>
-            <hr style="width:130px;margin-left:25px;margin-bottom:5px">
-        </div>
-        <!-- Games, Family, Editor's Choice -->
-        <div>
-            <a href="#" class="text-decoration-none">
-                <div class="catFont s2nav">Games</div>
-            </a>
-            <a href="#" class="text-decoration-none">
-                <div class="catFont s2nav">Family</div>
-            </a>
-            <a href="#" class="text-decoration-none">
-                <div class="catFont s2nav">Editors' Choice</div>
-            </a>
-        </div>
-        </div>
+    <!-- Navigation Sidebar-->
+    <div class="shadow-sm snav">
+    <!-- My Apps, Shop -->
+    <div style="padding-top:7px;padding-bottom:7px">
+        <a href="#" class="text-decoration-none">
+            <div class="s1nav">My apps</div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="s1nav" style="color:rgb(124, 175, 48)">Shop</div>
+        </a>
+        <hr style="width:130px;margin-left:25px;margin-bottom:5px">
+    </div>
+    <!-- Games, Family, Editor's Choice -->
+    <div>
+        <a href="#" class="text-decoration-none">
+            <div class="catFont s2nav">Games</div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="catFont s2nav">Family</div>
+        </a>
+        <a href="#" class="text-decoration-none">
+            <div class="catFont s2nav">Editors' Choice</div>
+        </a>
+    </div>
+    </div>
+
     <!-- Account, Payment methods, My subsciptions, Redeem -->
-    <div class="snav shadow-sm stickyNav" style="height:200px;background-color:#e9e9e9;top:248px;padding-top:8px">
+    <div class="stickyNav shadow-sm snav" style="height:200px;background-color:#e9e9e9;">
         <a href="info_update.php" id="account" class="inactiveLink">
             <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
                 Account
@@ -165,8 +163,21 @@
                 Developer's site
             </button>
         </a>
-    </div>   
-
-
+    </div>
+    </div> 
+</head>
+<body>
+    <script>
+        window.onscroll = function() {myFunction()};
+        var navbar = document.getElementById("Appsbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+        }
+    </script>
 </body>
 </html>
