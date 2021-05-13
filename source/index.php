@@ -188,7 +188,7 @@
         <h2 class="appGridNameFirst">Most Downloads</h2>
         <div class="appGridPosition" style="margin-left:250px;">
             <div class="float-left mr-2">
-                <?php  $row = getAppInfo($mostDownloadsFree[0]);?>
+                <?php  $row = getAppInfo("g20");?>
                 <div class="card" style="width: 10rem; position:static">
                 <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">

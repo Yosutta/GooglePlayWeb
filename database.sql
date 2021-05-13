@@ -2,10 +2,10 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 12, 2021 at 02:03 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 13, 2021 lúc 03:09 AM
+-- Phiên bản máy phục vụ: 10.4.17-MariaDB
+-- Phiên bản PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database`
+-- Cơ sở dữ liệu: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `apps`
+-- Cấu trúc bảng cho bảng `apps`
 --
 
 CREATE TABLE `apps` (
@@ -45,11 +45,11 @@ CREATE TABLE `apps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `apps`
+-- Đang đổ dữ liệu cho bảng `apps`
 --
 
 INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ranking`, `free`, `cost`, `downloads`, `description`, `updatedate`, `capacity`, `link`, `screenshotlink`) VALUES
-('e2', 'maivanmanh', 0, 'admin', 'Education', 5, 0, 20000, 0, '', '2021-05-12', 0, 'resources/pendingapps/maivanmanh.png', ''),
+('e2', 'maivanmanh', 0, 'admin', 'Education', 5, 0, 20000, 0, '', '2021-05-12', 0, './resources/pendingapps/maivanmanh.png', ''),
 ('f1', 'Money Lover', 3, 'Finsify', 'Finance', 5, 1, 0, 177149, '', '2021-05-12', 0, './resources/apps/moneylover.jpg', ''),
 ('f2', 'Momo', 23, 'M_Service JSC', 'Finance', 4, 0, 1000, 239717, '', '2021-05-12', 0, './resources/apps/momo.jpg', ''),
 ('f3', 'Adobe Photoshop', 24, 'Adobe', 'Finance', 5, 0, 5000, 1677356, '', '2021-05-12', 0, './resources/apps/adobephotoshop.jpg\r\n', ''),
@@ -63,8 +63,14 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, '', '2021-05-12', 0, './resources/apps/gunny.png', ''),
 ('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, '', '2021-05-12', 0, './resources/apps/flappy.jpg\r\n', ''),
 ('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, '', '2021-05-12', 0, './resources/apps/kahoot.jpg\r\n', ''),
+('g17', 'Plants and Zombie', 27, 'ELECTRONIC ARTS', 'Game', 4, 0, 0, 5142697, '', '2021-05-13', 0, './resources/pendingapps/plantsandzombie.png', ''),
+('g18', 'Bandori', 26, 'grafiticraft', 'Game', 5, 0, 10000, 0, '', '2021-05-12', 0, './resources/pendingapps/bandori.png', ''),
+('g19', 'Plants vs Zombie 2', 27, 'ELECTRONIC ARTS', 'Game', 4, 0, 0, 6937580, '', '2021-05-13', 0, './resources/pendingapps/plantsvszombie2.png', ''),
 ('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, '', '2021-05-12', 0, './resources/apps/pokemongo.jpg', ''),
-('g21', 'Bandori', 26, 'grafiticraft', 'Game', 5, 0, 10000, 0, '', '2021-05-12', 0, 'resources/pendingapps/bandori.png', ''),
+('g20', 'Need for speed', 27, 'ELECTRONIC ARTS', 'Game', 5, 1, 0, 4487784, '', '2021-05-13', 0, './resources/apps/needforspeed.jpg', ''),
+('g21', 'FIFA Football\r\n', 27, 'ELECTRONIC ARTS', 'Game', 4, 1, 0, 7398357, '', '2021-05-13', 0, './resources/apps/fifafootball.jpg', ''),
+('g22', 'NBA LIVE Mobile Basketball', 27, 'ELECTRONIC ARTS', 'Game', 5, 1, 0, 2381942, '', '2021-05-13', 0, './resources/apps/nba.jpg', ''),
+('g23', 'Star Wars: Galaxy of Heroes', 27, 'ELECTRONIC ARTS', 'Game', 4, 1, 0, 1707943, '', '2021-05-13', 0, './resources/apps/starwar.jpg', ''),
 ('g3', 'PUBG', 14, 'VNG', 'Game', 5, 1, 0, 884560, '', '2021-05-12', 0, './resources/apps/pubgmobile.jpg', ''),
 ('g4', 'Azur Lane', 19, 'Yostar Limited.\r\n', 'Game', 5, 1, 0, 114856, '', '2021-05-12', 0, './resources/apps/azurlane.jpg', ''),
 ('g5', 'Liên quan Mobile', 5, 'Garena Co.Ltd', 'Game', 4, 1, 0, 4475522, '', '2021-05-12', 0, './resources/apps/lienquan.jpg', ''),
@@ -82,14 +88,14 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('s4', 'Instagram', 8, 'Instagram', 'Social', 5, 1, 0, 116316888, '', '2021-05-12', 0, './resources/apps/ins.jpg\r\n', ''),
 ('s5', 'TikTok', 15, 'TikTok Pte.Ltd', 'Social', 5, 1, 0, 9649418, '', '2021-05-12', 0, './resources/apps/tiktok.jpg\r\n', ''),
 ('s6', 'Zalo', 18, 'Zalo Group', 'Social', 5, 1, 0, 1634141, '', '2021-05-12', 0, './resources/apps/zalo.jpg\r\n', ''),
-('s7', 'Phuc Long', 26, 'grafiticraft', 'Social', 4, 0, 0, 0, '', '2021-05-12', 0, 'resources/pendingapps/phuclong.jpg', ''),
-('s8', 'TikTok Wall', 15, 'TikTok Pte.Ltd', 'Social', 4, 0, 0, 56976, '', '2021-05-12', 0, 'resources/pendingapps/tiktokwall.png', ''),
+('s7', 'Phuc Long', 26, 'grafiticraft', 'Social', 4, 0, 0, 0, '', '2021-05-12', 0, './resources/pendingapps/phuclong.jpg', ''),
+('s8', 'TikTok Wall', 15, 'TikTok Pte.Ltd', 'Social', 4, 0, 0, 56976, '', '2021-05-12', 0, './resources/pendingapps/tiktokwall.png', ''),
 ('v1', 'Youtube', 6, 'Google LLC', 'Video', 4, 1, 0, 98986136, '', '2021-05-12', 0, './resources/apps/youtube.jpg', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -99,13 +105,13 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
 ('Education', 'e', 2),
 ('Finance', 'f', 6),
-('Game', 'g', 21),
+('Game', 'g', 23),
 ('Music', 'm', 3),
 ('Movies', 'mo', 2),
 ('Social', 's', 8),
@@ -114,7 +120,7 @@ INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Cấu trúc bảng cho bảng `comment`
 --
 
 CREATE TABLE `comment` (
@@ -128,7 +134,7 @@ CREATE TABLE `comment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `countries`
+-- Cấu trúc bảng cho bảng `countries`
 --
 
 CREATE TABLE `countries` (
@@ -137,7 +143,7 @@ CREATE TABLE `countries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `countries`
+-- Đang đổ dữ liệu cho bảng `countries`
 --
 
 INSERT INTO `countries` (`id`, `country_name`) VALUES
@@ -397,7 +403,7 @@ INSERT INTO `countries` (`id`, `country_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creator`
+-- Cấu trúc bảng cho bảng `creator`
 --
 
 CREATE TABLE `creator` (
@@ -410,7 +416,7 @@ CREATE TABLE `creator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `creator`
+-- Đang đổ dữ liệu cho bảng `creator`
 --
 
 INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `feature`) VALUES
@@ -418,7 +424,7 @@ INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `fe
 ('Facebook', 2, 'Best social media in the world.', '', '', ''),
 ('Finsify', 3, 'Bring personal financial management solutions and products to Vietnamese people. ', '', '', ''),
 ('FPT Coop', 4, 'Work for your best experience for watching.', '', '', ''),
-('Garena', 5, 'We will try our best to bloodsucking your wallet.', '', '', ''),
+('Garena Co.Ltd', 5, 'We will try our best to bloodsucking your wallet.', '', '', ''),
 ('Google LLC', 6, 'We help you search the world', '', '', ''),
 ('Hit-Point Co.,Ltd', 7, 'A game company operating in Nagoya and Kyoto.\r\nWe distribute apps such as \"Neko Atsume\", \"Narumonoka\" and \"Henri\". ', '', '', ''),
 ('Instagram', 8, 'Saving the beautiful pictures with your life', '', '', ''),
@@ -427,8 +433,8 @@ INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `fe
 ('Netflix, Inc', 11, 'Signing with us to seeing all movies in the world', '', '', ''),
 ('Niantic, Inc', 12, 'Joining imagination world with us', '', '', ''),
 ('Spotify Ltd', 13, 'Best music\'s app in the world', '', '', ''),
-('VNG', 14, 'VNG GAMES - BY GAMERS, FOR GAMERS\r\n', 'resources/creator/background/vng.jpeg', 'resources/creator/icon/vng.jpeg', ''),
-('TikTok Pte.Ltd', 15, 'Saving your memory', '', '', ''),
+('VNG', 14, 'VNG GAMES - BY GAMERS, FOR GAMERS\r\n', 'resources/creator/background/vng.png', 'resources/creator/icon/vng.png', ''),
+('TikTok Pte.Ltd', 15, 'Saving your memory', 'resources/creator/background/tiktok.png', 'resources/creator/icon/tiktok.png', ''),
 ('Twitter Ltd', 16, 'Flying with your chatting', '', '', ''),
 ('Vertigo Games', 17, 'Vertigo Games is the developer and publisher of free-to-play mobile shooter games.\r\n', '', '', ''),
 ('Zalo Group', 18, 'World in your hand\r\n', '', '', ''),
@@ -437,13 +443,14 @@ INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `fe
 ('Infinite Flight LLC', 21, 'Discover the sky with our VR', '', '', ''),
 ('Kahoot', 22, 'Kahoot! makes it easy to create, share and play fun learning games or trivia quizzes in minutes. Make learning awesome!\r\n', '', '', ''),
 ('M_Service JSC', 23, 'Online wallet make you don\'t need cash anymore', '', '', ''),
-('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n', 'resources/creator/background/adobe.jpg', 'resources/creator/icon/adobe.jpg', ''),
-('TGame Studio', 25, 'Thank you for playing my games..\r\n', '', '', '');
+('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n', 'resources/creator/background/adobe.png', 'resources/creator/icon/adobe.png', ''),
+('TGame Studio', 25, 'Thank you for playing my games..\r\n', '', '', ''),
+('ELECTRONIC ARTS', 27, 'Download your favorite games from EA!\r\n', 'resources/creator/background/ea.png', 'resources/creator/icon/ea.png', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `emailverification`
+-- Cấu trúc bảng cho bảng `emailverification`
 --
 
 CREATE TABLE `emailverification` (
@@ -452,16 +459,17 @@ CREATE TABLE `emailverification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `emailverification`
+-- Đang đổ dữ liệu cho bảng `emailverification`
 --
 
 INSERT INTO `emailverification` (`email`, `code`) VALUES
+('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55'),
 ('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `giftcode`
+-- Cấu trúc bảng cho bảng `giftcode`
 --
 
 CREATE TABLE `giftcode` (
@@ -470,7 +478,7 @@ CREATE TABLE `giftcode` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `giftcode`
+-- Đang đổ dữ liệu cho bảng `giftcode`
 --
 
 INSERT INTO `giftcode` (`serial`, `price`) VALUES
@@ -483,7 +491,7 @@ INSERT INTO `giftcode` (`serial`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mostdownloadsfree`
+-- Cấu trúc bảng cho bảng `mostdownloadsfree`
 --
 
 CREATE TABLE `mostdownloadsfree` (
@@ -491,7 +499,7 @@ CREATE TABLE `mostdownloadsfree` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `mostdownloadsfree`
+-- Đang đổ dữ liệu cho bảng `mostdownloadsfree`
 --
 
 INSERT INTO `mostdownloadsfree` (`appid`) VALUES
@@ -509,7 +517,7 @@ INSERT INTO `mostdownloadsfree` (`appid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mostdownloadspaid`
+-- Cấu trúc bảng cho bảng `mostdownloadspaid`
 --
 
 CREATE TABLE `mostdownloadspaid` (
@@ -517,7 +525,7 @@ CREATE TABLE `mostdownloadspaid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `mostdownloadspaid`
+-- Đang đổ dữ liệu cho bảng `mostdownloadspaid`
 --
 
 INSERT INTO `mostdownloadspaid` (`appid`) VALUES
@@ -535,7 +543,7 @@ INSERT INTO `mostdownloadspaid` (`appid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendingapp`
+-- Cấu trúc bảng cho bảng `pendingapp`
 --
 
 CREATE TABLE `pendingapp` (
@@ -550,7 +558,7 @@ CREATE TABLE `pendingapp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendingapp`
+-- Đang đổ dữ liệu cho bảng `pendingapp`
 --
 
 INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`, `status`) VALUES
@@ -562,6 +570,8 @@ INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `caten
 ('Logitech gaming', 'g19', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/logitechgaming.png', 1),
 ('Epic Games', 'g20', 1, 'grafiticraft', 'Game', 0, 'resources/pendingapps/epicgames.png', 0),
 ('Bandori', 'g21', 1, 'grafiticraft', 'Game', 10000, 'resources/pendingapps/bandori.png', 0),
+('Plants and Zombie', 'g22', 0, 'ELECTRONIC ARTS', 'Game', 0, 'resources/pendingapps/plantsandzombie.png', 1),
+('Plants vs Zombie 2', 'g23', 0, 'ELECTRONIC ARTS', 'Game', 0, 'resources/pendingapps/plantsvszombie2.png', 1),
 ('Soundcloud', 'm3', 1, 'grafiticraft', 'Music', 0, 'resources/pendingapps/soundcloud.png', 0),
 ('TikTok Wall', 's10', 0, 'TikTok Pte.Ltd', 'Social', 0, 'resources/pendingapps/tiktokwall.png', 1),
 ('Phuc Long', 's7', 1, 'grafiticraft', 'Social', 0, 'resources/pendingapps/phuclong.jpg', 0),
@@ -572,7 +582,7 @@ INSERT INTO `pendingapp` (`appname`, `appid`, `creatorid`, `creatorname`, `caten
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recentlyadded`
+-- Cấu trúc bảng cho bảng `recentlyadded`
 --
 
 CREATE TABLE `recentlyadded` (
@@ -580,7 +590,7 @@ CREATE TABLE `recentlyadded` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `recentlyadded`
+-- Đang đổ dữ liệu cho bảng `recentlyadded`
 --
 
 INSERT INTO `recentlyadded` (`appid`) VALUES
@@ -592,6 +602,8 @@ INSERT INTO `recentlyadded` (`appid`) VALUES
 ('g19'),
 ('g20'),
 ('g21'),
+('g22'),
+('g23'),
 ('m3'),
 ('s10'),
 ('s7'),
@@ -602,7 +614,7 @@ INSERT INTO `recentlyadded` (`appid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userbalance`
+-- Cấu trúc bảng cho bảng `userbalance`
 --
 
 CREATE TABLE `userbalance` (
@@ -615,7 +627,7 @@ CREATE TABLE `userbalance` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usercoderedeemhistory`
+-- Cấu trúc bảng cho bảng `usercoderedeemhistory`
 --
 
 CREATE TABLE `usercoderedeemhistory` (
@@ -627,7 +639,7 @@ CREATE TABLE `usercoderedeemhistory` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -640,7 +652,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`username`, `password`, `email`, `userid`, `creatorid`, `level`) VALUES
@@ -658,7 +670,7 @@ INSERT INTO `users` (`username`, `password`, `email`, `userid`, `creatorid`, `le
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usersinfo`
+-- Cấu trúc bảng cho bảng `usersinfo`
 --
 
 CREATE TABLE `usersinfo` (
@@ -673,7 +685,7 @@ CREATE TABLE `usersinfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usersinfo`
+-- Đang đổ dữ liệu cho bảng `usersinfo`
 --
 
 INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `gender`, `country`, `phoneNumber`, `balance`, `pictureLink`) VALUES
@@ -687,118 +699,118 @@ INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `gender`, `country`,
 (9, 'Pháº¡m Há»¯u BÃ¬nh', '2000-10-20', 0, '', '', 0, '');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `apps`
+-- Chỉ mục cho bảng `apps`
 --
 ALTER TABLE `apps`
   ADD PRIMARY KEY (`appid`,`creatorid`) USING BTREE;
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cateid`);
 
 --
--- Indexes for table `comment`
+-- Chỉ mục cho bảng `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`userid`,`appid`) USING BTREE;
 
 --
--- Indexes for table `countries`
+-- Chỉ mục cho bảng `countries`
 --
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `creator`
+-- Chỉ mục cho bảng `creator`
 --
 ALTER TABLE `creator`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `giftcode`
+-- Chỉ mục cho bảng `giftcode`
 --
 ALTER TABLE `giftcode`
   ADD PRIMARY KEY (`serial`);
 
 --
--- Indexes for table `mostdownloadsfree`
+-- Chỉ mục cho bảng `mostdownloadsfree`
 --
 ALTER TABLE `mostdownloadsfree`
   ADD PRIMARY KEY (`appid`);
 
 --
--- Indexes for table `mostdownloadspaid`
+-- Chỉ mục cho bảng `mostdownloadspaid`
 --
 ALTER TABLE `mostdownloadspaid`
   ADD PRIMARY KEY (`appid`);
 
 --
--- Indexes for table `pendingapp`
+-- Chỉ mục cho bảng `pendingapp`
 --
 ALTER TABLE `pendingapp`
   ADD PRIMARY KEY (`appid`);
 
 --
--- Indexes for table `recentlyadded`
+-- Chỉ mục cho bảng `recentlyadded`
 --
 ALTER TABLE `recentlyadded`
   ADD PRIMARY KEY (`appid`);
 
 --
--- Indexes for table `userbalance`
+-- Chỉ mục cho bảng `userbalance`
 --
 ALTER TABLE `userbalance`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indexes for table `usersinfo`
+-- Chỉ mục cho bảng `usersinfo`
 --
 ALTER TABLE `usersinfo`
   ADD PRIMARY KEY (`userid`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `countries`
+-- AUTO_INCREMENT cho bảng `countries`
 --
 ALTER TABLE `countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
--- AUTO_INCREMENT for table `userbalance`
+-- AUTO_INCREMENT cho bảng `userbalance`
 --
 ALTER TABLE `userbalance`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `usersinfo`
+-- AUTO_INCREMENT cho bảng `usersinfo`
 --
 ALTER TABLE `usersinfo`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
