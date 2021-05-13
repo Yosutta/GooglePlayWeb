@@ -37,7 +37,6 @@
         $sql = "SELECT * FROM creator where name = '$creatorname'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
-        print_r($row);
         
     ?>
 </head>

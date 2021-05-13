@@ -15,6 +15,10 @@
         echo "<script src='main.js'></script>";
         echo "<link rel='stylesheet' type='text/css' href='style.css'>";
 
+        if($_SESSION['userid']==null){
+            header("Location:index.php");
+        }
+
         $servername = "localhost";
         $username = "root";
         $password = "";

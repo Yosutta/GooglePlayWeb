@@ -63,7 +63,7 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('g14', 'Gunny Mobi', 14, 'VNG', 'Game', 4, 0, 5000, 201817, '', '2021-05-12', 0, './resources/apps/gunny.png', ''),
 ('g15', 'Flappy Bird', 25, 'TGame Studio', 'Game', 3, 0, 50000, 1446, '', '2021-05-12', 0, './resources/apps/flappy.jpg\r\n', ''),
 ('g16', 'Kahoot!', 22, 'Kahoot', 'Game', 5, 0, 2000, 303960, '', '2021-05-12', 0, './resources/apps/kahoot.jpg\r\n', ''),
-('g17', 'Plants and Zombie', 27, 'ELECTRONIC ARTS', 'Game', 4, 0, 0, 5142697, '', '2021-05-13', 0, './resources/pendingapps/plantsandzombie.png', ''),
+('g17', 'Plants and Zombie', 26, 'ELECTRONIC ARTS', 'Game', 4, 0, 0, 5142697, '', '2021-05-13', 0, './resources/pendingapps/plantsandzombie.png', ''),
 ('g18', 'Bandori', 26, 'grafiticraft', 'Game', 5, 0, 10000, 0, '', '2021-05-12', 0, './resources/pendingapps/bandori.png', ''),
 ('g19', 'Plants vs Zombie 2', 27, 'ELECTRONIC ARTS', 'Game', 4, 0, 0, 6937580, '', '2021-05-13', 0, './resources/pendingapps/plantsvszombie2.png', ''),
 ('g2', 'Pokemon Go', 12, 'Niantic, Inc', 'Game', 4, 1, 0, 14453953, '', '2021-05-12', 0, './resources/apps/pokemongo.jpg', ''),
@@ -445,7 +445,7 @@ INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `fe
 ('M_Service JSC', 23, 'Online wallet make you don\'t need cash anymore', '', '', ''),
 ('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n', 'resources/creator/background/adobe.png', 'resources/creator/icon/adobe.png', ''),
 ('TGame Studio', 25, 'Thank you for playing my games..\r\n', '', '', ''),
-('ELECTRONIC ARTS', 27, 'Download your favorite games from EA!\r\n', 'resources/creator/background/ea.png', 'resources/creator/icon/ea.png', '');
+('ELECTRONIC ARTS', 26, 'Download your favorite games from EA!\r\n', 'resources/creator/background/ea.png', 'resources/creator/icon/ea.png', '');
 
 -- --------------------------------------------------------
 

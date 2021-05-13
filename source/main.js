@@ -19,9 +19,12 @@ function checkLogIn(str){
         window.location.replace("upload_apps.php");
 }
 
-function activateLink(){
-    document.getElementById('devsite').className = 'activateLink';
+function activateLink(level){
     document.getElementById('account').className = 'activateLink';
+    document.getElementById('payment').className = 'activateLink';
+    if(level>1){
+        document.getElementById('devsite').className = 'activateLink';
+    }
 }
 
 // ADMIN PAGE

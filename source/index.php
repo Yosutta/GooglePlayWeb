@@ -156,9 +156,11 @@
                 Account
             </button>
         </a>
-        <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
-            Payment methods
-        </button>
+        <a href="upgrade.php?userid=<?php echo $_SESSION['userid']?>" id="payment" class="inactiveLink">
+            <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
+                Payment methods
+            </button>
+        </a>
         <button type="button" class="btn container-fluid s3nav" data-toggle="" data-target="">
             My subsciptions
         </button>
@@ -862,9 +864,8 @@
 </body>
 <?php
     if($_SESSION !=null){
-        if($_SESSION['level']==2){
-            echo '<script type="text/javascript">activateLink();</script>';
-        }
+        $level = $_SESSION['level'];
+        echo '<script type="text/javascript">activateLink('.$level.');</script>';
     }
 ?>
 </html>
