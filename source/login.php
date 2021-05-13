@@ -36,7 +36,7 @@
             <p class="text_bios">with your Google Account</p>
           
           </div>
-          <input class="input_decoration" placeholder="Email or Phone number" type="text" name="username" id="username">
+          <input class="input_decoration" placeholder="Username" type="text" name="username" id="username">
           <div name="usernameerror"></div>
           <br>
           <input class="input_decoration" placeholder="Password" type="password" name="password" id="password">

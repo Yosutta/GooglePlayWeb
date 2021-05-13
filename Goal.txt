@@ -1,7 +1,7 @@
 - description, backgroundpicture cho upload app
 - tạo hàm gán creator id cho creator mới
-- đổi sign in từ username thành mail
+- đổi sign in từ username thành mail Done
 - tạo trang xem ứng dụng cùng thể loại
-- tạo chức năng search ứng dụng
+- tạo chức năng search ứng dụng Done
 - tạo giao diện nâng cấp người dùng lên lập trình viên
 - 

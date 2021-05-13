@@ -31,11 +31,20 @@
 
         
         $sql = "SELECT * FROM `apps`";
+        $appList = [];
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
+        if($row){
+            array_push($appList, [$row['appname'],$row['appid']]);
+            while($row=$result->fetch_assoc()){
+                array_push($appList, [$row['appname'],$row['appid']]);
+            }    
+          }
     ?>
-
 </head>
+<script>
+    let appList = <?php echo json_encode($appList)?>;
+</script>
 <body>     
   <!-- Header  -->
     <div class="container-fluid" id="header">
@@ -44,11 +53,13 @@
       </a>
       <form action="#">
           <nav class="navbar">
-              <input class="focus" type="text" name="search" placeholder="Search">
+              <input class="focus" id="searchbar" type="text" name="search" placeholder="Search" onkeyup="appSearch(appList,value)">
               <button class="bg-primary text-white border rounded-right" type="submit">
                   <i class="fas fa-search"></i>
               </button>
+              <table class="mt-5 fixed-top shadow" id="suggestion"></table>
           </nav>
+          
       </form>
       <!-- Account Image -->
       <?php
