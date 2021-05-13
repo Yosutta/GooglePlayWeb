@@ -9,10 +9,6 @@
     <?php
       session_start();
 
-      if($_SESSION !=null){
-        header("Location:index.php");
-      }
-
       echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
       echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
       echo "<link rel='stylesheet' href=<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
@@ -36,7 +32,7 @@
             <p class="text_bios">with your Google Account</p>
           
           </div>
-          <input class="input_decoration" placeholder="Email or Phone number" type="text" name="username" id="username">
+          <input class="input_decoration" placeholder="Username" type="text" name="username" id="username">
           <div name="usernameerror"></div>
           <br>
           <input class="input_decoration" placeholder="Password" type="password" name="password" id="password">

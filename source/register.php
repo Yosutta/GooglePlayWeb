@@ -167,7 +167,6 @@
         $sql2 = "INSERT INTO `usersinfo` (`userid`,`fullName`, `birthDate`, `pictureLink`) VALUES ('$userid','$fullName', '$birthDate', '')";
         $conn->query($sql2);
 
-        header("Location:login.php");
       }
       else
         echo "This email has already been used";

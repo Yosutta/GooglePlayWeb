@@ -19,9 +19,12 @@ function checkLogIn(str){
         window.location.replace("upload_apps.php");
 }
 
-function activateLink(){
-    document.getElementById('devsite').className = 'activateLink';
+function activateLink(level){
     document.getElementById('account').className = 'activateLink';
+    document.getElementById('payment').className = 'activateLink';
+    if(level>1){
+        document.getElementById('devsite').className = 'activateLink';
+    }
 }
 
 // ADMIN PAGE
@@ -172,4 +175,63 @@ function whenApproved(id){
     xmlhttp.open("GET", UrlToSend, false);
     console.log(xmlhttp)
     xmlhttp.send();
+}
+
+function appSearch(appList,key){
+    key = key.toLowerCase();
+    appsArr = []
+    for(let i in appList){
+        let count = 0;
+        let appName = change_alias(appList[i][0]).toLowerCase()
+        for(let x in key){
+            if(appName.charAt(x) === key.charAt(x))
+                count++
+        }
+        if(key.length === count){
+            appsArr.push(appList[i])
+        }
+    }
+
+    for(let i=0;i<appsArr.length;i++)
+        console.log(appsArr[i])
+
+    if(appsArr.length <10){
+        count = appsArr.length
+    }
+    else
+        count =10
+    
+    let suggestions = document.getElementById("suggestion")
+    suggestions.style.backgroundColor = "white";
+    suggestions.style.width = "600px";
+    suggestions.style.marginLeft = "235px"
+    
+    
+    suggestions.innerHTML = ""
+    if(key.length>0){
+        for(let i=0;i<count;i++){
+            let row = suggestions.insertRow(i)
+            let appname = row.insertCell(0)
+            let link = document.createElement("a")
+
+            appname.innerHTML = "<a href='application_detail.php?appid="+appsArr[i][1]+"'>"+appsArr[i][0]+"</a>"
+        }
+    }
+}
+
+function change_alias(alias) {
+    var str = alias;
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a"); 
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e"); 
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g,"i"); 
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o"); 
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u"); 
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y"); 
+    str = str.replace(/đ/g,"d");
+    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ");
+    str = str.replace(/ + /g," ");
+    str = str.trim(); 
+    return str;
+    // From github
 }

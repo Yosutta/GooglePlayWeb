@@ -25,11 +25,15 @@
       $dbname = "database";
   
       $conn = new mysqli($servername,$username,$password,$dbname);
-  
+        
       if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
       }
       
+      if($_SESSION['level']==1 || $_SESSION['level'] == null){
+          header("Location: index.php");
+      }
+
       $sql = "SELECT * from categories";
       $categories = [];
       $result = $conn->query($sql);

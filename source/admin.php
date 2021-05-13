@@ -23,6 +23,10 @@
       $password = "";
       $dbname = "database";
   
+      if($_SESSION['level']!=3){
+          header("Location: index.php");
+      }
+
       $conn = new mysqli($servername,$username,$password,$dbname);
   
       if ($conn->connect_error) {
