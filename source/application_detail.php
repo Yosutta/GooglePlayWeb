@@ -29,11 +29,13 @@
         die("Connection failed: " . $conn->connect_error);
         }
 
+        if(isset($_GET['appid'])){
+            $appid =  $_GET['appid'];
+        }
         
-        $sql = "SELECT * FROM `apps`";
+        $sql = "SELECT * FROM `apps` where appid = '$appid'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
-        
         
     ?>
 </head>
@@ -41,13 +43,13 @@
     <div id="loadheader"></div>
     <div class="alignment_frame_ad">
         <div class="frame_ad">
-            <img style="padding-right:40px; float:left"src="./resources/apps/fo4.jpg">
+            <img class="image_ad" style="padding-right:40px; float:left"src="<?php echo $row['link']?>">
             <div class="infor_ad">
-            <p class="title_ad">FIFA Online 4M</p>
+            <p class="title_ad"><?php echo $row['appname']?></p>
             <div class="rating_ad">
-                <a href="#" class="a_tag_ad">Creator</a>
-                <a href="#" class="a_tag_ad">Category</a>
-                <p class="rating_start_ad" ><?php echo $row['ranking']?>/5 &#9733</p>
+                <a href="#" class="a_tag_ad"><?php echo $row['creator']?></a>
+                <a href="#" class="a_tag_ad"><?php echo $row['category']?></a>
+                <p class="float-right rating_start_ad" ><?php echo $row['ranking']?>/5 &#9733</p>
             </div>
             <div class="div_install_btn_ad">
                 <button type="submit" class="btn btn-success">Install</button>

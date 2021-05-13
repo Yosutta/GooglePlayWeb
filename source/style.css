@@ -541,7 +541,6 @@ form nav button{
 
 
 .div_background{
-  background-image: url(./resources/creator/test.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%; 
@@ -667,6 +666,10 @@ form nav button{
   padding-left: 240px;
   padding-right: 70px;
   padding-top: 77px;
+}
+
+.image_ad{
+  width: 220px
 }
 
 .frame_ad{ 

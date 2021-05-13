@@ -188,15 +188,15 @@
         <h2 class="appGridNameFirst">Most Downloads</h2>
         <div class="appGridPosition" style="margin-left:250px;">
             <div class="float-left mr-2">
-                <?php  $row = getAppInfo("g20");?>
+                <?php  $row = getAppInfo($mostDownloadsFree[0]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -214,13 +214,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($mostDownloadsFree[1]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -237,13 +237,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($mostDownloadsFree[2]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -260,13 +260,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($mostDownloadsFree[3]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -283,13 +283,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($mostDownloadsFree[4]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -306,13 +306,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($mostDownloadsFree[5]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -329,13 +329,13 @@
             <div class="float-left mr-2 appGridCounts-sm">
                 <?php  $row = getAppInfo($mostDownloadsFree[6]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -352,13 +352,13 @@
             <div class="float-left mr-2 appGridCounts-md">
                 <?php  $row = getAppInfo($mostDownloadsFree[7]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -375,13 +375,13 @@
             <div class="float-left mr-2 appGridCounts-lg">
                 <?php  $row = getAppInfo($mostDownloadsFree[8]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -416,13 +416,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[0]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -440,13 +440,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[1]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -463,13 +463,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[2]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -486,13 +486,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[3]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -509,13 +509,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[4]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -532,13 +532,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[5]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -555,13 +555,13 @@
             <div class="float-left mr-2 appGridCounts-sm">
                 <?php  $row = getAppInfo($list[6]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -578,13 +578,13 @@
             <div class="float-left mr-2 appGridCounts-md">
                 <?php  $row = getAppInfo($list[7]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -601,13 +601,13 @@
             <div class="float-left mr-2 appGridCounts-lg">
                 <?php  $row = getAppInfo($list[8]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -640,13 +640,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[0]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -664,13 +664,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[1]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -687,13 +687,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[2]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -710,13 +710,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[3]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -733,13 +733,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[4]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -756,13 +756,13 @@
             <div class="float-left mr-2">
                 <?php  $row = getAppInfo($list[5]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -779,13 +779,13 @@
             <div class="float-left mr-2 appGridCounts-sm">
                 <?php  $row = getAppInfo($list[6]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -802,13 +802,13 @@
             <div class="float-left mr-2 appGridCounts-md">
                 <?php  $row = getAppInfo($list[7]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 
@@ -825,13 +825,13 @@
             <div class="float-left mr-2 appGridCounts-lg">
                 <?php  $row = getAppInfo($list[8]);?>
                 <div class="card" style="width: 10rem; position:static">
-                <a href="appTemplate.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
                     <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
                 </a>
                     <div class="card-body">
-                        <a href="appTemplate.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                        <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
                         <br>
-                        <a href="appTemplate.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+                        <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
                     </div>
                     <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
                     <?php 

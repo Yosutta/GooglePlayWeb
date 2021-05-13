@@ -29,25 +29,29 @@
         die("Connection failed: " . $conn->connect_error);
         }
 
-        
-        $sql = "SELECT * FROM `apps`";
+        if(isset($_GET['creator'])){
+            $creatorname = $_GET['creator'];
+            print_r($creatorname);
+        }
+
+        $sql = "SELECT * FROM creator where name = '$creatorname'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
-        
+        print_r($row);
         
     ?>
 </head>
 <body class="testing_grid">
     <div id="loadheader"></div>
     <div class="layout_creator">
-        <div class="div_background">
+        <div class="div_background" style="background-image: url(<?php echo $row['backgroundlink']?>);">
             <div>
                 <div class="div_title_description">
                     <div>
-                        <img class="img_creator"src="./resources/creator/pikachu.png"/>
+                        <img class="img_creator" src="<?php echo $row['iconlink']?>"/>
                     </div>
-                    <p class="title_creator">Name creator</p>
-                    <p class="title_description">fbkgkbngbkgnbkgbn kgbgkbngkbngk ngbgkbngkbnllekfbnglbn, bgnbmg kbm gbmgbkm kmgbkgmb gbkmgbkm bkgm</p>
+                    <p class="title_creator"><?php echo $row['name']?></p>
+                    <p class="title_description"><?php echo $row['tittle']?></p>
                 </div>
                 <div class="content_text_featured"><p class="featured">Featured</p></div>
                 <div class="creator_feature">
