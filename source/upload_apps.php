@@ -16,6 +16,7 @@
       echo "<link href='https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap' rel='stylesheet'>";
       echo "<link rel='icon' href='resources/icon.png'>";
       echo "<script src='main.js'></script>";
+      echo "<link rel='stylesheet' type='text/css' href='lib/knockout-file-bindings.css'>";
       echo "<link rel='stylesheet' type='text/css' href='style.css'>";
 
       $servername = "localhost";
@@ -137,7 +138,28 @@
             ?>
             " name="user_id"/>
             <!-- App's Creator -->
-            <div id="content3">
+            <div id="content3" >
+            <div class="well" data-bind="fileDrag: multiFileData">
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <!-- ko foreach: {data: multiFileData().dataURLArray, as: 'dataURL'} -->
+                    <img style="height: 100px; margin: 5px;" class="img-rounded  thumb" data-bind="attr: { src: dataURL }, visible: dataURL">
+                    <!-- /ko -->
+                    <div data-bind="ifnot: multiFileData().dataURL">
+                        <label class="drag-label"></label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" multiple data-bind="fileInput: multiFileData, customFileInput: {
+                    buttonClass: 'btn btn-success',
+                    fileNameClass: 'disabled form-control',
+                    onClear: onClear,
+                    onInvalidFileDrop: onInvalidFileDrop
+                    }" accept="image/*" name="files[]">
+                </div>
+            </div>
+            <button class="btn btn-default" data-bind="click: debug">Debug</button>
+        </div>
                 Creator
                 <input type="text" name="creator_name" value=
                 <?php
@@ -160,17 +182,19 @@
                         }
                     ?>
                 </select>
-                <button type="submit">Submit</button>
+                <button type="submit" name="save_btn">Submit</button>
             </div>
         </div>
     </form>
  
 </body> 
+<script src='http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js'></script><script src='lib/knockout-file-bindings.js'></script>
 <script>
     function triggerClick(){
         document.querySelector('#profile-image').click();
         displayImage(e);
     }   
+
 
     function displayImage(e){
         if(e.files[0]){
@@ -184,5 +208,35 @@
             reader.readAsDataURL(e.files[0]);
         }
     }
+    var viewModel = {};
+    viewModel.multiFileData = ko.observable({ dataURLArray: ko.observableArray() });
+    viewModel.onClear = function (fileData) {
+        if (confirm('Are you sure?')) {
+            fileData.clear && fileData.clear();
+        }
+    };
+    viewModel.debug = function () {
+        window.viewModel = viewModel;
+        var lit = viewModel.multiFileData().dataURLArray()
+        console.log(viewModel.multiFileData())
+        console.log(viewModel.multiFileData().dataURLArray());
+        console.log(viewModel.multiFileData().fileArray());
+        debugger;
+    };
+    viewModel.onInvalidFileDrop = function(failedFiles) {
+    var fileNames = [];
+    for (var i = 0; i < failedFiles.length; i++) {
+        fileNames.push(failedFiles[i].name);
+    }
+    var message = 'Invalid file type: ' + fileNames.join(', ');
+    alert(message)
+    console.error(message);
+    };
+    ko.applyBindings(viewModel);
 </script>
+<?php
+if (isset($_POST["save_btn"])){
+    echo "<pre>", print_r($_FILES["files"]["name"]) ,"</pre>";    
+}
+?>
 </html>

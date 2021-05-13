@@ -401,7 +401,9 @@ form nav button{
   background-color: white;
   border-radius:30px;
   margin-right: 0.8rem;
+  padding :40px;
 }
+
 
 #cator{
   grid-area: cator;
