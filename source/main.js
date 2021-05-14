@@ -191,7 +191,7 @@ function appSearch(appList,key){
             appsArr.push(appList[i])
         }
     }
-
+    console.log(appsArr)
     for(let i=0;i<appsArr.length;i++)
         console.log(appsArr[i])
 
