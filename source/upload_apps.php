@@ -54,7 +54,8 @@
             $userid = $_POST['user_id'];
             $sql = "SELECT creatorid from users where userid = $userid";
             $result = $conn->query($sql);
-  
+            
+
           //   print_r($_POST);
             $appid = '';  
             $apptitle = $_POST['title_app'];
@@ -64,7 +65,23 @@
             $creatorname = $_POST['creator_name'];
             $catename = $_POST['category_name'];
             $cost = $_POST['pricing'];
-  
+            $screenshotsRaw = $_FILES["files"]["name"];
+            $screenshots = [];
+
+            // echo "<img src = $pic</img>";
+
+            for($i=0;$i<count($screenshotsRaw);$i++){
+                $appScreenShots = strtolower($apptitle).($i+1).".png";
+                $appScreenShots = str_replace(' ', '', $appScreenShots);
+                $name =strtolower($apptitle);
+                $targets1 = 'resources/pendingapps/screenshots/'.str_replace(' ', '', $name).'/'.$appScreenShots;
+                if('resources/pendingapps/screenshots/'.str_replace(' ', '', $name))
+                    mkdir('resources/pendingapps/screenshots/'.str_replace(' ', '', $name));
+                move_uploaded_file($_FILES["files"]["tmp_name"][$i],$targets1);
+                array_push($screenshots, $targets1);
+            }
+            $screenshots = json_encode($screenshots);
+
   
             for($i=0;$i<count($categoriesTable);$i++){
                 if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
@@ -80,8 +97,7 @@
             }
   
           // $profileImage = time()."_".$_FILES["profile-image"]["name"];
-            $sql = "INSERT INTO `pendingapp`(`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`) VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$cost','$targets')";
-            print_r($sql);
+            $sql = "INSERT INTO `pendingapp`(`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`, `screenshotslink`) VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$cost','$targets', '$screenshots')";  
             $conn->query($sql);
 
             // Add to recenly added apps

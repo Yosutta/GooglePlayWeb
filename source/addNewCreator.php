@@ -29,12 +29,13 @@
 
         for($i=0;$i<count($creators);$i++){
             if($creators[$i][0] == $name){
-                echo $creators[$i][1];
+                $profileImage = $appname_pending.".png";
+            $targets = 'resources/apps/' .$profileImage;
+            move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
             }
             else{
                 $newid = count($creators)+1;
                 $sql = "INSERT INTO creator(`name`,id,tittle,iconlink) value('$name',$newid,'$slogan','$icon')";
-                print_r($sql);
                 $conn->query($sql);
             }
         }

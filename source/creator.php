@@ -36,6 +36,14 @@
         $sql = "SELECT * FROM creator where name = '$creatorname'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
+
+        $featured_appid = $row['feature'];
+
+        $sql = "SELECT * FROM apps where appid = '$featured_appid'";
+        $result = $conn->query($sql);
+        if($featured_app = $result->fetch_assoc()){
+        }
+
         
     ?>
 </head>
@@ -54,13 +62,16 @@
                 <div class="content_text_featured"><p class="featured">Featured</p></div>
                 <div class="creator_feature">
                     <div class="featured_app">
-                        <img src="./resources/creator/featured_test/clashofclans.jpeg" id="feature_image"/>
+                        <img src="<?php
+                            $screenshot = json_decode($featured_app['screenshotlink'])[0];
+                            echo $screenshot;
+                        ?>" id="feature_image"/>
                     </div>
                     <div class="infor_feature">
-                        <img src="./resources/apps/adobephotoshop.jpg" id="featured_app_img"/>
-                        <p id="title_featured_app">Adobe Photoshop Blalal alala</p>
-                        <p id="title_featured_star">&#9733 &#9733 &#9733 &#9733 &#9733</p>
-                        <p id="title_featured_app_description">Shoot & edit raw images, make advanced color & lighting adjustments, easily.</p>
+                        <img src="<?php echo $featured_app['link']?>" id="featured_app_img"/>
+                        <p id="title_featured_app"><?php echo $featured_app['appname']?></p>
+                        <p id="title_featured_star"><?php echo $featured_app['ranking']?>/5&#9733</p>
+                        <p id="title_featured_app_description"><?php echo $featured_app['description']?></p>
                     </div>
                 </div>
                 <div style="text-align:left;">

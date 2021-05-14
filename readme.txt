@@ -9,7 +9,7 @@
 
 3. Link đã deploy:
 	- http://my-web-site.com
-	- Tài khoản admin: admin, mật khẩu: 123
+	- Tài khoản admin: admin, mật khẩu: 
 	- Tài khoản developer 1: dev1@gmail.com, mật khẩu: 123456 
 	- Tài khoản developer 2: dev2@gmail.com, mật khẩu: 123456 
 	- Tài khoản user 1: user1@gmail.com, mật khẩu: 123456 
