@@ -557,7 +557,7 @@ form nav button{
   padding-top: 30px;
   display: inline-block;
   width: 800px;
-  height: 170px;
+  height: 200px;
   margin: auto auto;
   padding-left:60px;
   padding-right:60px;
@@ -580,6 +580,7 @@ form nav button{
 .img_creator{ 
   display:block;
   width: 180px;
+  height: 180px;
   border: 4px solid #d0d0d0;
   margin: 0px auto; 
   border-radius: 50%;
@@ -618,6 +619,37 @@ form nav button{
   height: 50%;
 }
 
+#featured_app_img{
+  width: 100px;
+  padding-top:20px;
+  padding-left: 20px; 
+  padding-right: 10px;
+  float: left;
+}
+
+#title_featured_star{
+  float:inline;
+  color:grey;
+}
+
+#title_featured_app_description{
+  float:left;
+  padding-left: 20px;
+  color:grey; 
+}
+
+#title_featured_app{
+  font-size: 31px; 
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 1px;
+  padding-top: 15px;
+  margin: 0px;  
+  float : inline;
+
+}
+
+
 .featured_app{
   height: auto; 
   width: auto; 
@@ -630,9 +662,9 @@ form nav button{
   width: 400px;
   margin-left:400px;
   margin-top: -225px;
+  padding-right:20px;
   background-color : white;
-  
-  float : inline-end;
+
 }
 
 
@@ -724,6 +756,25 @@ form nav button{
 }
 
 
+
+/* fragment seemore */
+
+#div_seemore_fragment{
+  padding-left: 270px;
+  padding-right: 70px;
+  clear: both;
+}
+
+.title_seemore{
+  display : inline; 
+}
+
+.button_seemore{
+  display : inline;
+  align-self: right;
+  float: right; 
+}
+
 /* GLOBAL CSS */
 /* GLOBAL CSS */
 /* GLOBAL CSS */
@@ -751,3 +802,7 @@ input::-webkit-inner-spin-button {
 #giftcodenotification{
   color:greenyellow;
 }
+
+
+
+

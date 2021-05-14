@@ -51,30 +51,37 @@
                     </div>
                     <p class="title_creator"><?php echo $row['name']?></p>
                     <p class="title_description"><?php echo $row['tittle']?></p>
-                </div>
+                    </div>
                 <div class="content_text_featured"><p class="featured">Featured</p></div>
                 <div class="creator_feature">
                     <div class="featured_app">
                         <img src="./resources/creator/featured_test/clashofclans.jpeg" id="feature_image"/>
                     </div>
                     <div class="infor_feature">
-                        Hello
+                        <img src="./resources/apps/adobephotoshop.jpg" id="featured_app_img"/>
+                        <p id="title_featured_app">Adobe Photoshop Blalal alala</p>
+                        <p id="title_featured_star">&#9733 &#9733 &#9733 &#9733 &#9733</p>
+                        <p id="title_featured_app_description">Shoot & edit raw images, make advanced color & lighting adjustments, easily.</p>
                     </div>
                 </div>
-                <div>
+                <div>   
                     <p>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </p>
+                    </p>    
                 </div>
             </div>
         </div>
 	</div>
+    <div id="testfragment"></div>
 
 <script>
     src="jquery.js"
     $(function(){
       $("#loadheader").load("header.php"); 
+    });
+    $(function(){
+      $("#testfragment").load("fragmentSeeMoreElement.php"); 
     });
     if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
