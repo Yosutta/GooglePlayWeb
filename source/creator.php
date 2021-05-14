@@ -74,7 +74,8 @@
                         <p id="title_featured_app_description"><?php echo $featured_app['description']?></p>
                     </div>
                 </div>
-                <div>   
+                <div style="text-align:left;">
+                    <?php include("fully_element_frame.php"); ?>  
                     <p>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -83,15 +84,11 @@
             </div>
         </div>
 	</div>
-    <div id="testfragment"></div>
 
 <script>
     src="jquery.js"
     $(function(){
       $("#loadheader").load("header.php"); 
-    });
-    $(function(){
-      $("#testfragment").load("fragmentSeeMoreElement.php"); 
     });
     if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';

@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GooglePlay</title>
     <?php
-        session_start();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
         echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
         echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
         echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'>";
@@ -27,28 +30,46 @@
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
+
+        if(isset($_GET['creator'])){
+            $creatorname = $_GET['creator'];
         }
 
-        
-        $sql = "SELECT * FROM `apps`";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
+        }
+
         
     ?>    
 </head>
 <body>
+    <?php include("getAppidfromCreator.php"); 
+            include("fragmentEachElement.php"); 
+    ?>
     <div id="div_seemore_fragment">
     <div>
-        <p class="title_seemore">Title</p>
-        <button type="submit" class="btn btn-success">See More</button>
+        <p class="title_seemore">More by <?php echo  $_GET['creator']?></p>
+        <button type="submit" class="btn btn-success button_seemore">See More</button>
     </div>
-    <div id="store_element"></div>
+    <?php 
+        $arr= getAppfromCreator($_GET['creator']);
+        ?>
+    <div id="store_element">
+        <?php 
+            $count = count($arr); 
+            for($i = 0; $i< $count ; $i++){
+            HtmlGenerate($arr[$i]);
+            }
+        ?>
+    </div>
     </div>
 <script> 
     src="jquery.js"
-    $(function(){
-      $("#store_element").load("fragmentEachElement.php"); 
-    });
-</script>
+
+    let arr  = <?php echo json_encode($arr)?>;
+
+
+
+    console.log(arr);
+    
+    </script>
 </body>
 </html>
