@@ -33,7 +33,7 @@
         $sql = "SELECT * FROM `apps`";
         $appList = [];
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
+        $row = $result->fetch_assoc(); 
         if($row){
             array_push($appList, [$row['appname'],$row['appid']]);
             while($row=$result->fetch_assoc()){
@@ -51,7 +51,7 @@
       <a href="index.php">
           <img class="" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="GooglePlay">
       </a>
-      <form action="#">
+      <form action="#" autocomplete="off">
           <nav class="navbar">
               <input class="focus" id="searchbar" type="text" name="search" placeholder="Search" onkeyup="appSearch(appList,value)">
               <button class="bg-primary text-white border rounded-right" type="submit">
