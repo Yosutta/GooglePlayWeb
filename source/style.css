@@ -165,7 +165,8 @@ form nav button{
 .card-title{
   white-space: nowrap;
   overflow:hidden;
-  text-overflow: ellipsis;
+  text-overflow: clip;
+  max-width: 1ch;
 }
 
 /* Custom Collumns Large*/
@@ -652,7 +653,8 @@ form nav button{
   padding-top: 15px;
   margin: 0px;  
   float : inline;
-
+  pointer-events: none;
+  cursor:default;
 }
 
 
