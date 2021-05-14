@@ -41,22 +41,35 @@
     ?>    
 </head>
 <body>
-    <?php include("getAppidfromCreator.php"); ?>
+    <?php include("getAppidfromCreator.php"); 
+            include("fragmentEachElement.php"); 
+    ?>
     <div id="div_seemore_fragment">
     <div>
         <p class="title_seemore">More by <?php echo  $_GET['creator']?></p>
         <button type="submit" class="btn btn-success button_seemore">See More</button>
     </div>
-    <div id="store_element"></div>
-    </div>
     <?php 
-        print_r(getAppfromCreator($_GET['creator']));
+        $arr= getAppfromCreator($_GET['creator']);
         ?>
+    <div id="store_element">
+        <?php 
+            $count = count($arr); 
+            for($i = 0; $i< $count ; $i++){
+            HtmlGenerate($arr[$i]);
+            }
+        ?>
+    </div>
+    </div>
 <script> 
     src="jquery.js"
-    $(function(){
-      $("#store_element").load("fragmentEachElement.php"); 
-    });
+
+    let arr  = <?php echo json_encode($arr)?>;
+
+
+
+    console.log(arr);
+    
     </script>
 </body>
 </html>
