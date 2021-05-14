@@ -38,10 +38,17 @@
 </head>
 <body>
     <div id="div_seemore_fragment">
-        <div style="width: 500px;">
+    <div>
         <p class="title_seemore">Title</p>
-        <button type="submit" class="btn btn-success button_seemore">See More</button>
-        </div>
+        <button type="submit" class="btn btn-success">See More</button>
     </div>
+    <div id="store_element"></div>
+    </div>
+<script> 
+    src="jquery.js"
+    $(function(){
+      $("#store_element").load("fragmentEachElement.php"); 
+    });
+</script>
 </body>
 </html>
