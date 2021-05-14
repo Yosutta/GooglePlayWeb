@@ -760,18 +760,18 @@ form nav button{
 /* fragment seemore */
 
 #div_seemore_fragment{
-  padding-left: 270px;
-  padding-right: 70px;
-  clear: both;
+  width: auto; 
+  height : auto; 
+  padding-top: 50px;
 }
 
 .title_seemore{
+  font-size: 31px; 
   display : inline; 
 }
 
 .button_seemore{
   display : inline;
-  align-self: right;
   float: right; 
 }
 

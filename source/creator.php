@@ -31,7 +31,6 @@
 
         if(isset($_GET['creator'])){
             $creatorname = $_GET['creator'];
-            print_r($creatorname);
         }
 
         $sql = "SELECT * FROM creator where name = '$creatorname'";
@@ -64,7 +63,8 @@
                         <p id="title_featured_app_description">Shoot & edit raw images, make advanced color & lighting adjustments, easily.</p>
                     </div>
                 </div>
-                <div>   
+                <div style="text-align:left;">
+                    <?php include("fully_element_frame.php"); ?>  
                     <p>
                     <br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -73,15 +73,11 @@
             </div>
         </div>
 	</div>
-    <div id="testfragment"></div>
 
 <script>
     src="jquery.js"
     $(function(){
       $("#loadheader").load("header.php"); 
-    });
-    $(function(){
-      $("#testfragment").load("fragmentSeeMoreElement.php"); 
     });
     if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
