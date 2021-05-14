@@ -37,6 +37,9 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         
+        $screenshots = json_decode($row['screenshotlink']);
+        print_r($screenshots);
+
     ?>
 </head>
 <body class="testing_grid">
@@ -47,10 +50,15 @@
             <div class="infor_ad">
             <p class="title_ad"><?php echo $row['appname']?></p>
             <div class="rating_ad">
-                <a href="#" class="a_tag_ad"><?php echo $row['creator']?></a>
+                <a href="creator.php?creator=<?php echo $row['creator']?>" class="a_tag_ad"><?php echo $row['creator']?></a>
                 <a href="#" class="a_tag_ad"><?php echo $row['category']?></a>
                 <p class="float-right rating_start_ad" ><?php echo $row['ranking']?>/5 &#9733</p>
             </div>
+            <?php
+            // for($i=0;$i<count($screenshots);$i++){
+            //     echo "<img class='screenshot_ad' src='$screenshots[$i]'>";
+            // }
+            ?>
             <div class="div_install_btn_ad">
                 <button type="submit" class="btn btn-success">Install</button>
             </div>

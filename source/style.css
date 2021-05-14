@@ -564,6 +564,7 @@ form nav button{
   box-shadow: 1px 1px 1px 1px #d0d0d0;
   margin-top: 390px;
   border-radius: 4px;
+  
 }
 
 
@@ -636,6 +637,11 @@ form nav button{
   float:left;
   padding-left: 20px;
   color:grey; 
+  display:inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50ch;
+  max-height: 30ch;
 }
 
 #title_featured_app{
@@ -706,6 +712,10 @@ form nav button{
 
 .image_ad{
   width: 220px
+}
+
+.screenshot_ad{
+  width:500px;
 }
 
 .frame_ad{ 
