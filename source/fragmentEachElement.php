@@ -37,8 +37,38 @@
     ?>    
 </head>
 <body>
-    <div id="frame_white_element">
+    <?php
+        $sql = "SELECT * FROM `mostdownloadsfree`";
+        $result = $conn->query($sql);
+        $mostDownloadsFree = [];
+        while($row=$result->fetch_assoc()){
+            array_push($mostDownloadsFree,$row['appid']);
+        }
         
+        include("getAppInfo.php");
+    ?>
+    <div class="float-left mr-2">
+        <?php  $row = getAppInfo($mostDownloadsFree[0]);?>
+        <div class="card" style="width: 10rem; position:static">
+        <a href="application_detail.php?appid=<?php echo $row['appid']?>" class="items-holder" name="appImage">
+            <img class="card-img-top appImage" src="<?php echo $row['link']?>" alt="Card image cap">
+        </a>
+            <div class="card-body">
+                <a href="application_detail.php?appid=<?php echo $row['appid']?>" name="appid" class="card-title"><?php echo $row['appname'] ?></a>
+                <br>
+                <a href="creator.php?creator=<?php echo $row['creator']?>" name="creator" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title" class="card-title"><?php echo $row['creator'] ?></a>
+            </div>
+            <p class="float-left display-5 pl-3 d-inline mb-0"><?php echo $row['ranking']?>/5 &#9733</p>
+            <?php 
+                if($row['cost']!=0){
+                    $cost = $row['cost'];
+                    echo '<p class="float-right d-inline-block pl-3 text-success">&#8363;'.$cost.'</p>';
+                }
+                else
+                    echo '<p class="text-success pl-3">Free</p>'
+            ?>
+            <!-- <p class="float-right d-inline-block text-success">&#8363;<?php echo $row['cost']?></p> -->
+        </div>
     </div>
 </body>
 </html>
