@@ -6,6 +6,10 @@
 -- Generation Time: May 14, 2021 at 01:32 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 14, 2021 lúc 09:51 AM
+-- Phiên bản máy phục vụ: 10.4.17-MariaDB
+-- Phiên bản PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,7 +56,10 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('e2', 'maivanmanh', 0, 'admin', 'Education', 5, 0, 20000, 0, '', '2021-05-12', 0, './resources/pendingapps/maivanmanh.png', ''),
 ('f1', 'Money Lover', 3, 'Finsify', 'Finance', 5, 1, 0, 177149, '', '2021-05-12', 0, './resources/apps/moneylover.jpg', ''),
 ('f10', 'Adobe Comp', 24, 'Adobe', 'Finance', 4, 1, 0, 1837, '', '2021-05-14', 0, 'resources/apps/adobecomp.jpg', ''),
-('f11', 'Adobe Sign', 24, 'Adobe', 'Finance', 4, 1, 0, 0, '', '2021-05-14', 0, 'resources/apps/adobesign.jpg', ''),
+('f11', 'Adobe Sign', 24, 'Adobe', 'Finance', 4, 1, 0, 2207, '', '2021-05-14', 0, 'resources/apps/adobesign.jpg', ''),
+('f12', 'Adobe Scout', 24, 'Adobe', 'Finance', 5, 0, 43333, 860, '', '2021-05-14', 0, 'resources/pendingapps/adobescout.png', ''),
+('f13', 'Adobe Read Fast', 24, 'Adobe', 'Finance', 5, 0, 10000, 87888, '', '2021-05-14', 0, 'resources/pendingapps/adobereadfast.png', ''),
+('f14', 'Adobe Connect', 24, 'Adobe', 'Finance', 4, 1, 0, 22524, '', '2021-05-14', 0, 'resources/pendingapps/adobeconnect.png', ''),
 ('f2', 'Momo', 23, 'M_Service JSC', 'Finance', 4, 0, 1000, 239717, '', '2021-05-12', 0, './resources/apps/momo.jpg', ''),
 ('f3', 'Adobe Photoshop', 24, 'Adobe', 'Finance', 5, 0, 5000, 1677356, '', '2021-05-12', 0, './resources/apps/adobephotoshop.jpg\r\n', ''),
 ('f4', 'Adobe Reader PDF', 24, 'Adobe', 'Finance', 5, 0, 10000, 4520986, '', '2021-05-12', 0, './resources/apps/pdf.jpg\r\n', ''),
@@ -429,18 +436,18 @@ CREATE TABLE `creator` (
 --
 
 INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `feature`, `appquantity`) VALUES
-('Arcline', 1, 'We are passionate game developers behind the games like Tic Tac Toe Glow, Spot It, Decrypto and many more!\r\n', '', '', '', 0),
-('Facebook', 2, 'Best social media in the world.', '', '', '', 0),
-('Finsify', 3, 'Bring personal financial management solutions and products to Vietnamese people. ', '', '', '', 0),
+('Arcline', 1, 'We are passionate game developers behind the games like Tic Tac Toe Glow, Spot It, Decrypto and many more!\r\n', 'resources/creator/background/arcline.png', 'resources/creator/icon/arcline.png', '', 0),
+('Facebook', 2, 'Best social media in the world.', 'resources/creator/background/facebook.png', 'resources/creator/icon/facebook.png', '', 0),
+('Finsify', 3, 'Bring personal financial management solutions and products to Vietnamese people. ', 'resources/creator/background/finsify.png', 'resources/creator/icon/finsify.png', '', 0),
 ('FPT Coop', 4, 'Work for your best experience for watching.', '', '', '', 0),
-('Garena Co.Ltd', 5, 'We will try our best to bloodsucking your wallet.', '', '', '', 0),
+('Garena Co.Ltd', 5, 'We will try our best to bloodsucking your wallet.', 'resources/creator/background/garena.png', 'resources/creator/icon/garena.png', '', 0),
 ('Google LLC', 6, 'We help you search the world', '', '', '', 0),
 ('Hit-Point Co.,Ltd', 7, 'A game company operating in Nagoya and Kyoto.\r\nWe distribute apps such as \"Neko Atsume\", \"Narumonoka\" and \"Henri\". ', '', '', '', 0),
 ('Instagram', 8, 'Saving the beautiful pictures with your life', '', '', '', 0),
 ('Mihoyo Inc', 9, 'Our game will take you to the fairy world', '', '', '', 0),
 ('Nekki', 10, 'Cool and epic action fighting games, multiplayer games with top 3D graphics featuring online and offline brawl and fun battles w', '', '', '', 0),
 ('Netflix, Inc', 11, 'Signing with us to seeing all movies in the world', '', '', '', 0),
-('Niantic, Inc', 12, 'Joining imagination world with us', '', '', '', 0),
+('Niantic, Inc', 12, 'Joining imagination world with us', 'resources/creator/background/niantic.png', 'resources/creator/icon/niantic.png', '', 0),
 ('Spotify Ltd', 13, 'Best music\'s app in the world', '', '', '', 0),
 ('VNG', 14, 'VNG GAMES - BY GAMERS, FOR GAMERS\r\n', 'resources/creator/background/vng.png', 'resources/creator/icon/vng.png', '', 0),
 ('TikTok Pte.Ltd', 15, 'Saving your memory', 'resources/creator/background/tiktok.png', 'resources/creator/icon/tiktok.png', '', 0),
@@ -453,7 +460,7 @@ INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `fe
 ('Kahoot', 22, 'Kahoot! makes it easy to create, share and play fun learning games or trivia quizzes in minutes. Make learning awesome!\r\n', '', '', '', 0),
 ('M_Service JSC', 23, 'Online wallet make you don\'t need cash anymore', '', '', '', 0),
 ('Adobe', 24, 'Great ideas can happen anywhere. With Adobe apps for creativity and productivity, great work can too.\r\n', 'resources/creator/background/adobe.png', 'resources/creator/icon/adobe.png', '', 0),
-('TGame Studio', 25, 'Thank you for playing my games..\r\n', '', '', '', 0),
+('TGame Studio', 25, 'Thank you for playing my games..\r\n', 'resources/creator/background/tgamestudio.png', 'resources/creator/icon/tgamestudio.png', '', 0),
 ('grafiticraft', 26, 'Try our best test', '', '', '', 0),
 ('ELECTRONIC ARTS', 27, 'Download your favorite games from EA!\r\n', 'resources/creator/background/ea.png', 'resources/creator/icon/ea.png', '', 0),
 ('King', 28, 'Our games are packed full of fun for you to enjoy with your friends or with other players!\r\n', 'resources/creator/background/king.png', 'resources/creator/icon/king.png', '', 0),
@@ -476,7 +483,8 @@ CREATE TABLE `emailverification` (
 
 INSERT INTO `emailverification` (`email`, `code`) VALUES
 ('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55'),
-('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55');
+('grafiticraft@gmail.com', '6bea7db14a928a7713980abc7c3bcd55'),
+('huubinh1823@gmail.com', '6af5950a557da368ea4b5bc3178228c7');
 
 -- --------------------------------------------------------
 
@@ -615,6 +623,9 @@ CREATE TABLE `recentlyadded` (
 INSERT INTO `recentlyadded` (`appid`) VALUES
 ('f10'),
 ('f11'),
+('f12'),
+('f13'),
+('f14'),
 ('f6'),
 ('f8'),
 ('f9'),
@@ -676,7 +687,7 @@ INSERT INTO `users` (`username`, `password`, `email`, `userid`, `creatorid`, `le
 ('awdawdaw', 'qwerty123', 'dawdaw@gmail.com', 6, 0, 1),
 ('hahaha', '12345', 'hahaha@gmail.coom', 7, 0, 1),
 ('ba', 'hai', 'ffvvfvfvfvf@fjvfvfvfhvf', 8, 0, 2),
-('Bynivh', '3', 'huubinh1823@gmail.com', 9, 0, 2),
+('Bynivh', '4', 'huubinh1823@gmail.com', 9, 0, 2),
 ('admin', 'admin', '', 10, 0, 3);
 
 -- --------------------------------------------------------
@@ -708,9 +719,7 @@ INSERT INTO `usersinfo` (`userid`, `fullName`, `birthDate`, `gender`, `country`,
 (6, 'Phù Phương Tuấn', '2021-04-15', 0, '', '', 0, 'resources/account/awdawdaw.jpg'),
 (7, 'hahaha', '2021-04-09', 0, '', '', 0, 'resources/account/hahaha.jpg'),
 (8, 'blabla', '2021-04-23', 0, '', '', 0, 'resources/account/ba.jpg'),
-(9, 'Pháº¡m Há»¯u BÃ¬nh', '2000-10-20', 0, '', '', 510000, ''),
-(11, 'King', '2021-05-20', 0, '', '', 0, ''),
-(12, 'Adobe', '2021-05-11', 0, '', '', 0, '');
+(9, 'Pháº¡m Há»¯u BÃ¬nh', '2000-10-20', 0, '', '', 510000, '');
 
 --
 -- Indexes for dumped tables
@@ -821,13 +830,13 @@ ALTER TABLE `userbalance`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `usersinfo`
 --
 ALTER TABLE `usersinfo`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
