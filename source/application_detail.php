@@ -211,14 +211,6 @@
             </div>
             </div>
         </div>
-        <div class="owl-carousel owl-theme">
-            <?php
-                for($i=0;$i<count($screenshots);$i++){
-                    $image = $screenshots[$i];
-                    echo "<div class='item'><img src=$image></div>";
-                }
-            ?>
-        </div>
     </div>
 </body>
 </html>
