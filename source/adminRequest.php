@@ -43,7 +43,7 @@ if(isset($_GET['appid'])){
                 if(file_exists('resources/apps/screenshots/'.str_replace(' ','',strtolower($appname)))==false)
                     mkdir('resources/apps/screenshots/'.str_replace(' ','',strtolower($appname)));
                 $appScreenshotTarget = 'resources/apps/screenshots/'.str_replace(' ','',strtolower($appname)).'/'.$appScreenshot;
-                copy($appscreenshots[$i], $appIconTarget);
+                copy($appscreenshots[$i], $appScreenshotTarget);
                 array_push($appScreenshotTargets,$appScreenshotTarget);
             }
 

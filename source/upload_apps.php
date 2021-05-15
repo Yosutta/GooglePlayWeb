@@ -18,6 +18,11 @@
       echo "<script src='main.js'></script>";
       echo "<link rel='stylesheet' type='text/css' href='lib/knockout-file-bindings.css'>";
       echo "<link rel='stylesheet' type='text/css' href='style.css'>";
+    //   OWL CARAOUSEL
+      echo '<link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+            <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+            <script src="jquery.min.js"></script>
+            <script src="owlcarousel/owl.carousel.min.js"></script>';
 
       $servername = "localhost";
       $username ="root";
@@ -162,6 +167,8 @@
             $conn->query($sql);
         }
 
+        print_r($sql);
+
         // CHANGE CATEGORY QUANTITY
         $categoryQuantity = $category1['apps']+1;
         $sql = "UPDATE categories SET apps = '$categoryQuantity' where catename = '$appcategory'";
@@ -169,7 +176,6 @@
 
         //ADD TO RECENTLY ADDED LIST
         $sql = "INSERT INTO recentlyadded(appid) value('$appid')";
-        print_r($sql);
         $conn->query($sql);
         
         header("Location:upload_apps.php");
