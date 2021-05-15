@@ -18,9 +18,7 @@
             echo '<div class="float-left mr-2">';
             $row = getAppInfo($apps);
             echo '<div class="card" style="width: 10rem; position:static">';
-            echo '<a href="application_detail.php?appid='.$row['appid'].'" class="items-holder" name="appImage">';
-                echo '<img class="card-img-top appImage" src="'.$row['link'].'" alt="Card image cap">';
-            echo '</a>';
+            echo '<a href="application_detail.php?appid='.$row['appid'].'" class="items-holder" name="appImage"><img class="card-img-top appImage" src="'.$row['link'].'" alt="Card image cap"></a>';
                 echo'<div class="card-body">';
                     echo '<a href="application_detail.php?appid='.$row['appid'].'" name="appid" class="card-title">'.$row['appname'].'</a>';
                     echo '<br>';
@@ -34,8 +32,7 @@
                     else
                         echo '<p class="text-success pl-3">Free</p>';
             echo '</div>';
-    
             echo '</div>';
-                }
+            }
             ?>
     

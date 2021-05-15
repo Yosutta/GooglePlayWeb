@@ -51,7 +51,7 @@
     </div>
     <?php 
         $arr= getAppfromCreator($_GET['creator']);
-        ?>
+    ?>
     <div id="store_element">
         <?php 
             $count = count($arr); 
@@ -65,9 +65,6 @@
     src="jquery.js"
 
     let arr  = <?php echo json_encode($arr)?>;
-
-
-
     console.log(arr);
     
     </script>

@@ -539,6 +539,7 @@ form nav button{
   padding-left: 270px;
   padding-right: 70px;
   padding-top: 7px;
+  float : left;
 }
 
 
@@ -694,6 +695,7 @@ form nav button{
 
 #Appsbar{
   overflow: hidden;
+  float :left;
 }
 
 .sticky {
@@ -773,6 +775,9 @@ form nav button{
   width: auto; 
   height : auto; 
   padding-top: 50px;
+}
+#store_element{
+  padding-top: 30px;
 }
 
 .title_seemore{

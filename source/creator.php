@@ -46,6 +46,19 @@
 
         
     ?>
+<script>
+    src="jquery.js"
+    $(function(){
+      $("#loadheader").load("header.php"); 
+    });
+    if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}   
+</script>
 </head>
 <body class="testing_grid">
     <div id="loadheader"></div>
@@ -75,28 +88,10 @@
                     </div>
                 </div>
                 <div style="text-align:left;">
-                    <?php include("fully_element_frame.php"); ?>  
-                    <p>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </p>    
+                    <?php include("fully_element_frame.php"); ?>    
                 </div>
             </div>
         </div>
 	</div>
-
-<script>
-    src="jquery.js"
-    $(function(){
-      $("#loadheader").load("header.php"); 
-    });
-    if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-} else {
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
-}   
-</script>
 </body>
 </html>
