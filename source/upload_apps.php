@@ -43,72 +43,141 @@
         array_push($categoriesTable,$row1);
       }
 
-      if (isset($_POST['title_app'], $_POST['creator_name'], $_POST['category_name'], $_POST['user_id'], $_POST["cost"])){
-          if(strlen($_POST['title_app'])!=0){
-            global $conn;
-            $profileImage = strtolower($_POST['title_app']).".png";
-            $profileImage = str_replace(' ', '', $profileImage);
-            $targets = 'resources/pendingapps/' .$profileImage;
-            move_uploaded_file($_FILES["profile-image"]["tmp_name"],$targets);
+    //     app_image
+    //     title_app
+    //     cost
+    //     pricing
+    //     app_description
+    //     app_downloads
+    //     app_ranking
+    //     category_name
+    //     files
+    //   creator_icon
+    //   creator_background
 
-            $userid = $_POST['user_id'];
-            $sql = "SELECT creatorid from users where userid = $userid";
+
+      if(isset($_POST['title_app'],$_POST['cost'], $_POST['app_description'], $_POST['app_downloads'], $_POST['category_name'], $_FILES['app_image'], $_FILES['files'], $_POST['creator_name'])){
+        $apptitle = $_POST['title_app'];
+        $appfree = $_POST['cost'];
+
+        if($appfree==0){
+            if(isset($_POST['pricing'])){
+                $appprice = ($_POST['pricing']);
+            }
+        }
+
+        // APP
+        $appdescription = $_POST['app_description'];
+        $appdownloads = $_POST['app_downloads'];
+        $appranking = $_POST['app_ranking'];
+        $appcategory = $_POST['category_name'];
+        $appicon = $_FILES['app_image'];
+        $appscreenshots = $_FILES['files'];
+
+        // GET CREATOR NAME
+        $creatorname = $_POST['creator_name'];
+
+        // GET APPID
+        global $conn;
+        $sql = "SELECT cateid, apps from categories where catename = '$appcategory'";
+        $result = $conn->query($sql);
+        if($category1 = $result->fetch_assoc()){
+            $appid = $category1['cateid'].($category1['apps']+1);
+        }
+
+        // GET CREATORID
+        global $conn;
+        $sql = "SELECT id from creator where name = '$creatorname'";
+        $result = $conn->query($sql);
+        if($row = $result->fetch_assoc()){
+            $creatorid = $row['id'];
+        }
+        else{
+            $sql = "SELECT id from creator";
             $result = $conn->query($sql);
-            
+            $num_rows = $result->num_rows;
+            $creatorid = $num_rows +1;
 
-          //   print_r($_POST);
-            $appid = '';  
-            $apptitle = $_POST['title_app'];
-            $creatorid = "";
-            if($row = $result->fetch_assoc())
-                $creatorid = $row['creatorid'];
-            $creatorname = $_POST['creator_name'];
-            $catename = $_POST['category_name'];
-            $cost = $_POST['pricing'];
-            $screenshotsRaw = $_FILES["files"]["name"];
-            $screenshots = [];
+            if(isset($_FILES['creator_icon'], $_FILES['creator_background'], $_POST['creator_description'])){
+                $creatoricon = $_FILES['creator_icon'];
+                $creatorbackground = $_FILES['creator_background'];
+                $creatordescription = $_POST['creator_description'];
 
-            // echo "<img src = $pic</img>";
+                // MOVE NEW CREATOR PICTURE
+                // MOVE ICON
+                $creatorIconName = str_replace(' ','',strtolower($creatorname)).".png";
+                $creatorIconTarget = 'resources/creator/icon/'.$creatorIconName;
+                move_uploaded_file($creatoricon["tmp_name"], $creatorIconTarget);
 
-            for($i=0;$i<count($screenshotsRaw);$i++){
-                $appScreenShots = strtolower($apptitle).($i+1).".png";
-                $appScreenShots = str_replace(' ', '', $appScreenShots);
-                $name =strtolower($apptitle);
-                $targets1 = 'resources/pendingapps/screenshots/'.str_replace(' ', '', $name).'/'.$appScreenShots;
-                if('resources/pendingapps/screenshots/'.str_replace(' ', '', $name))
-                    mkdir('resources/pendingapps/screenshots/'.str_replace(' ', '', $name));
-                move_uploaded_file($_FILES["files"]["tmp_name"][$i],$targets1);
-                array_push($screenshots, $targets1);
+                // MOVE BACKGROUND
+                $creatorBackgroundName = str_replace(' ','',strtolower($creatorname)).".png";
+                $creatorBackgroundTarget = 'resources/creator/background/'.$creatorBackgroundName;
+                move_uploaded_file($creatorbackground["tmp_name"], $creatorBackgroundTarget);
+
+                // ADD NEW CREATOR
+                $sql = "INSERT INTO creator(`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `feature`) VALUE('$creatorname', '$creatorid', '$creatordescription', '$creatorBackgroundTarget', '$creatorIconTarget', '$appid')";
+                $conn->query($sql);
             }
-            $screenshots = json_encode($screenshots);
+        }
 
-  
-            for($i=0;$i<count($categoriesTable);$i++){
-                if ($categoriesTable[$i]['catename'] == $_POST['category_name']){
-                    $appid = $categoriesTable[$i]['cateid'].((int)$categoriesTable[$i]['apps']+1); 
-                    $catename = $categoriesTable[$i]['catename'];
-                    $appsNumbers = (int)$categoriesTable[$i]['apps']+1;
-                    // Update numbers of apps of a category
-                    $sql = "UPDATE categories SET apps=$appsNumbers WHERE catename = '$catename'";
-                    $conn->query($sql);
+        // MOVE APP ICON AND SCREENSHOTS
+        $appicon = $_FILES['app_image'];
+        $appscreenshots = $_FILES['files'];
 
-                    break;
-                }
-            }
-  
-          // $profileImage = time()."_".$_FILES["profile-image"]["name"];
-            $sql = "INSERT INTO `pendingapp`(`appname`, `appid`, `creatorid`, `creatorname`, `catename`, `price`, `pictureLink`, `screenshotslink`) VALUES ('$apptitle','$appid','$creatorid','$creatorname','$catename','$cost','$targets', '$screenshots')";  
+        $appIconName = str_replace(' ','',strtolower($apptitle)).".png";
+        $appIconTarget = 'resources/pendingapps/'.$appIconName;
+        move_uploaded_file($appicon["tmp_name"], $appIconTarget);
+
+        $appScreenshotsTargets = [];
+        for($i=0;$i<count($appscreenshots['name']);$i++){
+            $appScreenshot = str_replace(' ','',strtolower($apptitle)).$i.".png";
+            // CHECK IF DIRECTORY EXIST
+            if(file_exists('resources/pendingapps/screenshots/'.str_replace(' ','',strtolower($apptitle)))==false)
+                mkdir('resources/pendingapps/screenshots/'.str_replace(' ','',strtolower($apptitle)));
+            $appScreenshotTarget = 'resources/pendingapps/screenshots/'.str_replace(' ','',strtolower($apptitle)).'/'.$appScreenshot;
+            move_uploaded_file($appscreenshots["tmp_name"][$i], $appScreenshotTarget);
+            array_push($appScreenshotsTargets,$appScreenshotTarget);
+        }
+
+        $appScreenshotsTargets = json_encode($appScreenshotsTargets);
+
+        // $apptitle
+        // $appid
+        // $appfree
+        // $appprice
+        // $appdescription
+        // $appdownloads
+        // $appranking 
+        // $appcategory
+        // $appIconTarget
+        // $appScreenshotsTargets
+        // $creatorid
+        // $creatorname
+        if($appfree==0){
+            $sql = "INSERT INTO `pendingapp`(`appname`, `appid`, `appdescription`,`creatorid`, `creatorname`, `catename`, `price`, `appdownloads`, `appranking`,`pictureLink`, `screenshotslink`, `status`) VALUES('$apptitle','$appid','$appdescription','$creatorid','$creatorname','$appcategory','$appprice', $appdownloads, $appranking,'$appIconTarget','$appScreenshotsTargets',0)";
             $conn->query($sql);
-
-            // Add to recenly added apps
-            $sql = "INSERT INTO `recentlyAdded` values ('$appid')";
+        }
+        else{
+            $sql = "INSERT INTO `pendingapp`(`appname`, `appid`, `appdescription`,`creatorid`, `creatorname`, `catename`, `price`, `appdownloads`, `appranking`, `pictureLink`, `screenshotslink`, `status`) VALUES('$apptitle','$appid','$appdescription','$creatorid','$creatorname','$appcategory',0, $appdownloads, $appranking, '$appIconTarget','$appScreenshotsTargets',0)";
             $conn->query($sql);
+        }
 
-            header("Location:upload_apps.php");
-          }       
-          else
-            echo "<h2 style='color:red'>Please provide more information</h2>";
+        // CHANGE CATEGORY QUANTITY
+        $categoryQuantity = $category1['apps']+1;
+        $sql = "UPDATE categories SET apps = '$categoryQuantity' where catename = '$appcategory'";
+        $conn->query($sql);
+
+        //ADD TO RECENTLY ADDED LIST
+        $sql = "INSERT INTO recentlyadded(appid) value('$appid')";
+        print_r($sql);
+        $conn->query($sql);
+        
+        header("Location:upload_apps.php");
       }
+      else{
+          echo "bruh";
+      }
+
     ?>
     <title>Upload Applications</title>
 </head>
@@ -133,7 +202,7 @@
                         <div class="apps_word_update">Upload</div>
                     </div>
                 </div>
-                <input type="file" style="display: none;" onchange="displayImage(this)" name="profile-image" id="profile-image" class="form-control">
+                <input type="file" style="display: none;" onchange="displayImage(this)" name="app_image" id="profile-image" class="form-control">
             </div>
 
             <!-- App's Title -->
@@ -150,13 +219,19 @@
                 <br><br>
                 Pricing
                 <input type="number" name="pricing" id="pricing" disabled>
+                
+                <div class="form-group mt-5">
+                    <label for="app_description">Application's Description</label>
+                    <textarea class="form-control" name="app_description" id="app_description" rows="4"></textarea>
+                </div>
+
+                <br>Downloads
+                <input type="number" name="app_downloads" id="app_downloads">
+
+                <br><br>Ranking
+                <input type="number" name="app_ranking" id ="app_ranking" max="5" min="1">
             </div>
             <!-- Hidden Creator id -->  
-            <input type="hidden" value="
-            <?php
-                echo $_SESSION['userid'];
-            ?>
-            " name="user_id"/>
             <!-- App's Creator -->
             <div id="content3" >
             <div class="well" data-bind="fileDrag: multiFileData">
@@ -186,6 +261,13 @@
                     echo $_SESSION['username'];
                 ?>
                 >
+                <br>
+                Creator icon
+                <input type="file" name="creator_icon" class="form-control">
+                Creator background
+                <input type="file" name="creator_background" class="form-control">
+                Creator description
+                <textarea class="form-control" name="creator_description" rows="4"></textarea>
             </div>
 
             <!-- App's category -->
