@@ -36,7 +36,7 @@
       $price = "";
       $numbers = "";
 
-      $sql = "SELECT * FROM pendingapp";
+      $sql = "SELECT * FROM pendingapp order by date_added desc";
       $result = $conn->query($sql);
       $pendingapps = [];
       $row = $result->fetch_assoc();

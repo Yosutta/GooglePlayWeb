@@ -413,7 +413,7 @@
     <br>
     <div class="" style="margin-left: 250px;">
         <?php
-            $sql = "SELECT * FROM `recentlyadded`";
+            $sql = "SELECT * FROM `recentlyadded` ORDER BY date_added DESC";
             $result = $conn->query($sql);
             $recentlyadded = [];
             while($row=$result->fetch_assoc()){
