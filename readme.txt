@@ -9,11 +9,12 @@
 
 3. Link đã deploy:
 	- http://my-web-site.com
-	- Tài khoản admin: admin, mật khẩu: 
-	- Tài khoản developer 1: dev1@gmail.com, mật khẩu: 123456 
-	- Tài khoản developer 2: dev2@gmail.com, mật khẩu: 123456 
-	- Tài khoản user 1: user1@gmail.com, mật khẩu: 123456 
-	- Tài khoản user 2: user2@gmail.com, mật khẩu: 123456 
+	- Tài khoản admin: admin, mật khẩu: admin
+	- Tài khoản developer 1: grafiticraft, mật khẩu: qwerty123
+	- Tài khoản developer 2: Bynivh, mật khẩu: 3
+	- Tài khoản developer 3: ericdang, mật khẩu: chihao
+	- Tài khoản user 1: user1, mật khẩu: 123456 
+	- Tài khoản user 2: user2, mật khẩu: 123456 
 
 	- Link vào xem database: 
 		- http://my-web-site.com/phpmyadmin
@@ -24,10 +25,12 @@
 	1. Copy nội dung trong thư mục 'source' vào trong 'htdocs' của XAMPP
 	2. Vào source/config/database.php điều chỉnh thông tin dòng số 7 -> 10 cho phù hợp với cài đặt của máy hiện tại.
 	3. Import 'database.sql' vào phpMyAdmin
-	4. Khởi động XAMPP và truy cập http://localhost
+	4. Khởi động XAMPP và truy cập http://localhost:8080
 
 	(cung cấp thêm danh sách tài khoản dùng để đăng nhập: admin, developer, user...)
 
 5. Các ghi chú khác (nếu cần thiết)
 	
-	Thầy ơi nhóm em có 2 thành viên mà thằng kia không làm gì cả, chỉ có mình em làm a-z.
+	Phù Phương Tín : Backend - Frontend
+	Đặng Chí Hào : Frontend - Backend
+	Phạm Hữu Bình : Database
