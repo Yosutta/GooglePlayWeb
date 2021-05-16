@@ -86,7 +86,6 @@
 
     let arr  = <?php echo json_encode($arr)?>;
 
-
     console.log(arr);
     
     </script>
