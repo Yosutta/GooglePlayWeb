@@ -209,6 +209,7 @@
             </div>
             <br> 
             <br>
+            <div style="width: auto; height :auto">
             <div id="myCarousel" class="carousel slide float-left" data-ride="carousel">
             <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -220,12 +221,12 @@
              for($i=0;$i<count($screenshots);$i++){
                 if ($i!= 0){
                     echo '<div class="carousel-item">' ;
-                    echo "<img class='d-block w-100' src='$screenshots[$i]'>";
+                    echo "<img class='d-block h-100  w-100 p-3 ' src='$screenshots[$i]'>";
                     echo '</div>';
                 }
                 else {
                     echo '<div class="carousel-item active">' ;
-                    echo "<img class='d-block w-100' src='$screenshots[$i]'>";
+                    echo "<img class='d-block  h-100 w-100 p-3' src='$screenshots[$i]'>";
                     echo '</div>';
                 }
             }
@@ -240,10 +241,10 @@
             <span class="sr-only">Next</span>
             </a>
             </div>
-
+            </div>
             <div>
                 <p class ="ad_descript_title">App Description</p> 
-                <?php echo  '<p class="float-left">'.$row['description'].'</p>' ?>
+                <?php echo  '<p>'.$row['description'].'</p>' ?>
             </div>
             <br>
         </div>
