@@ -1,4 +1,0 @@
-DBNAME epiz_28596066_database
-username epiz_28596066
-password 0LUu7RR65AKFwhy
-MySQL Host Name sql207.epizy.com

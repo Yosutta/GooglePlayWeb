@@ -235,3 +235,9 @@ function change_alias(alias) {
     return str;
     // From github
 }
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+})
