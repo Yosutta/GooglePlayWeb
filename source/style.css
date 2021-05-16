@@ -750,15 +750,22 @@ form nav button{
 
 .frame_ad{ 
   width: 900px; 
-  height: 800px; 
+  height: 1500px; 
   background-color: white;
   padding: 20px;
 }
 
 .infor_ad{ 
   width: 630px;
-  height:300px; 
+  height:250px; 
   background-color: white;
+  float: left;
+}
+
+.ad_descript_title{
+  font-size: 40px;
+  font-weight: none;
+  margin-top: 765px;
   float: left;
 }
 
