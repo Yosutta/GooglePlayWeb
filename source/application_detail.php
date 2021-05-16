@@ -240,17 +240,17 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="width:860px">
             <?php
              for($i=0;$i<count($screenshots);$i++){
                 if ($i!= 0){
                     echo '<div class="carousel-item">' ;
-                    echo "<img class='d-block h-100  w-100 p-3 ' src='$screenshots[$i]'>";
+                    echo "<img class='d-block p-3' style='width:860px' src='$screenshots[$i]'>";
                     echo '</div>';
                 }
                 else {
                     echo '<div class="carousel-item active">' ;
-                    echo "<img class='d-block  h-100 w-100 p-3' src='$screenshots[$i]'>";
+                    echo "<img class='d-block p-3' style='width:860px' src='$screenshots[$i]'>";
                     echo '</div>';
                 }
             }
