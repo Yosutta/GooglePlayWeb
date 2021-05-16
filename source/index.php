@@ -29,6 +29,10 @@
         die("Connection failed: " . $conn->connect_error);
         }
 
+        // UPDATE mostDownloads
+        include("mostDownload.php");
+        mostDownloads();
+
         
         $sql = "SELECT * FROM `apps`";
         $appList = [];
@@ -186,7 +190,7 @@
     <!-- Most downloads -->
     <div class="" style="">
         <?php
-            $sql = "SELECT * FROM `mostdownloadsfree`";
+            $sql = "SELECT * FROM `mostdownloadsfree` ORDER BY downloads desc";
             $result = $conn->query($sql);
             $mostDownloadsFree = [];
             while($row=$result->fetch_assoc()){
@@ -1084,6 +1088,7 @@
         </div>
     </div>
 
+    <br>
 </body>
 <?php
     if($_SESSION !=null){

@@ -34,9 +34,8 @@
         if(isset($_GET['creator'])){
             $creatorname = $_GET['creator'];
         }
-
         }
-
+        print_r($_GET);
         
     ?>    
 </head>
@@ -65,7 +64,6 @@
     src="jquery.js"
 
     let arr  = <?php echo json_encode($arr)?>;
-
 
 
     console.log(arr);

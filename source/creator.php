@@ -74,13 +74,16 @@
                         <p id="title_featured_app_description"><?php echo $featured_app['description']?></p>
                     </div>
                 </div>
-                <div style="text-align:left;">
-                    <?php include("fully_element_frame.php"); ?>  
-                    <p>
-                    <br>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </p>    
-                </div>
+                <form action="fully_element_frame.php">
+                    <input type="text" name="creator" value="<?php echo $_GET['creator']?>" hidden>
+                    <div style="text-align:left;">
+                        <?php include("fully_element_frame.php"); ?>  
+                        <p>
+                        <br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </p>    
+                    </div>
+                </form>
             </div>
         </div>
 	</div>
