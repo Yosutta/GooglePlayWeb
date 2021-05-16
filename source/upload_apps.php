@@ -200,13 +200,14 @@
                     </div>
                 </div>
                 <input type="file" style="display: none;" onchange="displayImage(this)" name="app_image" id="profile-image" class="form-control">
+                <br><br>
+                <div id="div_title_apps">
+                    <input type="text" id="title_apps" name="title_app" placeholder="Title">
+                </div>
             </div>
 
             <!-- App's Title -->
             <div id="content2">
-                Title
-                <input type="text" name="title_app" placeholder="Title">
-                <br><br>
 
                 <label for="">Free</label>    
                 <input type="radio" name="cost" id="free" onclick="insertCost(),removeCost()" value="1" checked>

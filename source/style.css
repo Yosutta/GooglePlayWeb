@@ -540,7 +540,7 @@ form nav button{
   padding-left: 270px;
   padding-right: 70px;
   padding-top: 7px;
-  margin-top: -350px;
+  float : left;
 }
 
 
@@ -646,6 +646,32 @@ form nav button{
   max-height: 30ch;
 }
 
+
+#div_title_apps{ 
+  padding-top: 30px;
+}
+
+#title_apps{ 
+  font-size: 40px;
+  border-radius: 40px;
+  padding-left: 20px;
+  border:none;
+  border-bottom: 2px solid #228C22;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#title_apps:focus{
+  outline: none;
+}
+
+.title_text{
+  font-size: 30px; 
+  color: white; 
+  padding-left: 20px;
+  padding-top:10px;
+}
+
 #title_featured_app{
   font-size: 31px; 
   white-space: nowrap;
@@ -697,6 +723,7 @@ form nav button{
 
 #Appsbar{
   overflow: hidden;
+  float :left;
 }
 
 .sticky {
@@ -723,16 +750,22 @@ form nav button{
 
 .frame_ad{ 
   width: 900px; 
-  height: 800px; 
+  height: 1500px; 
   background-color: white;
   padding: 20px;
 }
 
 .infor_ad{ 
   width: 630px;
-  height:300px; 
+  height:250px; 
   background-color: white;
   float: left;
+}
+
+.ad_descript_title{
+  font-size: 40px;
+  font-weight: none;
+  margin-top: 765px;
 }
 
 .title_ad{
@@ -777,6 +810,9 @@ form nav button{
   width: auto; 
   height : auto; 
   padding-top: 50px;
+}
+#store_element{
+  padding-top: 30px;
 }
 
 .title_seemore{

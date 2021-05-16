@@ -74,6 +74,19 @@
 
         
     ?>
+<script>
+    src="jquery.js"
+    $(function(){
+      $("#loadheader").load("header.php"); 
+    });
+    if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}   
+</script>
 </head>
 <script>
     let appList = <?php echo json_encode($appList)?>;

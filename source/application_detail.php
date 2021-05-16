@@ -71,6 +71,7 @@
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
             $screenshots = json_decode($row['screenshotlink']);  
+            $decrip =$row['description'];
         }
     ?>
 </head>
@@ -224,17 +225,70 @@
                 <p class="float-right rating_start_ad" ><?php echo $row['ranking']?>/5 &#9733</p>
                 <p class="float-right"><?php echo $row['downloads']?></p>
             </div>
-            <?php
-            // for($i=0;$i<count($screenshots);$i++){
-            //     echo "<img class='screenshot_ad' src='$screenshots[$i]'>";
-            // }
-            ?>
-            <br>
+
+
             <div class="div_install_btn_ad">
                 <button type="submit" class="btn btn-success">Install</button>
             </div>
             </div>
+            <br> 
+            <br>
+            <div style="width: auto; height :auto">
+            <div id="myCarousel" class="carousel slide float-left" data-ride="carousel">
+            <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+            <?php
+             for($i=0;$i<count($screenshots);$i++){
+                if ($i!= 0){
+                    echo '<div class="carousel-item">' ;
+                    echo "<img class='d-block h-100  w-100 p-3 ' src='$screenshots[$i]'>";
+                    echo '</div>';
+                }
+                else {
+                    echo '<div class="carousel-item active">' ;
+                    echo "<img class='d-block  h-100 w-100 p-3' src='$screenshots[$i]'>";
+                    echo '</div>';
+                }
+            }
+            ?>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+            </div>
+            </div>
+            <div>
+                <p class ="ad_descript_title">App Description</p> 
+                <?php echo  '<p>'.$row['description'].'</p>' ?>
+            </div>
+            <br>
         </div>
     </div>
+<script>
+// Activate Carousel
+$("#myCarousel").carousel();
+
+// Enable Carousel Indicators
+$(".item").click(function(){
+  $("#myCarousel").carousel(1);
+});
+
+// Enable Carousel Controls
+$(".left").click(function(){
+  $("#myCarousel").carousel("prev");
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>  
 </body>
 </html>
