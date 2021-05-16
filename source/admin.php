@@ -52,9 +52,20 @@
         $price = $_POST['giftcodeprice'];
         $numbers = $_POST['codes'];
         }
+        
+        function utf8ize($d) {
+            if (is_array($d)) {
+                foreach ($d as $k => $v) {
+                    $d[$k] = utf8ize($v);
+                }
+            } else if (is_string ($d)) {
+                return utf8_encode($d);
+            }
+            return $d;
+        }
     ?>
     <script>
-    let pendingapps = <?php echo json_encode($pendingapps);?>
+        let pendingapps = <?php echo json_encode(utf8ize($pendingapps))?>
     </script>
     <title>GPlay - A.D.M.I.N</title>
 </head>

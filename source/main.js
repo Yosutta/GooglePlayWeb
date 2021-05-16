@@ -236,8 +236,3 @@ function change_alias(alias) {
     // From github
 }
 
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-})
