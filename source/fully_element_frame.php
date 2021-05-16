@@ -33,6 +33,7 @@
 
         if(isset($_GET['creator'])){
             $creatorname = $_GET['creator'];
+            echo $creatorname;
         }
 
         }
