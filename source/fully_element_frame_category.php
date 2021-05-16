@@ -214,7 +214,7 @@
     <?php include("getAppidfromCategory.php"); 
             include("fragmentEachElement.php"); 
     ?>
-    <div id="div_seemore_fragment">
+    <div id="div_seemore_fragment_category">
     <div>
         <p class="title_seemore">More by <?php echo  $_GET['category']?></p>
         <button type="submit" class="btn btn-success button_seemore">See More</button>
@@ -235,7 +235,6 @@
     src="jquery.js"
 
     let arr  = <?php echo json_encode($arr)?>;
-
 
     console.log(arr);
     

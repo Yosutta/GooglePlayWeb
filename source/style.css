@@ -541,6 +541,7 @@ form nav button{
   padding-right: 70px;
   padding-top: 7px;
   float : left;
+  margin-top: -350px;
 }
 
 
@@ -577,7 +578,7 @@ form nav button{
 
 .title_description{
   font-size: 20px;
-  text-align: left;
+  text-align: center
 }
 
 .img_creator{ 
@@ -802,6 +803,11 @@ form nav button{
   text-align: right;
 }
 
+.carousel-height{
+  min-height:500px;
+  max-width:863px; 
+}
+
 
 
 /* fragment seemore */
@@ -823,6 +829,12 @@ form nav button{
 .button_seemore{
   display : inline;
   float: right; 
+}
+
+/* fragment_seemote_category */
+#div_seemore_fragment_category{
+  margin-left:270px;
+  margin-top:-350px;
 }
 
 /* GLOBAL CSS */

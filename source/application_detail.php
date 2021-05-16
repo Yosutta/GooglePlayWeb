@@ -9,9 +9,9 @@
         echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
         echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
         echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'>";
-        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
-        echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
+        echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>";
         echo "<link href='https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap' rel='stylesheet'>";
+        echo "<script src='https://kit.fontawesome.com/a076d05399.js'></script>";
         echo "<link rel='icon' href='resources/icon.png'>";
         echo "<script src='main.js'></script>";
         echo "<link rel='stylesheet' type='text/css' href='style.css'>";
@@ -28,11 +28,18 @@
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         }
-
-        if(isset($_GET['appid'])){
-            $appid =  $_GET['appid'];
+        
+        // GET CATEGORIES
+        $sql = "SELECT * from categories";
+        $categories = [];
+        $result = $conn->query($sql);
+        $categoriesTable =  [];
+        while($row1 = $result->fetch_assoc()){
+          array_push($categories,$row1['catename']);
+          array_push($categoriesTable,$row1);
         }
 
+        // GET APP FOR SEARCHBAR
         $sql = "SELECT * FROM `apps`";
         $appList = [];
         $result = $conn->query($sql);
@@ -43,6 +50,9 @@
                 array_push($appList, [$row['appname'],$row['appid']]);
             }    
           }
+          if(isset($_GET['appid'])){
+            $appid =  $_GET['appid'];
+        }
 
         if(isset($_GET['pendingappid'])){
             $pendingappid = $_GET['pendingappid'];
@@ -55,11 +65,13 @@
             $row['category'] = $row['catename'];
             $row['ranking'] = $row['appranking'];
             $row['downloads'] = $row['appdownloads'];
+            $row['description'] = $row['appdescription'];
             unset($row['pictureLink']);
             unset($row['creatorname']);
             unset($row['catename']);
             unset($row['appranking']);
             unset($row['appdownloads']);
+            unset($row['appdescription']);
 
             $screenshots = json_decode($row['screenshotslink']);  
 
@@ -132,7 +144,15 @@
     </a>
     <a href="#">
         <div class="catPlacement float-left catFont" style="margin-left:60px">
-            Categories <i class="fas fa-chevron-down"></i>
+        <select name="category_name" style="border:none;outline:0px;" onChange="window.location.href=this.value">
+            <option value="" hidden>Categories<i class="fas fa-chevron-down"></i></option>
+            <?php 
+            for($i=0;$i<count($categories);$i++){
+                $category = $categories[$i];
+                echo "<option value='fully_element_frame_category.php?category=$category'>" . $category. "</option>";
+            }
+            ?>
+    </select>
         </div>
     </a>
     <div class="float-left mt-2" style="border-left:1px solid #c1c1c1;height:30px;"></div>
@@ -240,17 +260,17 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner" style="width:860px">
+            <div class="carousel-inner carousel-height" style="">
             <?php
              for($i=0;$i<count($screenshots);$i++){
                 if ($i!= 0){
                     echo '<div class="carousel-item">' ;
-                    echo "<img class='d-block p-3' style='width:860px' src='$screenshots[$i]'>";
+                    echo "<img class='d-block p-3 carousel-height' src='$screenshots[$i]'>";
                     echo '</div>';
                 }
                 else {
                     echo '<div class="carousel-item active">' ;
-                    echo "<img class='d-block p-3' style='width:860px' src='$screenshots[$i]'>";
+                    echo "<img class='d-block p-3 carousel-height' src='$screenshots[$i]'>";
                     echo '</div>';
                 }
             }
@@ -266,7 +286,7 @@
             </a>
             </div>
             </div>
-            <div>
+            <div>   <br><br><br><br>
                 <p class ="ad_descript_title">App Description</p> 
                 <?php echo  '<p>'.$row['description'].'</p>' ?>
             </div>
