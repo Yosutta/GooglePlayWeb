@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2021 at 10:14 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: May 16, 2021 at 12:31 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,6 +68,7 @@ INSERT INTO `apps` (`appid`, `appname`, `creatorid`, `creator`, `category`, `ran
 ('g13', 'Zing Speed', 6, 'VNG', 'Game', 5, 1, 0, 343159, 'Have a best race', '2021-05-16 14:24:49', 0, 'resources/apps/zingspeed.png', '[\"resources/apps/screenshots/zingspeed/zingspeed0.png\"]'),
 ('g14', 'Gunny', 6, 'VNG', 'Game', 3, 1, 0, 202132, 'Shooting chicken\r\n', '2021-05-16 14:26:27', 0, 'resources/apps/gunny.png', '[\"resources/apps/screenshots/gunny/gunny0.png\",\"resources/apps/screenshots/gunny/gunny1.png\"]'),
 ('g15', 'Thien Nu', 6, 'VNG', 'Game', 5, 0, 3000, 50055, 'Good Girl!!!', '2021-05-16 14:28:18', 0, 'resources/apps/thiennu.png', '[\"resources/apps/screenshots/thiennu/thiennu0.png\",\"resources/apps/screenshots/thiennu/thiennu1.png\"]'),
+('g16', 'Genshin Impact', 17, 'miHoYo Limited', 'Game', 5, 1, 0, 1501123, 'Step into Teyvat, a vast world teeming with life and flowing with elemental energy.\r\n\r\nYou and your sibling arrived here from another world. Separated by an unknown god, stripped of your powers, and cast into a deep slumber, you now awake to a world very different from when you first arrived.', '2021-05-16 17:22:33', 0, 'resources/apps/genshinimpact.png', '[\"resources/apps/screenshots/genshinimpact/genshinimpact0.png\",\"resources/apps/screenshots/genshinimpact/genshinimpact1.png\",\"resources/apps/screenshots/genshinimpact/genshinimpact2.png\"]'),
 ('g2', 'DEEMO', 1, 'Rayark', 'Game', 5, 1, 0, 552118, 'Never Left Without Saying Goodbye.', '2021-05-15 22:16:04', 0, 'resources/apps/deemo.png', '[\"resources/apps/screenshots/deemo/deemo0.png\",\"resources/apps/screenshots/deemo/deemo1.png\",\"resources/apps/screenshots/deemo/deemo2.png\"]'),
 ('g3', 'VOEZ', 1, 'Rayark', 'Game', 4, 1, 0, 107144, 'VOEZ invites you to embark on the remarkable journey of teenage dreams,\r\nFollowing after Cytus and Deemo, two titles that took the world by storm,\r\nRayark’s remarkable rhythm game, VOEZ, has officially arrived!', '2021-05-15 23:03:17', 0, 'resources/apps/voez.png', '[\"resources/apps/screenshots/voez/voez0.png\",\"resources/apps/screenshots/voez/voez1.png\",\"resources/apps/screenshots/voez/voez2.png\"]'),
 ('g6', 'Flappy Bird', 4, 'TGame Studio', 'Game', 5, 0, 2000, 14232, 'You are a bird try to go home. \r\nHave funs!!!', '2021-05-16 13:42:02', 0, 'resources/apps/flappybird.png', '[\"resources/apps/screenshots/flappybird/flappybird0.png\",\"resources/apps/screenshots/flappybird/flappybird1.png\",\"resources/apps/screenshots/flappybird/flappybird2.png\"]'),
@@ -107,7 +108,7 @@ INSERT INTO `categories` (`catename`, `cateid`, `apps`) VALUES
 ('Daydream', 'dd', 2),
 ('Education', 'e', 3),
 ('Finance', 'f', 5),
-('Game', 'g', 15),
+('Game', 'g', 16),
 ('Houses', 'h', 0),
 ('Lifestyle', 'l', 2),
 ('Music', 'm', 0),
@@ -437,7 +438,8 @@ INSERT INTO `creator` (`name`, `id`, `tittle`, `backgroundlink`, `iconlink`, `fe
 ('HiEdu', 13, 'Higher the quality of education.\r\n', 'resources/creator/background/hiedu.png', 'resources/creator/icon/hiedu.png', 'e1', 0),
 ('Google', 14, 'Apps from Google to help you get the most out of your day, across all your devices.\r\n', 'resources/creator/background/google.png', 'resources/creator/icon/google.png', 'e3', 0),
 ('Pinterest', 15, 'Beauty Picture', 'resources/creator/background/pinterest.png', 'resources/creator/icon/pinterest.png', 'dd1', 0),
-('Zego Game', 16, 'For all everything we do', 'resources/creator/background/zegogame.png', 'resources/creator/icon/zegogame.png', 'l2', 0);
+('Zego Game', 16, 'For all everything we do', 'resources/creator/background/zegogame.png', 'resources/creator/icon/zegogame.png', 'l2', 0),
+('miHoYo Limited', 17, 'TECH OTAKUS SAVE THE WORLD', 'resources/creator/background/mihoyolimited.png', 'resources/creator/icon/mihoyolimited.png', 'g16', 0);
 
 -- --------------------------------------------------------
 
@@ -477,8 +479,24 @@ INSERT INTO `giftcode` (`serial`, `price`) VALUES
 --
 
 CREATE TABLE `mostdownloadsfree` (
-  `appid` varchar(11) NOT NULL
+  `appid` varchar(11) NOT NULL,
+  `downloads` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mostdownloadsfree`
+--
+
+INSERT INTO `mostdownloadsfree` (`appid`, `downloads`) VALUES
+('bs3', 1483272),
+('dd1', 7897149),
+('e3', 1527856),
+('f1', 4551330),
+('g16', 1501123),
+('p2', 1685658),
+('p4', 1366081),
+('p5', 34395697),
+('v2', 100268185);
 
 -- --------------------------------------------------------
 
@@ -487,8 +505,24 @@ CREATE TABLE `mostdownloadsfree` (
 --
 
 CREATE TABLE `mostdownloadspaid` (
-  `appid` varchar(11) NOT NULL
+  `appid` varchar(11) NOT NULL,
+  `downloads` int(11) NOT NULL,
+  `cost` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mostdownloadspaid`
+--
+
+INSERT INTO `mostdownloadspaid` (`appid`, `downloads`, `cost`) VALUES
+('da1', 1254, 2000),
+('f5', 90, 57000),
+('g1', 111141, 54000),
+('g15', 50055, 3000),
+('g6', 14232, 2000),
+('g7', 150000, 5000),
+('g8', 45398412, 300000),
+('l2', 48098, 41000);
 
 -- --------------------------------------------------------
 
@@ -536,6 +570,7 @@ INSERT INTO `pendingapp` (`appname`, `appid`, `appdescription`, `creatorid`, `cr
 ('Zing Speed', 'g13', 'Have a best race', 6, 'VNG', 'Game', 0, 343159, 5, '2021-05-16 14:24:45', 'resources/pendingapps/zingspeed.png', '[\"resources/pendingapps/screenshots/zingspeed/zingspeed0.png\"]', 1),
 ('Gunny', 'g14', 'Shooting chicken\r\n', 6, 'VNG', 'Game', 0, 202132, 3, '2021-05-16 14:26:24', 'resources/pendingapps/gunny.png', '[\"resources/pendingapps/screenshots/gunny/gunny0.png\",\"resources/pendingapps/screenshots/gunny/gunny1.png\"]', 1),
 ('Thien Nu', 'g15', 'Good Girl!!!', 6, 'VNG', 'Game', 3000, 50055, 5, '2021-05-16 14:28:15', 'resources/pendingapps/thiennu.png', '[\"resources/pendingapps/screenshots/thiennu/thiennu0.png\",\"resources/pendingapps/screenshots/thiennu/thiennu1.png\"]', 1),
+('Genshin Impact', 'g16', 'Step into Teyvat, a vast world teeming with life and flowing with elemental energy.\r\n\r\nYou and your sibling arrived here from another world. Separated by an unknown god, stripped of your powers, and cast into a deep slumber, you now awake to a world very different from when you first arrived.', 17, 'miHoYo Limited', 'Game', 0, 1501123, 5, '2021-05-16 16:02:34', 'resources/pendingapps/genshinimpact.png', '[\"resources/pendingapps/screenshots/genshinimpact/genshinimpact0.png\",\"resources/pendingapps/screenshots/genshinimpact/genshinimpact1.png\",\"resources/pendingapps/screenshots/genshinimpact/genshinimpact2.png\"]', 1),
 ('DEEMO', 'g2', 'Never Left Without Saying Goodbye.', 1, 'Rayark', 'Game', 0, 552118, 5, '2021-05-15 22:15:00', 'resources/pendingapps/deemo.png', '[\"resources/pendingapps/screenshots/deemo/deemo0.png\",\"resources/pendingapps/screenshots/deemo/deemo1.png\",\"resources/pendingapps/screenshots/deemo/deemo2.png\"]', 1),
 ('VOEZ', 'g3', 'VOEZ invites you to embark on the remarkable journey of teenage dreams,\r\nFollowing after Cytus and Deemo, two titles that took the world by storm,\r\nRayark’s remarkable rhythm game, VOEZ, has officially arrived!', 1, 'Rayark', 'Game', 0, 107144, 4, '2021-05-15 23:03:09', 'resources/pendingapps/voez.png', '[\"resources/pendingapps/screenshots/voez/voez0.png\",\"resources/pendingapps/screenshots/voez/voez1.png\",\"resources/pendingapps/screenshots/voez/voez2.png\"]', 1),
 ('Flappy Bird', 'g6', 'You are a bird try to go home. \r\nHave funs!!!', 4, 'TGame Studio', 'Game', 2000, 14232, 5, '2021-05-16 13:41:57', 'resources/pendingapps/flappybird.png', '[\"resources/pendingapps/screenshots/flappybird/flappybird0.png\",\"resources/pendingapps/screenshots/flappybird/flappybird1.png\",\"resources/pendingapps/screenshots/flappybird/flappybird2.png\"]', 1),
@@ -569,49 +604,18 @@ CREATE TABLE `recentlyadded` (
 --
 
 INSERT INTO `recentlyadded` (`appid`, `date_added`) VALUES
-('bs1', '2021-05-16 13:16:39'),
-('bs2', '2021-05-16 13:17:34'),
-('bs3', '2021-05-16 13:19:22'),
-('bs4', '2021-05-16 13:32:27'),
-('bs5', '2021-05-16 13:37:09'),
-('da1', '2021-05-16 14:31:59'),
-('da2', '2021-05-16 14:33:55'),
-('da3', '2021-05-16 14:35:43'),
-('da4', '2021-05-16 14:37:36'),
 ('dd1', '2021-05-16 15:08:08'),
 ('dd2', '2021-05-16 15:10:01'),
 ('e1', '2021-05-16 14:53:50'),
-('e2', '2021-05-16 14:55:08'),
 ('e3', '2021-05-16 14:58:04'),
-('f1', '2021-05-16 13:11:50'),
-('f2', '2021-05-16 14:41:59'),
-('f3', '2021-05-16 14:44:36'),
-('f4', '2021-05-16 14:47:02'),
-('f5', '2021-05-16 14:50:07'),
 ('g1', '2021-05-15 22:09:50'),
-('g10', '2021-05-16 13:52:39'),
-('g11', '2021-05-16 13:54:53'),
-('g12', '2021-05-16 14:22:28'),
-('g13', '2021-05-16 14:24:45'),
-('g14', '2021-05-16 14:26:24'),
-('g15', '2021-05-16 14:28:15'),
+('g16', '2021-05-16 17:22:33'),
 ('g2', '2021-05-15 22:15:00'),
 ('g3', '2021-05-15 23:03:09'),
-('g5', '2021-05-16 13:40:19'),
-('g6', '2021-05-16 13:41:57'),
-('g7', '2021-05-16 13:44:04'),
-('g8', '2021-05-16 13:48:23'),
-('g9', '2021-05-16 13:51:09'),
 ('l1', '2021-05-16 15:05:40'),
 ('l2', '2021-05-16 15:13:33'),
-('p1', '2021-05-16 13:06:54'),
-('p2', '2021-05-16 13:21:40'),
-('p3', '2021-05-16 13:27:06'),
 ('p4', '2021-05-16 15:01:59'),
 ('p5', '2021-05-16 15:03:21'),
-('s1', '2021-05-16 02:31:21'),
-('s2', '2021-05-16 02:33:56'),
-('v1', '2021-05-16 13:30:26'),
 ('v2', '2021-05-16 15:00:28');
 
 -- --------------------------------------------------------

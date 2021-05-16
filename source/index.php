@@ -33,7 +33,20 @@
         include("mostDownload.php");
         mostDownloads();
 
+        // UPDATE mostDownloadsPaid
+        include("mostDownloadPaid.php");
+        mostDownloadsPaid();
         
+        // GET CATEGORIES
+        $sql = "SELECT * from categories";
+        $categories = [];
+        $result = $conn->query($sql);
+        $categoriesTable =  [];
+        while($row1 = $result->fetch_assoc()){
+          array_push($categories,$row1['catename']);
+          array_push($categoriesTable,$row1);
+        }
+
         $sql = "SELECT * FROM `apps`";
         $appList = [];
         $result = $conn->query($sql);
@@ -103,7 +116,15 @@
     </a>
     <a href="#">
         <div class="catPlacement float-left catFont" style="margin-left:60px">
-            Categories <i class="fas fa-chevron-down"></i>
+        <select name="category_name" style="border:none;outline:0px;" onChange="window.location.href=this.value">
+            <option value="" hidden>Categories<i class="fas fa-chevron-down"></i></option>
+            <?php 
+            for($i=0;$i<count($categories);$i++){
+                $category = $categories[$i];
+                echo "<option value='fully_element_frame_category.php?category=$category'>" . $category. "</option>";
+            }
+            ?>
+    </select>
         </div>
     </a>
     <div class="float-left mt-2" style="border-left:1px solid #c1c1c1;height:30px;"></div>

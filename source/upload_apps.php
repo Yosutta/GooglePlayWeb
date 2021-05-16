@@ -168,10 +168,6 @@
         $categoryQuantity = $category1['apps']+1;
         $sql = "UPDATE categories SET apps = '$categoryQuantity' where catename = '$appcategory'";
         $conn->query($sql);
-
-        //ADD TO RECENTLY ADDED LIST
-        $sql = "INSERT INTO recentlyadded(appid) value('$appid')";
-        $conn->query($sql);
         
         header("Location:upload_apps.php");
       }

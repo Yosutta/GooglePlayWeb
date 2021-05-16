@@ -65,7 +65,7 @@ function showAdminAppsGrid(pendingapps,index){
         let buttons = row.insertCell(5)
         
         if(pendingapps[i]!==undefined){
-            let id = "appTemplate.php?appid="+pendingapps[i]['appid']
+            let id = "application_detail.php?pendingappid="+pendingapps[i]['appid']
             appname.innerHTML = "<a href ='"+id+"'>"+pendingapps[i]['appname']+"</a>"
 
             let img = document.createElement('img'); 

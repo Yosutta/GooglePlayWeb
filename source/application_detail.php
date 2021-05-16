@@ -44,10 +44,34 @@
             }    
           }
 
-        $sql = "SELECT * FROM `apps` where appid = '$appid'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $screenshots = json_decode($row['screenshotlink']);  
+        if(isset($_GET['pendingappid'])){
+            $pendingappid = $_GET['pendingappid'];
+            $sql = "SELECT * FROM `pendingapp` where appid = '$pendingappid'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+
+            $row['link'] = $row['pictureLink'];
+            $row['creator'] = $row['creatorname'];
+            $row['category'] = $row['catename'];
+            $row['ranking'] = $row['appranking'];
+            $row['downloads'] = $row['appdownloads'];
+            unset($row['pictureLink']);
+            unset($row['creatorname']);
+            unset($row['catename']);
+            unset($row['appranking']);
+            unset($row['appdownloads']);
+
+            $screenshots = json_decode($row['screenshotslink']);  
+
+            echo "This is app is yet to be confirmed";
+        }
+
+        else{
+            $sql = "SELECT * FROM `apps` where appid = '$appid'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $screenshots = json_decode($row['screenshotlink']);  
+        }
     ?>
 </head>
 <script>
@@ -196,7 +220,7 @@
             <p class="title_ad"><?php echo $row['appname']?></p>
             <div class="rating_ad">
                 <a href="creator.php?creator=<?php echo $row['creator']?>" class="a_tag_ad"><?php echo $row['creator']?></a>
-                <a href="#" class="a_tag_ad"><?php echo $row['category']?></a>
+                <a href="fully_element_frame_category.php?category=<?php echo $row['category']?>" class="a_tag_ad"><?php echo $row['category']?></a>
                 <p class="float-right rating_start_ad" ><?php echo $row['ranking']?>/5 &#9733</p>
                 <p class="float-right"><?php echo $row['downloads']?></p>
             </div>

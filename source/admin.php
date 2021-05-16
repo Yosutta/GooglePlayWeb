@@ -63,13 +63,66 @@
             }
             return $d;
         }
+        $sql = "SELECT * FROM `apps`";
+        $appList = [];
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc(); 
+        if($row){
+            array_push($appList, [$row['appname'],$row['appid']]);
+            while($row=$result->fetch_assoc()){
+                array_push($appList, [$row['appname'],$row['appid']]);
+            }    
+          }
     ?>
     <script>
+        let appList = <?php echo json_encode($appList)?>;
         let pendingapps = <?php echo json_encode(utf8ize($pendingapps))?>
     </script>
     <title>GPlay - A.D.M.I.N</title>
 </head>
 <body>
+  <!-- Header  -->
+  <div class="container-fluid" id="header">
+      <a href="index.php">
+          <img class="" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="GooglePlay">
+      </a>
+      <form action="#" autocomplete="off">
+          <nav class="navbar">
+              <input class="focus" id="searchbar" type="text" name="search" placeholder="Search" onkeyup="appSearch(appList,value)">
+              <button class="bg-primary text-white border rounded-right" type="submit">
+                  <i class="fas fa-search"></i>
+              </button>
+              <table class="mt-5 fixed-top shadow" id="suggestion"></table>
+          </nav>
+          
+      </form>
+      <!-- Account Image -->
+      <?php
+        if(isset($_POST['btn1'])){
+            unset($_SESSION['username']);
+            unset($_SESSION['userid']);
+            unset($_SESSION['level']);
+            unset($_SESSION['pictureLink']);
+        }
+        if(!isset($_SESSION['username'])){
+            echo '<a href="login.php" class="float-right mr-4 mt-2 rounded bg-primary text-white text-decoration-none" style="font-size:15px;padding:5px 15px">Sign in</a>';
+        }
+        else{
+            $username = $_SESSION['username'];
+            echo $_SESSION['level'];
+            echo $username;
+            if(strlen($_SESSION['pictureLink'])>3){
+                $pictureLink = $_SESSION['pictureLink'];
+            }
+            else
+                $pictureLink = "resources/default/default_img.jpg";
+            echo '<img class="rounded-circle float-right mr-4 mt-2" src='.$pictureLink.' alt='.$username.'>';
+            }
+      ?>
+      <form action="" method="post">
+          <button type="submit" name="btn1">Log out</button>
+      </form>
+     </div>
         <!-- App's Image -->
         <div class="container-fluid">
             <div class="row">

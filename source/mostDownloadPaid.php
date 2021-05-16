@@ -1,5 +1,5 @@
 <?php
-    function mostDownloads(){
+    function mostDownloadsPaid(){
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -16,21 +16,23 @@
     
         $sql = "SELECT appid,downloads,cost from apps ORDER BY downloads DESC";
         $result = $conn->query($sql);
-        $mostDownload = [];
+        $mostDownloadPaid = [];
         while($row = $result->fetch_assoc()){
-            if($row['cost']==0)
-                array_push($mostDownload,[$row['appid'],$row['downloads']]);
-            if (count($mostDownload)==9)
+            if($row['cost']!=0)
+                array_push($mostDownloadPaid,[$row['appid'],$row['downloads'],$row['cost']]);
+            if (count($mostDownloadPaid)==9)
                 break;
         }
+        
     
-        $sql = "TRUNCATE TABLE mostdownloadsfree";
+        $sql = "TRUNCATE TABLE mostdownloadspaid";
         $conn->query($sql);
     
-        for($i=0;$i<count($mostDownload);$i++){
-            $appid = $mostDownload[$i][0];
-            $downloads = $mostDownload[$i][1];
-            $sql = "INSERT INTO `mostdownloadsfree` VALUES ('$appid',$downloads)";
+        for($i=0;$i<count($mostDownloadPaid);$i++){
+            $appid = $mostDownloadPaid[$i][0];
+            $downloads = $mostDownloadPaid[$i][1];
+            $cost = $mostDownloadPaid[$i][2];
+            $sql = "INSERT INTO `mostdownloadspaid` VALUES ('$appid',$downloads, $cost)";
             $conn -> query($sql);
         }
     }

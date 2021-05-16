@@ -61,6 +61,10 @@ if(isset($_GET['appid'])){
 
         $sql = "UPDATE pendingapp set status = 1 where appid = '$msg'";
         $conn->query($sql);
+
+        //ADD TO RECENTLY ADDED LIST
+        $sql = "INSERT INTO recentlyadded(appid) value('$msg')";
+        $conn->query($sql);
     }
     else if($status==2){
         $sql = "UPDATE pendingapp set status = 2 where appid = '$msg'";
